@@ -5,6 +5,7 @@
  * - Cyan (#22d3ee) accent for active elements
  * - Frosted glass cards with subtle borders
  * - Plus Jakarta Sans headlines, Inter body
+ * Navigation: User-controlled (keyboard, swipe, click)
  */
 
 import { useState, useEffect, useCallback } from 'react';
