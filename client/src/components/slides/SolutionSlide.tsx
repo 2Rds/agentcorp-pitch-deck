@@ -1,114 +1,79 @@
-/*
- * Slide 4: Solution
- * Programmed Incompleteness
- * Design: Technical diagram with explanation
- */
-
 import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-  }
-};
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
+const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } } };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' as const }
-  }
-};
+const dontClaim = [
+  'IPFS can\'t be breached',
+  'R2 can\'t be breached',
+  'We\'re unhackable',
+];
 
-const claims = [
-  { claim: "IPFS can't be breached", truth: false },
-  { claim: "R2 can't be breached", truth: false },
-  { claim: "We're unhackable", truth: false },
-  { claim: "Breaches yield nothing usable", truth: true },
-  { claim: "Complete files never exist", truth: true },
-  { claim: "Hacking is pointless", truth: true },
+const doClaim = [
+  'Breaches yield nothing usable',
+  'Complete files never exist in one place',
+  'Hacking us is architecturally pointless',
 ];
 
 export default function SolutionSlide() {
   return (
-    <div className="w-full min-h-full flex items-start justify-center p-4 md:p-6 pt-8 md:pt-12 pb-20 overflow-auto">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-6xl w-full"
-      >
-        {/* Section label */}
-        <motion.p variants={itemVariants} className="section-label mb-4">
-          The Solution
-        </motion.p>
+    <div className="slide-shell">
+      <div className="glow-bl" />
+      <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
-        {/* Headline */}
-        <motion.h2 variants={itemVariants} className="slide-title text-white mb-3">
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
+          The Solution
+        </motion.span>
+
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '0.85rem' }}>
           Programmed Incompleteness
         </motion.h2>
 
-        {/* Subheadline */}
-        <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-8">
-          We don't just encrypt data. We make it permanently incomplete.
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 600, marginBottom: '1.75rem' }}>
+          We don't just encrypt data. We architect it so that a complete, usable file never exists in a single location. The first 16 bytes — the cryptographic seed that makes reconstruction possible — are stripped before upload, stored separately with a zero-knowledge proof, and reunited only on the client at retrieval. Without those bytes, whatever an attacker takes is mathematically irreversible garbage.
         </motion.p>
 
-        {/* Visual diagram */}
-        <motion.div variants={itemVariants} className="grid lg:grid-cols-2 gap-8 mb-8">
-          {/* Flow diagram - using generated image */}
-          <div className="glass-card p-4 overflow-hidden">
-            <img 
-              src="/images/data-split-visualization.png" 
-              alt="Programmed Incompleteness - Data Split Visualization"
-              className="w-full h-auto rounded-lg"
-            />
-            <p className="text-xs text-slate-500 mt-3 text-center">
-              Without the 16 bytes, the file is cryptographic garbage—impossible to reconstruct.
-            </p>
-          </div>
+        <motion.div variants={i} className="cols-2" style={{ marginBottom: '1.5rem' }}>
 
-          {/* Key point + claims */}
-          <div className="space-y-6">
-            {/* Key point */}
-            <div className="glass-card-highlight p-6">
-              <p className="text-lg text-white font-medium mb-2">
-                Without the 16 bytes, the file is cryptographic garbage
-              </p>
-              <p className="text-slate-400">
-                Impossible to reconstruct even with unlimited compute.
-              </p>
-            </div>
-
-            {/* Claims table */}
-            <div className="glass-card p-6">
-              <p className="text-sm text-slate-500 uppercase tracking-wide mb-4">Intellectual Honesty</p>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                <div>
-                  <p className="text-xs text-red-400 uppercase tracking-wide mb-2">We DON'T claim</p>
-                  {claims.filter(c => !c.truth).map((c, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-slate-500 mb-1">
-                      <X className="w-3 h-3 text-red-400" />
-                      {c.claim}
-                    </div>
-                  ))}
+          {/* Don't claim */}
+          <div style={{ padding: '1.4rem 1.6rem', background: 'rgba(255,80,80,0.03)', border: '1px solid rgba(255,80,80,0.12)', borderRadius: 'var(--radius-lg)' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,80,80,0.6)', marginBottom: '1rem' }}>We don't claim</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {dontClaim.map((item) => (
+                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <span style={{ width: 16, height: 16, borderRadius: '50%', background: 'rgba(255,80,80,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ color: 'rgba(255,80,80,0.7)', fontSize: '0.6rem', fontWeight: 700 }}>✕</span>
+                  </span>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--text-3)', textDecoration: 'line-through' }}>{item}</p>
                 </div>
-                <div>
-                  <p className="text-xs text-green-400 uppercase tracking-wide mb-2">We DO claim</p>
-                  {claims.filter(c => c.truth).map((c, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm text-white mb-1">
-                      <Check className="w-3 h-3 text-green-400" />
-                      {c.claim}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
+
+          {/* Do claim */}
+          <div style={{ padding: '1.4rem 1.6rem', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.18)', borderRadius: 'var(--radius-lg)' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '1rem' }}>We do claim</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              {doClaim.map((item) => (
+                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <span style={{ width: 16, height: 16, borderRadius: '50%', background: 'rgba(0,229,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ color: 'var(--cyan)', fontSize: '0.6rem', fontWeight: 700 }}>✓</span>
+                  </span>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--text-1)', fontWeight: 500 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </motion.div>
+
+        <motion.div variants={i} className="bar-card" style={{ maxWidth: 640 }}>
+          <p className="t-body">
+            <span className="c-white" style={{ fontWeight: 600 }}>Without the 16 bytes, the file is cryptographic garbage</span>{' '}
+            — impossible to reconstruct even with unlimited compute. This is the architecture. This is the moat.
+          </p>
+        </motion.div>
+
       </motion.div>
     </div>
   );
