@@ -1,164 +1,122 @@
-/*
- * Slide 11: Ask
- * $2M @ $12M + use of funds + milestones
- * Design: Centered, clean. Closing line LARGE and memorable.
- */
-
 import { motion } from 'framer-motion';
-import { Target, TrendingUp, Building, Mail, Globe } from 'lucide-react';
-import CountUp from '@/components/CountUp';
+import { Mail, Globe } from 'lucide-react';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.2 }
-  }
-};
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
+const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } } };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' as const }
-  }
-};
-
-const useOfFunds = [
-  { category: 'Engineering', percentage: 40, color: 'bg-cyan-500' },
-  { category: 'Sales & Marketing', percentage: 25, color: 'bg-blue-500' },
-  { category: 'Ops & Buffer', percentage: 20, color: 'bg-slate-500' },
-  { category: 'Product', percentage: 15, color: 'bg-green-500' },
+const funds = [
+  { category: 'Engineering',      pct: 40, color: 'var(--cyan)' },
+  { category: 'Sales & Marketing', pct: 25, color: 'rgba(120,160,255,1)' },
+  { category: 'Ops & Buffer',      pct: 20, color: 'var(--text-4)' },
+  { category: 'Product',           pct: 15, color: 'var(--gold)' },
 ];
 
 const milestones = [
-  { year: 'Y1', title: 'Crypto Beachhead', target: '$1M ARR', icon: Target },
-  { year: 'Y2', title: 'Vertical Expansion', target: 'Healthcare, Legal, Family Offices', icon: TrendingUp },
-  { year: 'Y3', title: 'Series A', target: 'Enterprise & Mid-Market', icon: Building },
+  { tag: 'Y1', title: 'Crypto Beachhead',      detail: '$1M ARR — crypto / Web3 companies + crypto law firms',     color: 'var(--cyan)',            bg: 'rgba(0,229,255,0.08)',      border: 'rgba(0,229,255,0.18)'       },
+  { tag: 'Y2', title: 'Vertical Expansion',    detail: 'Healthcare, legal, family offices — cross-vertical product-led growth', color: 'rgba(120,160,255,1)', bg: 'rgba(120,160,255,0.06)', border: 'rgba(120,160,255,0.16)'     },
+  { tag: 'Y3', title: 'Series A',              detail: 'Enterprise + mid-market — $10M+ ARR target, institutional rounds', color: 'var(--gold)',          bg: 'rgba(232,201,106,0.06)',  border: 'rgba(232,201,106,0.16)'     },
 ];
 
 export default function AskSlide() {
   return (
-    <div className="w-full min-h-full flex items-start justify-center p-4 md:p-6 pt-8 md:pt-12 pb-20 overflow-auto">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-5xl w-full"
-      >
-        {/* Section label */}
-        <motion.p variants={itemVariants} className="section-label mb-2 text-center">
+    <div className="slide-shell">
+      <div className="glow-tr" />
+      <div className="glow-bl" />
+      <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
+
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem', textAlign: 'center' }}>
           The Ask
-        </motion.p>
+        </motion.span>
 
-        {/* Headline */}
-        <motion.h2 variants={itemVariants} className="slide-title text-white mb-1 text-center">
-          Raising <span className="text-cyan-400">$2M</span>
-        </motion.h2>
+        <motion.div variants={i} style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+          <h2 className="t-title c-white" style={{ marginBottom: '0.4rem' }}>
+            Raising <span className="c-cyan">$2M</span>
+          </h2>
+          <p className="t-body">Seed Round · $12M Post-Money SAFE</p>
+        </motion.div>
 
-        {/* Subheadline */}
-        <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-6 text-center">
-          Seed Round • $12M Post-Money SAFE
-        </motion.p>
+        <motion.div variants={i} className="cols-2" style={{ marginBottom: '1.25rem' }}>
 
-        <div className="grid lg:grid-cols-2 gap-4 mb-6">
           {/* Use of funds */}
-          <motion.div variants={itemVariants} className="glass-card p-4">
-            <h3 className="text-xs text-slate-500 uppercase tracking-wide mb-3">Use of Funds</h3>
-            <div className="space-y-2">
-              {useOfFunds.map((item, i) => (
-                <div key={i}>
-                  <div className="flex justify-between text-xs mb-1">
-                    <span className="text-slate-300">{item.category}</span>
-                    <span className="text-white font-medium">{item.percentage}%</span>
+          <div style={{ padding: '1.4rem 1.4rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+            <p className="eyebrow-muted" style={{ marginBottom: '1rem' }}>Use of Funds</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {funds.map((f) => (
+                <div key={f.category}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-2)' }}>{f.category}</span>
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.875rem', color: 'var(--text-1)', fontWeight: 700 }}>{f.pct}%</span>
                   </div>
-                  <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                     <motion.div
                       initial={{ width: 0 }}
-                      animate={{ width: `${item.percentage}%` }}
-                      transition={{ duration: 1, delay: 0.5 + i * 0.1, ease: 'easeOut' as const }}
-                      className={`h-full ${item.color} rounded-full`}
+                      animate={{ width: `${f.pct}%` }}
+                      transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
+                      style={{ height: '100%', background: f.color, borderRadius: 2 }}
                     />
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-slate-500 mt-2">
-              ~24 months runway at planned burn
-            </p>
-          </motion.div>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-4)', marginTop: '0.75rem', letterSpacing: '0.04em' }}>~24 months runway at planned burn</p>
+          </div>
 
           {/* Milestones */}
-          <motion.div variants={itemVariants} className="glass-card p-4">
-            <h3 className="text-xs text-slate-500 uppercase tracking-wide mb-3">Milestones</h3>
-            <div className="space-y-3">
-              {milestones.map((milestone, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                    i === 0 ? 'bg-cyan-500/20' : i === 1 ? 'bg-blue-500/20' : 'bg-green-500/20'
-                  }`}>
-                    <milestone.icon className={`w-4 h-4 ${
-                      i === 0 ? 'text-cyan-400' : i === 1 ? 'text-blue-400' : 'text-green-400'
-                    }`} />
+          <div style={{ padding: '1.4rem 1.4rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+            <p className="eyebrow-muted" style={{ marginBottom: '1rem' }}>Milestones</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              {milestones.map((m) => (
+                <div key={m.tag} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <div style={{
+                    padding: '0.2rem 0.5rem',
+                    background: m.bg, border: `1px solid ${m.border}`,
+                    borderRadius: 4, flexShrink: 0, marginTop: 2,
+                  }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', fontWeight: 700, color: m.color, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{m.tag}</span>
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
-                        i === 0 ? 'bg-cyan-500/20 text-cyan-400' : 
-                        i === 1 ? 'bg-blue-500/20 text-blue-400' : 
-                        'bg-green-500/20 text-green-400'
-                      }`}>
-                        {milestone.year}
-                      </span>
-                      <span className="text-white text-sm font-medium">{milestone.title}</span>
-                    </div>
-                    <p className="text-xs text-slate-400 mt-0.5">{milestone.target}</p>
+                    <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-1)', marginBottom: '0.2rem' }}>{m.title}</p>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.775rem', color: 'var(--text-3)', lineHeight: 1.45 }}>{m.detail}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </motion.div>
-        </div>
+          </div>
 
-        {/* Thesis callback */}
-        <motion.div variants={itemVariants} className="text-center mb-4">
-          <p className="text-slate-400 text-sm italic">
-            For 30 years, security meant keeping attackers out. We're building something different.
-          </p>
         </motion.div>
 
-        {/* Closing line - THE MEMORABLE MOMENT */}
-        <motion.div 
-          variants={itemVariants}
-          className="text-center mb-10"
-        >
-          <motion.blockquote 
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+        {/* Closing line */}
+        <motion.div variants={i} style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+          <motion.p
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 1.2 }}
+            style={{
+              fontFamily: 'var(--font-display)', fontWeight: 800,
+              fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)',
+              color: 'var(--text-1)', letterSpacing: '-0.02em', lineHeight: 1.2,
+            }}
           >
-            "Hack us all you want—
-            <br />
-            <span className="text-cyan-400">you get nothing.</span>"
-          </motion.blockquote>
+            "Hack us all you want —<br />
+            <span style={{ color: 'var(--cyan)' }}>you get nothing."</span>
+          </motion.p>
         </motion.div>
 
         {/* Contact */}
-        <motion.div variants={itemVariants} className="flex flex-col items-center gap-2">
-          <p className="text-white font-medium">Sean Weiss, CEO</p>
-          <div className="flex items-center gap-4 text-slate-400">
-            <a href="mailto:sean@blockdrive.co" className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
-              <Mail className="w-4 h-4" />
-              <span className="text-sm">sean@blockdrive.co</span>
+        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.875rem', color: 'var(--text-1)' }}>Sean Weiss, CEO</p>
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <a href="mailto:sean@blockdrive.co" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-3)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}>
+              <Mail style={{ width: 13, height: 13 }} />
+              sean@blockdrive.co
             </a>
-            <a href="https://app.blockdrive.co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
-              <Globe className="w-4 h-4" />
-              <span className="text-sm">app.blockdrive.co</span>
+            <a href="https://app.blockdrive.co" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-3)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}>
+              <Globe style={{ width: 13, height: 13 }} />
+              app.blockdrive.co
             </a>
           </div>
         </motion.div>
+
       </motion.div>
     </div>
   );
