@@ -1,101 +1,126 @@
+/*
+ * Slide 9: Competition
+ * They're Playing the Old Game
+ * Design: Matrix table with BlockDrive highlighted
+ */
+
 import { motion } from 'framer-motion';
 import { Check, X, Minus } from 'lucide-react';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.05 } } };
-const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } } };
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.2 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' as const }
+  }
+};
 
 const features = [
-  { name: 'Paradigm',              blockdrive: 'Breach-pointless', dropbox: 'Prevention',  filecoin: 'Prevention',  tresorit: 'Prevention'  },
-  { name: 'Complete Files Stored', blockdrive: 'Never',            dropbox: 'Yes',          filecoin: 'Yes',          tresorit: 'Yes'          },
-  { name: 'Breach = Data Loss',    blockdrive: false,               dropbox: true,           filecoin: true,           tresorit: true           },
-  { name: 'True Zero-Knowledge',   blockdrive: true,                dropbox: false,          filecoin: false,          tresorit: 'partial'      },
-  { name: 'Provable Deletion',     blockdrive: true,                dropbox: false,          filecoin: false,          tresorit: false          },
-  { name: 'Provider Immunity',     blockdrive: true,                dropbox: false,          filecoin: false,          tresorit: false          },
+  { name: 'Paradigm', blockdrive: 'Breach-pointless', dropbox: 'Prevention', filecoin: 'Prevention', tresorit: 'Prevention' },
+  { name: 'Complete Files Stored', blockdrive: 'Never', dropbox: 'Yes', filecoin: 'Yes', tresorit: 'Yes' },
+  { name: 'Breach = Data Loss', blockdrive: false, dropbox: true, filecoin: true, tresorit: true },
+  { name: 'True Zero-Knowledge', blockdrive: true, dropbox: false, filecoin: false, tresorit: 'partial' },
+  { name: 'Provable Deletion', blockdrive: true, dropbox: false, filecoin: false, tresorit: false },
+  { name: 'Provider Immunity', blockdrive: true, dropbox: false, filecoin: 'gray', tresorit: false },
 ];
 
-const renderVal = (val: boolean | string, bd = false) => {
-  if (val === true)      return <Check style={{ width: 16, height: 16, color: bd ? 'var(--cyan)' : 'rgba(100,200,100,0.7)' }} />;
-  if (val === false)     return <X     style={{ width: 16, height: 16, color: 'rgba(255,80,80,0.45)' }} />;
-  if (val === 'partial') return <Minus style={{ width: 16, height: 16, color: 'rgba(232,201,106,0.5)' }} />;
-  return <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: bd ? 'var(--cyan)' : 'var(--text-3)', fontWeight: bd ? 600 : 400 }}>{val}</span>;
+const renderValue = (value: boolean | string, isBlockDrive: boolean = false) => {
+  if (typeof value === 'boolean') {
+    if (value) {
+      return <Check className={`w-5 h-5 ${isBlockDrive ? 'text-cyan-400' : 'text-green-400'}`} />;
+    }
+    return <X className="w-5 h-5 text-red-400/50" />;
+  }
+  if (value === 'partial' || value === 'gray') {
+    return <Minus className="w-5 h-5 text-yellow-400/50" />;
+  }
+  return <span className={`text-sm ${isBlockDrive ? 'text-cyan-400 font-semibold' : 'text-slate-400'}`}>{value}</span>;
 };
 
 export default function CompetitionSlide() {
   return (
-    <div className="slide-shell">
-      <div className="glow-tr" />
-      <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
-
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
+    <div className="w-full min-h-full flex items-start justify-center p-4 md:p-6 pt-8 md:pt-12 pb-20 overflow-auto">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-6xl w-full"
+      >
+        {/* Section label */}
+        <motion.p variants={itemVariants} className="section-label mb-2">
           Competitive Landscape
-        </motion.span>
+        </motion.p>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 680, marginBottom: '0.85rem' }}>
+        {/* Headline */}
+        <motion.h2 variants={itemVariants} className="slide-title text-white mb-2">
           They're Playing the Old Game
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 580, marginBottom: '1.5rem' }}>
-          Every competitor is still trying to keep attackers out. We made breaches irrelevant. That's not a feature difference — it's a paradigm difference.
+        {/* Subheadline */}
+        <motion.p variants={itemVariants} className="text-sm text-slate-400 mb-4">
+          Every competitor is still trying to "keep attackers out." We made breaches irrelevant.
         </motion.p>
 
-        <motion.div variants={i} style={{ marginBottom: '1.5rem', overflowX: 'auto' }}>
-          <table style={{ width: '100%', minWidth: 580, borderCollapse: 'collapse' }}>
+        {/* Comparison matrix */}
+        <motion.div variants={itemVariants} className="overflow-x-auto">
+          <table className="w-full min-w-[600px]">
             <thead>
-              <tr>
-                <th style={{ textAlign: 'left', padding: '0.6rem 0.9rem', fontFamily: 'var(--font-mono)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-4)', fontWeight: 500, borderBottom: '1px solid var(--border)' }}>
-                  Feature
-                </th>
-                {['BlockDrive', 'Dropbox / Box', 'Filecoin / StorJ', 'Tresorit'].map((h, idx) => (
-                  <th key={h} style={{
-                    textAlign: 'center', padding: '0.6rem 0.9rem',
-                    fontFamily: idx === 0 ? 'var(--font-display)' : 'var(--font-mono)',
-                    fontSize: idx === 0 ? '0.85rem' : '0.6rem',
-                    fontWeight: idx === 0 ? 700 : 500,
-                    color: idx === 0 ? 'var(--cyan)' : 'var(--text-4)',
-                    textTransform: idx === 0 ? 'none' : 'uppercase',
-                    letterSpacing: idx === 0 ? 0 : '0.06em',
-                    background: idx === 0 ? 'rgba(0,229,255,0.06)' : 'transparent',
-                    borderRadius: idx === 0 ? '6px 6px 0 0' : 0,
-                    borderBottom: '1px solid var(--border)',
-                  }}>{h}</th>
-                ))}
+              <tr className="border-b border-slate-700">
+                <th className="text-left py-3 px-4 text-sm text-slate-500 font-medium">Feature</th>
+                <th className="text-center py-3 px-4 text-sm text-cyan-400 font-bold bg-cyan-500/10 rounded-t-lg">BlockDrive</th>
+                <th className="text-center py-3 px-4 text-sm text-slate-500 font-medium">Dropbox/Box</th>
+                <th className="text-center py-3 px-4 text-sm text-slate-500 font-medium">Filecoin/StorJ</th>
+                <th className="text-center py-3 px-4 text-sm text-slate-500 font-medium">Tresorit</th>
               </tr>
             </thead>
             <tbody>
-              {features.map((row, ridx) => (
-                <tr key={row.name} style={{ borderBottom: '1px solid var(--border)' }}>
-                  <td style={{ padding: '0.65rem 0.9rem', fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-2)', fontWeight: 500 }}>
-                    {row.name}
+              {features.map((feature, i) => (
+                <motion.tr 
+                  key={i}
+                  variants={itemVariants}
+                  className={`border-b border-slate-800 ${i === 0 ? 'bg-slate-800/30' : ''}`}
+                >
+                  <td className="py-3 px-4 text-sm text-slate-300 font-medium">
+                    {feature.name}
+                    {i === 0 && <span className="ml-2 text-xs text-cyan-400">★</span>}
                   </td>
-                  {[
-                    { val: row.blockdrive, bd: true },
-                    { val: row.dropbox, bd: false },
-                    { val: row.filecoin, bd: false },
-                    { val: row.tresorit, bd: false },
-                  ].map((cell, cidx) => (
-                    <td key={cidx} style={{
-                      padding: '0.65rem 0.9rem', textAlign: 'center',
-                      background: cidx === 0 ? 'rgba(0,229,255,0.04)' : 'transparent',
-                      opacity: cidx === 0 ? 1 : 0.65,
-                    }}>
-                      <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        {renderVal(cell.val, cell.bd)}
-                      </div>
-                    </td>
-                  ))}
-                </tr>
+                  <td className="py-3 px-4 text-center bg-cyan-500/5">
+                    {renderValue(feature.blockdrive, true)}
+                  </td>
+                  <td className="py-3 px-4 text-center opacity-60">
+                    {renderValue(feature.dropbox)}
+                  </td>
+                  <td className="py-3 px-4 text-center opacity-60">
+                    {renderValue(feature.filecoin)}
+                  </td>
+                  <td className="py-3 px-4 text-center opacity-60">
+                    {renderValue(feature.tresorit)}
+                  </td>
+                </motion.tr>
               ))}
             </tbody>
           </table>
         </motion.div>
 
-        <motion.div variants={i} className="bar-card" style={{ maxWidth: 680 }}>
-          <p className="t-body">
-            Every competitor stores complete files somewhere. When they get breached, data is exposed.{' '}
-            <span className="c-white" style={{ fontWeight: 600 }}>We don't store complete files. When we get breached, attackers get cryptographic garbage.</span>
+        {/* Bottom line */}
+        <motion.div variants={itemVariants} className="mt-8 glass-card-highlight p-6 text-center">
+          <p className="text-slate-300 mb-2">
+            Every competitor stores complete files somewhere. When they get breached, data is exposed.
+          </p>
+          <p className="text-lg font-semibold text-white">
+            We don't store complete files. When we get breached, attackers get{' '}
+            <span className="text-cyan-400">cryptographic garbage</span>.
           </p>
         </motion.div>
-
       </motion.div>
     </div>
   );

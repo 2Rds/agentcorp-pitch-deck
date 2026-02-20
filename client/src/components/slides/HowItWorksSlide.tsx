@@ -1,110 +1,131 @@
+/*
+ * Slide 5: How It Works
+ * Three steps to breach-proof storage
+ * Design: Three cards with step numbers, icons, connection line
+ */
+
 import { motion } from 'framer-motion';
 import { Lock, Cloud, Wallet } from 'lucide-react';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.05 } } };
-const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } } };
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' as const }
+  }
+};
 
 const steps = [
   {
-    num: '01',
+    number: '01',
     title: 'Encrypt & Split',
-    Icon: Lock,
-    body: 'Your file is encrypted client-side with AES-256-GCM using a wallet-derived key. 16 critical bytes are extracted and stored separately — the main file becomes mathematically incomplete.',
-    tech: ['AES-256-GCM', 'Client-side keys', '16-byte extraction'],
-    accent: 'var(--cyan)',
-    accentBg: 'rgba(0,229,255,0.08)',
-    accentBorder: 'rgba(0,229,255,0.2)',
+    icon: Lock,
+    description: 'Your file is encrypted client-side with AES-256-GCM using a wallet-derived key. 16 critical bytes are extracted and stored separately—the main file becomes mathematically incomplete.',
+    color: 'cyan',
   },
   {
-    num: '02',
+    number: '02',
     title: 'Distributed Storage',
-    Icon: Cloud,
-    body: 'Encrypted data goes to enterprise-grade IPFS/Arweave. The 16 bytes are wrapped in zero-knowledge proofs and stored on Cloudflare R2. A commitment hash is recorded on Solana.',
-    tech: ['IPFS / Arweave', 'Cloudflare R2', 'Solana PDA'],
-    accent: 'rgba(120,160,255,1)',
-    accentBg: 'rgba(120,160,255,0.06)',
-    accentBorder: 'rgba(120,160,255,0.18)',
+    icon: Cloud,
+    description: 'Encrypted data goes to enterprise-grade IPFS. The 16 bytes are wrapped in zero-knowledge proofs and stored on Cloudflare R2. A commitment hash is recorded on Solana.',
+    color: 'blue',
   },
   {
-    num: '03',
+    number: '03',
     title: 'Secure Retrieval',
-    Icon: Wallet,
-    body: 'When you need your files, both pieces are fetched and recombined client-side. Only your wallet can decrypt — not your ISP, not a subpoena, not BlockDrive itself.',
-    tech: ['Wallet-gated', 'ZK verification', 'Client-only assembly'],
-    accent: 'var(--gold)',
-    accentBg: 'rgba(232,201,106,0.06)',
-    accentBorder: 'rgba(232,201,106,0.18)',
+    icon: Wallet,
+    description: 'When you need your files, both pieces are fetched and recombined client-side. Only your wallet can decrypt—no one else, not even BlockDrive, can access your data.',
+    color: 'green',
   },
 ];
 
+const colorClasses = {
+  cyan: {
+    bg: 'bg-cyan-500/20',
+    text: 'text-cyan-400',
+    border: 'border-cyan-500/30',
+    glow: 'shadow-cyan-500/20',
+  },
+  blue: {
+    bg: 'bg-blue-500/20',
+    text: 'text-blue-400',
+    border: 'border-blue-500/30',
+    glow: 'shadow-blue-500/20',
+  },
+  green: {
+    bg: 'bg-green-500/20',
+    text: 'text-green-400',
+    border: 'border-green-500/30',
+    glow: 'shadow-green-500/20',
+  },
+};
+
 export default function HowItWorksSlide() {
   return (
-    <div className="slide-shell">
-      <div className="glow-tr" />
-      <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
-
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
+    <div className="w-full min-h-full flex items-start justify-center p-4 md:p-6 pt-8 md:pt-12 pb-20 overflow-auto">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-6xl w-full"
+      >
+        {/* Section label */}
+        <motion.p variants={itemVariants} className="section-label mb-4">
           How It Works
-        </motion.span>
-
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 640, marginBottom: '0.85rem' }}>
-          Three layers. None of them complete without the others.
-        </motion.h2>
-
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 580, marginBottom: '1.75rem' }}>
-          The architecture is designed so that any one layer can be fully compromised and the attacker still has nothing. Security by separation, not by strength.
         </motion.p>
 
-        <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.5rem' }}>
-          {steps.map((step) => (
-            <div key={step.num} style={{
-              padding: '1.4rem 1.4rem',
-              background: step.accentBg,
-              border: `1px solid ${step.accentBorder}`,
-              borderRadius: 'var(--radius-lg)',
-              display: 'flex', flexDirection: 'column', gap: '0.75rem',
-            }}>
-              {/* Header */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                <div style={{
-                  width: 36, height: 36, borderRadius: 10,
-                  background: step.accentBg,
-                  border: `1px solid ${step.accentBorder}`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                }}>
-                  <step.Icon style={{ width: 16, height: 16, color: step.accent }} />
+        {/* Headline */}
+        <motion.h2 variants={itemVariants} className="slide-title text-white mb-10">
+          Three Steps to Breach-Proof Storage
+        </motion.h2>
+
+        {/* Steps */}
+        <div className="grid md:grid-cols-3 gap-6 relative">
+          {/* Connection line (desktop only) */}
+          <div className="hidden md:block absolute top-24 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-cyan-500/50 via-blue-500/50 to-green-500/50" />
+
+          {steps.map((step, i) => {
+            const colors = colorClasses[step.color as keyof typeof colorClasses];
+            return (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02, y: -4 }}
+                transition={{ duration: 0.2 }}
+                className={`glass-card p-6 relative ${colors.border} hover:shadow-lg ${colors.glow}`}
+              >
+                {/* Step number */}
+                <div className={`absolute -top-3 left-6 px-3 py-1 rounded-full ${colors.bg} ${colors.text} text-sm font-bold`}>
+                  {step.number}
                 </div>
-                <div>
-                  <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: step.accent, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{step.num}</p>
-                  <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: 'var(--text-1)', lineHeight: 1.2 }}>{step.title}</p>
+
+                {/* Icon */}
+                <div className={`w-14 h-14 rounded-xl ${colors.bg} flex items-center justify-center mb-4 mt-2`}>
+                  <step.icon className={`w-7 h-7 ${colors.text}`} />
                 </div>
-              </div>
 
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.835rem', color: 'var(--text-2)', lineHeight: 1.6 }}>{step.body}</p>
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {step.title}
+                </h3>
 
-              {/* Tech pills */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginTop: 'auto' }}>
-                {step.tech.map((t) => (
-                  <span key={t} style={{
-                    fontFamily: 'var(--font-mono)', fontSize: '0.55rem',
-                    color: step.accent, background: step.accentBg,
-                    border: `1px solid ${step.accentBorder}`,
-                    borderRadius: 4, padding: '0.2rem 0.5rem',
-                    textTransform: 'uppercase', letterSpacing: '0.06em',
-                  }}>{t}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div variants={i} className="bar-card" style={{ maxWidth: 660 }}>
-          <p className="t-body">
-            Compromise IPFS — you get encrypted fragments. Compromise R2 — you get a ZK proof with no corresponding file. Compromise Solana — you get metadata with nothing to reconstruct.{' '}
-            <span className="c-white" style={{ fontWeight: 600 }}>You need all three simultaneously. That's not a real attack surface.</span>
-          </p>
-        </motion.div>
-
+                {/* Description */}
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  {step.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
       </motion.div>
     </div>
   );
