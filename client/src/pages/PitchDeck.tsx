@@ -8,7 +8,6 @@ import ThesisSlide from '@/components/slides/ThesisSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
 import MvpSlide from '@/components/slides/MvpSlide';
-import StrategySlide from '@/components/slides/StrategySlide';
 import MultiChainAuthSlide from '@/components/slides/MultiChainAuthSlide';
 import PositioningSlide from '@/components/slides/PositioningSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
@@ -23,7 +22,6 @@ const SLIDES = [
   { component: <SolutionSlide key="solution" />,   label: 'Solution' },
   { component: <HowItWorksSlide key="how" />,      label: 'How It Works' },
   { component: <MvpSlide key="mvp" />,             label: 'Product' },
-  { component: <StrategySlide key="strategy" />,   label: 'Strategy' },
   { component: <MultiChainAuthSlide key="auth" />, label: 'Authentication' },
   { component: <PositioningSlide key="pos" />,     label: 'Positioning' },
   { component: <CompetitionSlide key="comp" />,    label: 'Competition' },
