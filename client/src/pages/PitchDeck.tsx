@@ -7,7 +7,7 @@ import ProblemSlide from '@/components/slides/ProblemSlide';
 import ThesisSlide from '@/components/slides/ThesisSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
-import MvpSlide from '@/components/slides/MvpSlide';
+import MvpSlide from '@/components/slides/TractionSlide';
 import MultiChainAuthSlide from '@/components/slides/MultiChainAuthSlide';
 import PositioningSlide from '@/components/slides/PositioningSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
