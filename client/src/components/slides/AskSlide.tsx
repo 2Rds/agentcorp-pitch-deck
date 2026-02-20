@@ -153,9 +153,9 @@ export default function AskSlide() {
               <Mail className="w-4 h-4" />
               <span className="text-sm">sean@blockdrive.co</span>
             </a>
-            <a href="https://app.blockdrive.co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+            <a href="https://blockdrive.co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
               <Globe className="w-4 h-4" />
-              <span className="text-sm">app.blockdrive.co</span>
+              <span className="text-sm">blockdrive.co</span>
             </a>
           </div>
         </motion.div>
