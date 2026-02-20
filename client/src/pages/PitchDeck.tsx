@@ -1,202 +1,118 @@
-/*
- * BlockDrive Investor Pitch Deck
- * Design: Crystalline Fortress Architecture
- * - Near-black (#0a0a0f) foundation
- * - Cyan (#22d3ee) accent for active elements
- * - Frosted glass cards with subtle borders
- * - Plus Jakarta Sans headlines, Inter body
- * Navigation: User-controlled (keyboard, swipe, click)
- */
-
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Slide imports
 import TitleSlide from '@/components/slides/TitleSlide';
 import ProblemSlide from '@/components/slides/ProblemSlide';
 import ThesisSlide from '@/components/slides/ThesisSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
-import TractionSlide from '@/components/slides/TractionSlide';
-import DemoSlide from '@/components/slides/DemoSlide';
-import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
-import MarketSlide from '@/components/slides/MarketSlide';
+import MvpSlide from '@/components/slides/MvpSlide';
+import StrategySlide from '@/components/slides/StrategySlide';
+import MultiChainAuthSlide from '@/components/slides/MultiChainAuthSlide';
+import PositioningSlide from '@/components/slides/PositioningSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
+import MarketSlide from '@/components/slides/MarketSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 12;
+const SLIDES = [
+  { component: <TitleSlide key="title" />,         label: 'BlockDrive' },
+  { component: <ProblemSlide key="problem" />,     label: 'Problem' },
+  { component: <ThesisSlide key="whynow" />,       label: 'Why Now' },
+  { component: <SolutionSlide key="solution" />,   label: 'Solution' },
+  { component: <HowItWorksSlide key="how" />,      label: 'How It Works' },
+  { component: <MvpSlide key="mvp" />,             label: 'Product' },
+  { component: <StrategySlide key="strategy" />,   label: 'Strategy' },
+  { component: <MultiChainAuthSlide key="auth" />, label: 'Authentication' },
+  { component: <PositioningSlide key="pos" />,     label: 'Positioning' },
+  { component: <CompetitionSlide key="comp" />,    label: 'Competition' },
+  { component: <MarketSlide key="market" />,       label: 'Market' },
+  { component: <TeamSlide key="team" />,           label: 'Team' },
+  { component: <AskSlide key="ask" />,             label: 'The Ask' },
+];
 
-const slideVariants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 100 : -100,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction: number) => ({
-    x: direction < 0 ? 100 : -100,
-    opacity: 0,
-  }),
+const variants = {
+  enter: (d: number) => ({ x: d > 0 ? 80 : -80, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit:  (d: number) => ({ x: d < 0 ? 80 : -80, opacity: 0 }),
 };
 
 export default function PitchDeck() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const total = SLIDES.length;
 
-  const goToSlide = useCallback((index: number) => {
-    if (index >= 0 && index < TOTAL_SLIDES) {
-      setDirection(index > currentSlide ? 1 : -1);
-      setCurrentSlide(index);
-    }
-  }, [currentSlide]);
+  const go = useCallback((index: number) => {
+    if (index < 0 || index >= total) return;
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  }, [current, total]);
 
-  const nextSlide = useCallback(() => {
-    if (currentSlide < TOTAL_SLIDES - 1) {
-      setDirection(1);
-      setCurrentSlide(prev => prev + 1);
-    }
-  }, [currentSlide]);
-
-  const prevSlide = useCallback(() => {
-    if (currentSlide > 0) {
-      setDirection(-1);
-      setCurrentSlide(prev => prev - 1);
-    }
-  }, [currentSlide]);
+  const next = useCallback(() => go(current + 1), [go, current]);
+  const prev = useCallback(() => go(current - 1), [go, current]);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
-        e.preventDefault();
-        nextSlide();
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        prevSlide();
-      }
+    const onKey = (e: KeyboardEvent) => {
+      if (['ArrowRight', ' ', 'Enter'].includes(e.key)) { e.preventDefault(); next(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [next, prev]);
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextSlide, prevSlide]);
-
-  // Touch/swipe support
   useEffect(() => {
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX = e.changedTouches[0].screenX;
+    let sx = 0;
+    const ts = (e: TouchEvent) => { sx = e.changedTouches[0].screenX; };
+    const te = (e: TouchEvent) => {
+      const d = sx - e.changedTouches[0].screenX;
+      if (Math.abs(d) > 50) d > 0 ? next() : prev();
     };
+    window.addEventListener('touchstart', ts);
+    window.addEventListener('touchend', te);
+    return () => { window.removeEventListener('touchstart', ts); window.removeEventListener('touchend', te); };
+  }, [next, prev]);
 
-    const handleTouchEnd = (e: TouchEvent) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 50) {
-        if (diff > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-      }
-    };
-
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchend', handleTouchEnd);
-
-    return () => {
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, [nextSlide, prevSlide]);
-
-  const slides = [
-    <TitleSlide key="title" />,
-    <ProblemSlide key="problem" />,
-    <ThesisSlide key="thesis" />,
-    <SolutionSlide key="solution" />,
-    <HowItWorksSlide key="how" />,
-    <TractionSlide key="traction" />,
-    <DemoSlide key="demo" />,
-    <BusinessModelSlide key="model" />,
-    <MarketSlide key="market" />,
-    <CompetitionSlide key="competition" />,
-    <TeamSlide key="team" />,
-    <AskSlide key="ask" />,
-  ];
+  const progress = ((current + 1) / total) * 100;
 
   return (
-    <div className="relative w-screen h-screen overflow-x-hidden bg-[#0a0a0f]">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,211,238,0.05)_0%,_transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(59,130,246,0.03)_0%,_transparent_50%)]" />
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', background: 'var(--bg)', position: 'relative' }}>
+      <div className="dot-grid" />
+      <div className="progress-bar-track">
+        <div className="progress-bar-fill" style={{ width: `${progress}%` }} />
+      </div>
 
-      {/* Main slide content */}
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
-          key={currentSlide}
+          key={current}
           custom={direction}
-          variants={slideVariants}
+          variants={variants}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.4, ease: 'easeOut' as const }}
-          className="w-full h-full overflow-y-auto"
+          transition={{ duration: 0.35, ease: [0.32, 0, 0.67, 0] }}
+          style={{ width: '100%', height: '100%', overflowY: 'auto' }}
         >
-          {slides[currentSlide]}
+          {SLIDES[current].component}
         </motion.div>
       </AnimatePresence>
 
-      {/* Progress dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goToSlide(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === currentSlide
-                ? 'w-8 bg-cyan-400'
-                : 'w-2 bg-white/20 hover:bg-white/40'
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
+      <button className={`nav-arrow nav-arrow-left ${current === 0 ? 'disabled' : ''}`} onClick={prev}>
+        <ChevronLeft size={16} />
+      </button>
+      <button className={`nav-arrow nav-arrow-right ${current === total - 1 ? 'disabled' : ''}`} onClick={next}>
+        <ChevronRight size={16} />
+      </button>
+
+      <div className="dot-nav">
+        {SLIDES.map((_, i) => (
+          <button key={i} className={`dot ${i === current ? 'active' : ''}`} onClick={() => go(i)} />
         ))}
       </div>
 
-      {/* Navigation arrows */}
-      <button
-        onClick={prevSlide}
-        disabled={currentSlide === 0}
-        className={`absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full transition-all duration-200 z-10 ${
-          currentSlide === 0
-            ? 'opacity-0 cursor-default'
-            : 'text-white/40 hover:text-white hover:bg-white/10'
-        }`}
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        disabled={currentSlide === TOTAL_SLIDES - 1}
-        className={`absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full transition-all duration-200 z-10 ${
-          currentSlide === TOTAL_SLIDES - 1
-            ? 'opacity-0 cursor-default'
-            : 'text-white/40 hover:text-white hover:bg-white/10'
-        }`}
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-
-      {/* Slide counter */}
-      <div className="absolute bottom-6 right-6 text-white/30 text-sm font-medium z-10">
-        {currentSlide + 1} / {TOTAL_SLIDES}
+      <div className="slide-counter">
+        {String(current + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
       </div>
-
     </div>
   );
 }

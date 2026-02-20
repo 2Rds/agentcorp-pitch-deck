@@ -1,102 +1,50 @@
-/*
- * Slide 3: The Paradigm Shift (Thesis)
- * Old vs New paradigm comparison
- * Design: Two-column comparison, thesis statement large and centered
- */
-
 import { motion } from 'framer-motion';
-import { X, Check } from 'lucide-react';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-  }
-};
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
+const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } } };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' as const }
-  }
-};
-
-const comparisons = [
-  { old: 'Keep attackers out', new: 'Assume they get in' },
-  { old: 'Security through prevention', new: 'Security through architecture' },
-  { old: 'If they breach, you lose', new: 'If they breach, they get nothing' },
-  { old: 'Hope the walls hold', new: 'Make the target worthless' },
+const signals = [
+  { stat: '2,365', label: 'Data breaches recorded in 2023 alone', sub: '— IBM Cost of a Data Breach Report', color: 'var(--text-3)' },
+  { stat: '97%', label: 'of AI-related breaches lacked proper access controls', sub: '— Ponemon Institute, 2024', color: 'var(--cyan)' },
+  { stat: '$4.9M', label: 'Average enterprise breach cost — up 15% in two years', sub: '— IBM Security, 2024', color: 'var(--gold)' },
 ];
 
 export default function ThesisSlide() {
   return (
-    <div className="w-full min-h-full flex items-start justify-center p-4 md:p-6 pt-8 md:pt-12 pb-20 overflow-auto">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-5xl w-full"
-      >
-        {/* Section label */}
-        <motion.p variants={itemVariants} className="section-label mb-4 text-center">
-          The Thesis
+    <div className="slide-shell">
+      <div className="glow-tr" />
+      <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
+
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
+          Why Now
+        </motion.span>
+
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '1.1rem' }}>
+          The old model was already losing.{' '}
+          <span className="c-cyan">AI just made it impossible to defend.</span>
+        </motion.h2>
+
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 600, marginBottom: '1.75rem' }}>
+          Security teams had accepted a certain level of breach as the cost of doing business. Human attackers have limits — they sleep, they make mistakes, they can only probe so many gaps at once. AI has none of those constraints. The threat environment didn't gradually worsen. It structurally changed. And the entire industry's existing answer — better locks — is now categorically insufficient.
         </motion.p>
 
-        {/* Comparison table */}
-        <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6 mb-10">
-          {/* Old Paradigm */}
-          <div className="glass-card p-6 border-red-500/20 bg-red-500/5 opacity-60">
-            <div className="flex items-center gap-2 mb-4">
-              <X className="w-5 h-5 text-red-400" />
-              <h3 className="text-lg font-semibold text-red-400 uppercase tracking-wide">Old Paradigm</h3>
+        <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.5rem' }}>
+          {signals.map((s) => (
+            <div key={s.stat} style={{ padding: '1.25rem 1.4rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', color: s.color, lineHeight: 1, marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>{s.stat}</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--text-1)', lineHeight: 1.4, marginBottom: '0.4rem' }}>{s.label}</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.04em' }}>{s.sub}</p>
             </div>
-            <ul className="space-y-3">
-              {comparisons.map((item, i) => (
-                <li key={i} className="text-slate-400 line-through text-sm md:text-base">
-                  {item.old}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* New Paradigm */}
-          <div className="glass-card-highlight p-6 glow-cyan">
-            <div className="flex items-center gap-2 mb-4">
-              <Check className="w-5 h-5 text-cyan-400" />
-              <h3 className="text-lg font-semibold text-cyan-400 uppercase tracking-wide">New Paradigm</h3>
-            </div>
-            <ul className="space-y-3">
-              {comparisons.map((item, i) => (
-                <li key={i} className="text-white font-medium text-sm md:text-base">
-                  {item.new}
-                </li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </motion.div>
 
-        {/* Central thesis statement */}
-        <motion.div variants={itemVariants} className="text-center mb-8">
-          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-            "We inverted 30 years of security thinking."
-          </blockquote>
-          <p className="text-slate-400 mt-4 text-lg">
-            Instead of trying to prevent breaches, we made breaches pointless.
+        <motion.div variants={i} className="bar-card" style={{ maxWidth: 620 }}>
+          <p className="t-body">
+            This is the moment when "we have encryption" stops being a sufficient answer in a board meeting — and enterprises start asking a different question entirely.{' '}
+            <span className="c-white" style={{ fontWeight: 600 }}>BlockDrive is built to be that answer.</span>
           </p>
         </motion.div>
 
-        {/* The question */}
-        <motion.div variants={itemVariants} className="glass-card p-6 text-center">
-          <p className="text-slate-300 text-lg mb-4">
-            What if an attacker could penetrate every storage provider we use—and still walk away with nothing usable?
-          </p>
-          <p className="text-2xl font-bold text-cyan-400">
-            That's BlockDrive.
-          </p>
-        </motion.div>
       </motion.div>
     </div>
   );
