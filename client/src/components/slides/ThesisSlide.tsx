@@ -4,9 +4,9 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const signals = [
-  { stat: '2,365', label: 'Data breaches recorded in 2023 alone', sub: '— IBM Cost of a Data Breach Report', color: 'var(--text-3)' },
-  { stat: '97%',   label: 'of AI-related breaches lacked proper access controls', sub: '— Ponemon Institute, 2024', color: 'var(--cyan)' },
-  { stat: '$4.9M', label: 'Average enterprise breach cost — up 15% in two years', sub: '— IBM Security, 2024', color: 'var(--gold)' },
+  { stat: '2,365', label: 'Data breaches recorded in 2023 alone',                 sub: '— IBM Cost of a Data Breach Report', color: 'var(--text-3)' },
+  { stat: '97%',   label: 'of AI-related breaches lacked proper access controls', sub: '— Ponemon Institute, 2024',           color: 'var(--cyan)' },
+  { stat: '$4.9M', label: 'Average enterprise breach cost — up 15% in two years', sub: '— IBM Security, 2024',               color: 'var(--gold)' },
 ];
 
 export default function ThesisSlide() {
@@ -15,25 +15,25 @@ export default function ThesisSlide() {
       <div className="glow-tr" />
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
           Why Now
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '1.1rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '0.9rem' }}>
           The old model was already losing.{' '}
           <span className="c-cyan">AI just made it impossible to defend.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 600, marginBottom: '1.75rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 600, marginBottom: '1.4rem' }}>
           Security teams had accepted a certain level of breach as the cost of doing business. Human attackers have limits — they sleep, they make mistakes, they can only probe so many gaps at once. AI has none of those constraints. The threat environment didn't gradually worsen. It structurally changed. And the entire industry's existing answer — better locks — is now categorically insufficient.
         </motion.p>
 
-        <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.5rem' }}>
+        <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.25rem' }}>
           {signals.map((s) => (
-            <div key={s.stat} style={{ padding: '1.25rem 1.4rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', color: s.color, lineHeight: 1, marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>{s.stat}</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--text-1)', lineHeight: 1.4, marginBottom: '0.4rem' }}>{s.label}</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.04em' }}>{s.sub}</p>
+            <div key={s.stat} style={{ padding: '1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: s.color, lineHeight: 1, marginBottom: '0.4rem', letterSpacing: '-0.02em' }}>{s.stat}</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.825rem', color: 'var(--text-1)', lineHeight: 1.4, marginBottom: '0.35rem' }}>{s.label}</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-4)', letterSpacing: '0.04em' }}>{s.sub}</p>
             </div>
           ))}
         </motion.div>

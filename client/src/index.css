@@ -704,10 +704,11 @@ img, svg { display: block; max-width: 100%; }
   width: 100%;
   min-height: 100vh;
   background: var(--bg);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
-  align-items: flex-start;
-  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 6vw, 5rem) 6rem;
+  align-items: center;
+  padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 6vw, 5rem);
 }
 
 .slide-inner {

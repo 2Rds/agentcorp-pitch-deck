@@ -10,7 +10,7 @@ export default function TitleSlide() {
 
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
-        <motion.div variants={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '3rem' }}>
+        <motion.div variants={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem' }}>
           <div style={{
             width: 28, height: 28, borderRadius: 6, flexShrink: 0,
             background: 'linear-gradient(135deg, var(--cyan) 0%, #3b82f6 100%)',

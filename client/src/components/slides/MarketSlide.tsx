@@ -25,7 +25,7 @@ export default function MarketSlide() {
           <span style={{ color: 'var(--cyan)' }}>Then ride the wave.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '1.5rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '1rem' }}>
           South Florida is the beachhead — it's where the network lives. 32 years building relationships in the exact industries that need this most: crypto, legal, financial services. From there, the four states leading crypto adoption are already in play. Once we've found PMF, we expand into traditional regulated industries the same CEO has spent his entire career building relationships in.
         </motion.p>
 
