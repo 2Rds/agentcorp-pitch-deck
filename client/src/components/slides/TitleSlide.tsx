@@ -1,8 +1,4 @@
 import { motion } from 'framer-motion';
-import { Shield } from 'lucide-react';
-
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.14, delayChildren: 0.1 } } };
-const i = { hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } };
 
 export default function TitleSlide() {
   return (
@@ -10,64 +6,85 @@ export default function TitleSlide() {
       <div className="glow-tr" />
       <div className="glow-bl" />
 
-      <motion.div variants={c} initial="hidden" animate="visible"
-        style={{ textAlign: 'center', position: 'relative', zIndex: 2, maxWidth: 720 }}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        style={{ textAlign: 'center', position: 'relative', zIndex: 2, maxWidth: 760 }}
       >
-        <motion.div variants={i} style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
+        >
           <div style={{
-            width: 72, height: 72, borderRadius: 18,
+            width: 64, height: 64, borderRadius: 16,
             background: 'linear-gradient(135deg, var(--cyan) 0%, rgba(0,229,255,0.4) 100%)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             boxShadow: '0 0 40px rgba(0,229,255,0.3)',
           }}>
-            <Shield style={{ width: 36, height: 36, color: '#08080f' }} />
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="white" strokeWidth="2" fill="none"/>
+              <path d="M16 4V28M4 10L28 22M28 10L4 22" stroke="white" strokeWidth="1.5" opacity="0.4"/>
+            </svg>
           </div>
         </motion.div>
 
-        <motion.h1 variants={i} style={{
-          fontFamily: 'var(--font-display)', fontWeight: 800,
-          fontSize: 'clamp(3rem, 7vw, 5.5rem)', letterSpacing: '-0.03em',
-          color: 'var(--text-1)', marginBottom: '1rem', lineHeight: 1.05,
-        }}>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="eyebrow"
+          style={{ display: 'block', marginBottom: '1.5rem' }}
+        >
           BlockDrive
+        </motion.span>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 800,
+            fontSize: 'clamp(2.25rem, 5.5vw, 4.25rem)',
+            letterSpacing: '-0.03em',
+            lineHeight: 1.05,
+            color: 'var(--text-1)',
+            marginBottom: '1.25rem',
+          }}
+        >
+          The first cloud storage system where someone finding a way in{' '}
+          <span style={{ color: 'var(--cyan)' }}>does not break the system.</span>
         </motion.h1>
 
-        <motion.p variants={i} style={{
-          fontFamily: 'var(--font-body)', fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
-          color: 'var(--text-2)', marginBottom: '0.75rem', fontWeight: 400,
-        }}>
-          Cloud Storage for the New Internet
-        </motion.p>
-
-        <motion.p variants={i} style={{
-          fontFamily: 'var(--font-body)', fontSize: '1rem',
-          color: 'var(--text-3)', maxWidth: 520, margin: '0 auto 2.5rem',
-        }}>
-          The first storage platform where breaches are architecturally pointless.
-        </motion.p>
-
-        <motion.div variants={i} style={{ display: 'inline-block' }}>
-          <div style={{
-            padding: '1.5rem 2.5rem',
-            background: 'rgba(0,229,255,0.06)',
-            border: '1px solid rgba(0,229,255,0.25)',
-            borderRadius: 'var(--radius-lg)',
-            boxShadow: '0 0 30px rgba(0,229,255,0.1)',
-          }}>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          style={{ display: 'inline-block', marginTop: '1.5rem' }}
+        >
+          <div className="bar-card" style={{ textAlign: 'center', padding: '1.25rem 2.5rem' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.1em', color: 'var(--cyan)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
               Seed Round
             </p>
-            <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--text-1)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '0.4rem' }}>
+            <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2.5rem', color: 'var(--text-1)', letterSpacing: '-0.03em', marginBottom: '0.25rem' }}>
               $2M
             </p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-2)' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--text-3)' }}>
               $12M Post-Money SAFE
             </p>
           </div>
         </motion.div>
 
-        <motion.p variants={i} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-4)', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '2.5rem' }}>
-          Confidential Investment Materials
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1 }}
+          style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.08em', marginTop: '2rem' }}
+        >
+          CONFIDENTIAL INVESTMENT MATERIALS
         </motion.p>
       </motion.div>
     </div>

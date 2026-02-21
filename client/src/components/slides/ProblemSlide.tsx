@@ -1,21 +1,7 @@
 import { motion } from 'framer-motion';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
-const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } } };
-
-const stats = [
-  { value: '$10.2M', label: 'Avg US Breach Cost', source: 'IBM 2024', color: 'var(--text-3)' },
-  { value: '54', label: 'Records Compromised / Second', source: 'Global', color: 'var(--text-3)' },
-  { value: '83%', label: 'Enterprises Breached in 2 Years', source: 'Industry', color: 'var(--gold)' },
-  { value: '277', label: 'Days to Identify a Breach', source: 'IBM 2024', color: 'var(--text-3)' },
-];
-
-const oldPlaybook = [
-  { text: 'Firewalls', result: 'they get through' },
-  { text: 'Encryption', result: 'keys get compromised' },
-  { text: 'Access control', result: 'credentials get stolen' },
-  { text: 'Zero-trust', result: 'still assumes prevention' },
-];
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.1 } } };
+const i = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as any } } };
 
 export default function ProblemSlide() {
   return (
@@ -27,43 +13,26 @@ export default function ProblemSlide() {
           The Problem
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 660, marginBottom: '0.85rem' }}>
-          "Keep Them Out" Is Failing
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '2rem' }}>
+          For 30 years, we've been trying to keep 100% of hackers out, 100% of the time.
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 580, marginBottom: '1.5rem' }}>
-          The entire security industry spent 30 years on one strategy: prevent access. Every tool, every framework, every compliance regime is built on that assumption. It's not working — and it was never going to.
-        </motion.p>
-
-        {/* Stats */}
-        <motion.div variants={i} className="cols-4" style={{ marginBottom: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0.85rem' }}>
-          {stats.map((s) => (
-            <div key={s.label} style={{ padding: '1.1rem 1.2rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.8rem', color: s.color, lineHeight: 1, marginBottom: '0.4rem', letterSpacing: '-0.02em' }}>{s.value}</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.35, marginBottom: '0.3rem' }}>{s.label}</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-4)', letterSpacing: '0.04em' }}>{s.source}</p>
-            </div>
-          ))}
+        <motion.div variants={i} className="bar-card" style={{ marginBottom: '1.5rem', borderLeft: '3px solid var(--cyan)', padding: '1.75rem 2rem' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(3rem, 6vw, 5rem)', color: 'var(--cyan)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '0.5rem' }}>
+            97%
+          </p>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.1rem', color: 'var(--text-1)', lineHeight: 1.4, marginBottom: '0.5rem' }}>
+            of organizations that reported an AI-related security incident lacked proper AI access controls.
+          </p>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.06em' }}>
+            — IBM & PONEMON INSTITUTE, 2024
+          </p>
         </motion.div>
 
-        {/* Old playbook */}
-        <motion.div variants={i} style={{ marginBottom: '1.25rem' }}>
-          <p className="eyebrow-muted" style={{ marginBottom: '0.75rem' }}>The Old Playbook</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '0.6rem' }}>
-            {oldPlaybook.map((item) => (
-              <div key={item.text} style={{ padding: '0.7rem 0.9rem', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8 }}>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-3)', textDecoration: 'line-through', marginBottom: '0.25rem' }}>{item.text}</p>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'rgba(255,80,80,0.6)', letterSpacing: '0.02em' }}>→ {item.result}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* AI callout */}
-        <motion.div variants={i} className="bar-card" style={{ borderLeftColor: 'var(--gold)', background: 'rgba(232,201,106,0.04)', maxWidth: 680 }}>
+        <motion.div variants={i} className="bar-card" style={{ maxWidth: 640 }}>
           <p className="t-body">
-            <span style={{ color: 'var(--gold)', fontWeight: 600 }}>And AI just made it structurally irreparable.</span>{' '}
-            AI-powered attacks operate 24/7 with no fatigue. LLMs write sophisticated malware faster than defenders can patch. Zero-day windows shrink from months to hours. The "keep them out" model was already losing — in the AI era, it becomes fantasy.
+            AI doesn't sleep. It doesn't take weekends. It finds the one gap you missed — at a speed and scale no human security team can match. The strategy of keeping every attacker out{' '}
+            <span className="c-white" style={{ fontWeight: 600 }}>wasn't just failing. It's now impossible.</span>
           </p>
         </motion.div>
 
