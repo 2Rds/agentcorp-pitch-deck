@@ -44,12 +44,12 @@ export default function HowItWorksSlide() {
           How It Works
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 780, marginBottom: '0.85rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.85rem' }}>
           Your file lives across three separate systems.{' '}
           <span className="c-cyan">None of them can do anything alone.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 620, marginBottom: '1.25rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.25rem' }}>
           When you upload to BlockDrive, your file is immediately split across three completely independent infrastructures. Compromising one — or even two — gets an attacker exactly nothing.
         </motion.p>
 

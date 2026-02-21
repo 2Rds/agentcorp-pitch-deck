@@ -40,12 +40,12 @@ export default function MultiChainAuthSlide() {
           Multi-Chain Authentication
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '0.85rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.85rem' }}>
           The front door looks familiar.{' '}
           <span className="c-cyan">What's behind it is unlike anything that exists.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '1.5rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
           Users sign up the same way they would for any modern app — name, email, done. BlockDrive then automatically creates a fully embedded wallet via Dynamic.xyz, issues a dual-chain identity, and mints a membership token, all invisibly and at no cost to the user. The web3 infrastructure does the heavy lifting. The user never knows it's there.
         </motion.p>
 

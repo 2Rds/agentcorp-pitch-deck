@@ -14,11 +14,11 @@ export default function ProblemSlide() {
           The Problem
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 680, marginBottom: '1.25rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
           For 30 years, every security strategy rested on one assumption: keep every bad actor out, 100% of the time.
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 560, marginBottom: '1.75rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '1.75rem' }}>
           Breaches kept happening anyway. The industry sold better locks. Enterprises kept buying them. Then AI arrived and made the assumption obsolete entirely.
         </motion.p>
 
@@ -26,7 +26,7 @@ export default function ProblemSlide() {
           display: 'flex', gap: '1.75rem', padding: '1.25rem 1.5rem',
           background: 'var(--surface)', border: '1px solid var(--border-hi)',
           borderRadius: 'var(--radius-lg)', alignItems: 'center',
-          maxWidth: 620, marginBottom: '1.5rem',
+          maxWidth: 720, marginBottom: '1.5rem',
         }}>
           <span className="t-stat" style={{ flexShrink: 0 }}>97%</span>
           <div>
@@ -37,7 +37,7 @@ export default function ProblemSlide() {
           </div>
         </motion.div>
 
-        <motion.div variants={i} className="bar-card" style={{ maxWidth: 560 }}>
+        <motion.div variants={i} className="bar-card" style={{ maxWidth: 680 }}>
           <p className="t-body">
             AI doesn't sleep. It doesn't take weekends. It finds the one gap you missed at a speed no human security team can match. Keeping every attacker out{' '}
             <span className="c-white" style={{ fontWeight: 600 }}>wasn't just failing — it's now impossible.</span>

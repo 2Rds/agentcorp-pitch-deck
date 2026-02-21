@@ -19,12 +19,12 @@ export default function MvpSlide() {
           The Product
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 680, marginBottom: '1.5rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.5rem' }}>
           BlockDrive feels far more like Dropbox than Filebase.{' '}
           <span style={{ color: 'var(--cyan)' }}>That's by design.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 600, marginBottom: '2rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '2rem' }}>
           No blockchain jargon. No wallets to configure. No behavior change for your team. The architecture underneath is unlike anything that has ever existed in cloud storage — and nobody needs to know that except you.
         </motion.p>
 

@@ -33,11 +33,11 @@ export default function CompetitionSlide() {
           Competitive Landscape
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 680, marginBottom: '0.75rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.75rem' }}>
           They're playing the old game.
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 580, marginBottom: '1.75rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '1.75rem' }}>
           Every competitor stores complete files. When they get breached, data is exposed. We don't store complete files. When we get breached, attackers get{' '}
           <span className="c-cyan">cryptographic garbage.</span>
         </motion.p>

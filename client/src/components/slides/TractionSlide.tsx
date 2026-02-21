@@ -54,7 +54,7 @@ export default function TractionSlide() {
           <span className="c-cyan">Feels like Dropbox. Runs on Web3.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 580, marginBottom: '1.75rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '1.75rem' }}>
           A complete breach-proof cloud storage platform with enterprise-grade UX. The architecture is live. The interface is live. We designed it so that the user never knows they're on a blockchain — and never needs to.
         </motion.p>
 
@@ -64,7 +64,7 @@ export default function TractionSlide() {
           {col('Enterprise Ready', 'rgba(180,140,255,1)', 'rgba(180,140,255,0.06)', enterprise)}
         </motion.div>
 
-        <motion.div variants={i} className="bar-card" style={{ maxWidth: 620 }}>
+        <motion.div variants={i} className="bar-card" style={{ maxWidth: 720 }}>
           <p className="t-body">
             <span className="c-cyan" style={{ fontWeight: 600 }}>Live demo available.</span>{' '}
             Upload, store, and retrieve files with full breach-proof architecture — visible in the browser, end to end.

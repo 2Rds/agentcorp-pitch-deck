@@ -20,12 +20,12 @@ export default function MarketSlide() {
           The Market
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '1rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           Start where pain is most acute and education cost is zero.{' '}
           <span style={{ color: 'var(--cyan)' }}>Then ride the wave.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '1rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1rem' }}>
           South Florida is the beachhead — it's where the network lives. 32 years building relationships in the exact industries that need this most: crypto, legal, financial services. From there, the four states leading crypto adoption are already in play. Once we've found PMF, we expand into traditional regulated industries the same CEO has spent his entire career building relationships in.
         </motion.p>
 

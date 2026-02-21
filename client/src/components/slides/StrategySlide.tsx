@@ -43,7 +43,7 @@ export default function StrategySlide() {
           <span className="c-cyan">We know exactly how it ends.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '1.75rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.75rem' }}>
           Web3 today is where the personal computer was in 1984 and the internet was in 1995 — real, powerful, and completely out of reach for anyone who isn't already a native. The technology works. The barrier isn't technical. It's experiential. The company that closes that gap doesn't just win the crypto market. It wins everyone.
         </motion.p>
 

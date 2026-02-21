@@ -14,12 +14,12 @@ export default function PositioningSlide() {
           Why We Win
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 740, marginBottom: '1rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           Every decentralized storage company markets itself as a Web3 company.{' '}
           <span className="c-cyan">We don't.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '1.75rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.75rem' }}>
           Filecoin. StorJ. Pinata. They wear the Web3 badge as their identity. That badge is a ceiling — limiting them to a fraction of the market, requiring customers to change how they think, how they operate, and what they already believe. We built the enterprise cloud storage of the new internet on decentralized infrastructure that no one sees and no one has to understand.
         </motion.p>
 

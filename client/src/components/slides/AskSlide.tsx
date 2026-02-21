@@ -20,7 +20,7 @@ export default function AskSlide() {
           The Ask
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '0.4rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.4rem' }}>
           $2M to prove the beachhead.{' '}
           <span className="c-cyan">Then we ride a wave that hits every industry.</span>
         </motion.h2>

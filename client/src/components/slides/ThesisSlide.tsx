@@ -19,12 +19,12 @@ export default function ThesisSlide() {
           Why Now
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 700, marginBottom: '0.9rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
           The old model was already losing.{' '}
           <span className="c-cyan">AI just made it impossible to defend.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 600, marginBottom: '1.4rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.4rem' }}>
           Security teams had accepted a certain level of breach as the cost of doing business. Human attackers have limits — they sleep, they make mistakes, they can only probe so many gaps at once. AI has none of those constraints. The threat environment didn't gradually worsen. It structurally changed. And the entire industry's existing answer — better locks — is now categorically insufficient.
         </motion.p>
 
@@ -38,7 +38,7 @@ export default function ThesisSlide() {
           ))}
         </motion.div>
 
-        <motion.div variants={i} className="bar-card" style={{ maxWidth: 620 }}>
+        <motion.div variants={i} className="bar-card" style={{ maxWidth: 720 }}>
           <p className="t-body">
             This is the moment when "we have encryption" stops being a sufficient answer in a board meeting — and enterprises start asking a different question entirely.{' '}
             <span className="c-white" style={{ fontWeight: 600 }}>BlockDrive is built to be that answer.</span>

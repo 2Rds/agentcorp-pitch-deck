@@ -37,12 +37,12 @@ export default function TeamSlide() {
           The Team
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 680, marginBottom: '0.6rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.6rem' }}>
           The operator who built the network. The engineer who built the product.{' '}
           <span className="c-cyan">Both all-in.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 580, marginBottom: '1.25rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '1.25rem' }}>
           Two roles, zero redundancy. Sean converts institutional relationships into closed deals. Roberto ships the technology those deals are built on.
         </motion.p>
 

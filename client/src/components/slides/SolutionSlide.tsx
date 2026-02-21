@@ -14,12 +14,12 @@ export default function SolutionSlide() {
           The Insight
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 780, marginBottom: '1rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           Stop trying to keep attackers out.{' '}
           <span className="c-cyan">Make sure there's nothing for them to find.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 660, marginBottom: '1.5rem' }}>
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
           Every security product ever built assumes your files exist somewhere — and the goal is to keep the wrong people away from them. Firewalls, encryption, zero-trust architecture. All of it rests on that assumption. BlockDrive rejects it entirely.
         </motion.p>
 
