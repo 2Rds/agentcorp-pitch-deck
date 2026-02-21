@@ -24,7 +24,7 @@ export default function TitleSlide() {
           <span className="eyebrow-muted">BlockDrive</span>
         </motion.div>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '2rem' }}>
+        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.5rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "2rem" }}>
           The first cloud storage system where someone finding a way in{' '}
           <span className="c-cyan">does not break the system.</span>
         </motion.h2>
