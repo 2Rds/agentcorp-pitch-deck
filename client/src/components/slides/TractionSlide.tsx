@@ -4,12 +4,12 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const stats = [
-  { value: '6',          label: 'Active enterprise pipeline conversations',       color: 'var(--cyan)' },
+  { value: '5',          label: 'Active enterprise pipeline conversations',       color: 'var(--cyan)' },
   { value: 'Organic',    label: 'Waitlist growing with zero marketing spend',       color: 'var(--gold)' },
   { value: 'Demo-Ready', label: 'MVP live with full breach-proof architecture',    color: 'var(--text-1)' },
 ];
 
-const pipeline = ['Holland & Knight', 'Mercury', 'Bitwise', "Sotheby's", 'BlackRock Aladdin', 'Gunster Yoakley'];
+const pipeline = ['Mercury', 'Bitwise', "Sotheby's", 'BlackRock Aladdin', 'Gunster Yoakley'];
 
 export default function TractionSlide() {
   return (
