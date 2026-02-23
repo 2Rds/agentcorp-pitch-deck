@@ -22,7 +22,7 @@ export default function TractionSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
-          Pre-revenue. Pre-launch.{' '}
+          Pre-revenue.{' '}
           <span className="c-cyan">Not pre-pipeline.</span>
         </motion.h2>
 
