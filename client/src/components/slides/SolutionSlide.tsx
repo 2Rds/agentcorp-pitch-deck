@@ -11,7 +11,7 @@ export default function SolutionSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-          The Insight
+          The Solution
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>

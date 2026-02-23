@@ -5,7 +5,7 @@ const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transiti
 
 const signals = [
   { stat: '2,365', label: 'Data breaches recorded in 2023 alone',                 sub: '— IBM Cost of a Data Breach Report', color: 'var(--text-3)' },
-  { stat: '97%',   label: 'of AI-related breaches lacked proper access controls', sub: '— Ponemon Institute, 2024',           color: 'var(--cyan)' },
+  { stat: '2025',  label: 'GENIUS & CLARITY Acts create first federal digital asset framework', sub: '— U.S. Senate & House, Bipartisan', color: 'var(--cyan)' },
   { stat: '$4.9M', label: 'Average enterprise breach cost — up 15% in two years', sub: '— IBM Security, 2024',               color: 'var(--gold)' },
 ];
 
@@ -25,7 +25,7 @@ export default function ThesisSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.4rem' }}>
-          Security teams had accepted a certain level of breach as the cost of doing business. Human attackers have limits — they sleep, they make mistakes, they can only probe so many gaps at once. AI has none of those constraints. The threat environment didn't gradually worsen. It structurally changed. And the entire industry's existing answer — better locks — is now categorically insufficient.
+          Security teams had accepted a certain level of breach as the cost of doing business. Human attackers have limits — they sleep, they make mistakes, they can only probe so many gaps at once. AI has none of those constraints. The threat environment didn't gradually worsen. It structurally changed. And with the GENIUS and CLARITY Acts, Congress is building the first federal framework for digital assets — legitimizing the very infrastructure our architecture runs on.
         </motion.p>
 
         <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.25rem' }}>
