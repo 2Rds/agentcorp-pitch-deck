@@ -4,8 +4,6 @@ import { Mail, Globe } from 'lucide-react';
 const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
 const i = { hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const pipeline = ['Holland & Knight', 'Mercury', 'Bitwise', "Sotheby's", 'BlackRock Aladdin', 'Gunster Yoakley'];
-
 const team = [
   {
     photo: '/images/sean-weiss.jpg',
@@ -75,16 +73,6 @@ export default function TeamSlide() {
               <p className="t-body-sm">{m.bio}</p>
             </div>
           ))}
-        </motion.div>
-
-        <motion.div variants={i}>
-          <div style={{ height: 1, background: 'var(--border)', marginBottom: '0.6rem' }} />
-          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Active Conversations</span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1rem' }}>
-            {pipeline.map((name) => (
-              <span key={name} className="pill pill-cyan">{name}</span>
-            ))}
-          </div>
         </motion.div>
 
         <motion.div variants={i} style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>

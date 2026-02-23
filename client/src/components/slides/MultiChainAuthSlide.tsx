@@ -37,7 +37,7 @@ export default function MultiChainAuthSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
-          Multi-Chain Authentication
+          The Identity Layer
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.85rem' }}>

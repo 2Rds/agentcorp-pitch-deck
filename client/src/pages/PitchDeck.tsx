@@ -11,12 +11,13 @@ import MvpSlide from '@/components/slides/MvpSlide';
 import StrategySlide from '@/components/slides/StrategySlide';
 import MultiChainAuthSlide from '@/components/slides/MultiChainAuthSlide';
 import PositioningSlide from '@/components/slides/PositioningSlide';
+import TractionSlide from '@/components/slides/TractionSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
 import MarketSlide from '@/components/slides/MarketSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 13;
+const TOTAL_SLIDES = 14;
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
@@ -28,11 +29,12 @@ const slides = [
   { component: <TitleSlide key="title" />,         label: 'BlockDrive' },
   { component: <ProblemSlide key="problem" />,     label: 'Problem' },
   { component: <SolutionSlide key="solution" />,   label: 'The Solution' },
-  { component: <ThesisSlide key="thesis" />,       label: 'The Shift' },
+  { component: <ThesisSlide key="thesis" />,       label: 'Why Now' },
   { component: <HowItWorksSlide key="how" />,      label: 'The Second Lock' },
   { component: <MvpSlide key="mvp" />,             label: 'Product' },
   { component: <StrategySlide key="strategy" />,   label: 'Strategy' },
-  { component: <MultiChainAuthSlide key="auth" />, label: 'Authentication' },
+  { component: <MultiChainAuthSlide key="auth" />, label: 'The Identity Layer' },
+  { component: <TractionSlide key="traction" />,   label: 'Traction' },
   { component: <PositioningSlide key="pos" />,     label: 'Why We Win' },
   { component: <CompetitionSlide key="comp" />,    label: 'Competition' },
   { component: <MarketSlide key="market" />,       label: 'Market' },

@@ -1,43 +1,15 @@
 import { motion } from 'framer-motion';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
-const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } } };
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
+const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const security = [
-  { label: 'Programmed Incompleteness Engine', desc: '16-byte split — breaches yield nothing' },
-  { label: 'AES-256-GCM Encryption', desc: 'Client-side, wallet-derived keys' },
-  { label: 'Multi-PDA Sharding', desc: '25,000+ files per user account' },
-  { label: 'Hybrid Multi-Cloud', desc: 'IPFS + Cloudflare R2 + Solana' },
+const stats = [
+  { value: '6',          label: 'Active enterprise pipeline conversations',       color: 'var(--cyan)' },
+  { value: 'Organic',    label: 'Waitlist growing with zero marketing spend',       color: 'var(--gold)' },
+  { value: 'Demo-Ready', label: 'MVP live with full breach-proof architecture',    color: 'var(--text-1)' },
 ];
 
-const ux = [
-  { label: 'Web Application', desc: 'Familiar cloud storage UI — feels like Dropbox' },
-  { label: 'Gasless Operations', desc: 'No crypto complexity surfaced to users' },
-  { label: 'Open Source Recovery SDK', desc: 'Zero vendor lock-in guarantee' },
-];
-
-const enterprise = [
-  { label: 'Crossmint Embedded Wallets', desc: 'Email or passkey login, no seed phrases' },
-  { label: 'Stripe + Crypto Payments', desc: 'Unified subscription billing' },
-  { label: 'Provable Deletion', desc: 'On-chain audit trail for compliance' },
-];
-
-const col = (title: string, accentColor: string, accentBg: string, items: { label: string; desc: string }[]) => (
-  <div style={{ padding: '1.4rem 1.4rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-    <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: accentColor, marginBottom: '1.1rem' }}>{title}</p>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-      {items.map((item) => (
-        <div key={item.label} style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
-          <div style={{ width: 6, height: 6, borderRadius: '50%', background: accentColor, marginTop: 6, flexShrink: 0 }} />
-          <div>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--text-1)', fontWeight: 500, lineHeight: 1.3 }}>{item.label}</p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.775rem', color: 'var(--text-3)', lineHeight: 1.4 }}>{item.desc}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+const pipeline = ['Holland & Knight', 'Mercury', 'Bitwise', "Sotheby's", 'BlackRock Aladdin', 'Gunster Yoakley'];
 
 export default function TractionSlide() {
   return (
@@ -45,29 +17,49 @@ export default function TractionSlide() {
       <div className="glow-bl" />
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>
-          What We've Built
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
+          Traction
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 680, marginBottom: '0.85rem' }}>
-          Demo-ready MVP.{' '}
-          <span className="c-cyan">Feels like Dropbox. Runs on Web3.</span>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
+          Pre-revenue. Pre-launch.{' '}
+          <span className="c-cyan">Not pre-pipeline.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '1.75rem' }}>
-          A complete breach-proof cloud storage platform with enterprise-grade UX. The architecture is live. The interface is live. We designed it so that the user never knows they're on a blockchain — and never needs to.
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
+          Sean spent a decade earning the trust of institutional investors and business owners at
+          JPMorgan, Merrill Lynch, AXA, and Prudential. That network is now BlockDrive's pipeline —
+          six active enterprise conversations, a growing organic waitlist, and a demo-ready product
+          behind every meeting.
         </motion.p>
 
+        {/* Stats row */}
         <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.25rem' }}>
-          {col('Core Security', 'var(--cyan)', 'rgba(0,229,255,0.08)', security)}
-          {col('User Experience', 'var(--gold)', 'rgba(232,201,106,0.06)', ux)}
-          {col('Enterprise Ready', 'rgba(180,140,255,1)', 'rgba(180,140,255,0.06)', enterprise)}
+          {stats.map((s) => (
+            <div key={s.value} style={{ padding: '1.1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: s.color, lineHeight: 1, marginBottom: '0.4rem', letterSpacing: '-0.02em' }}>{s.value}</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)', lineHeight: 1.4 }}>{s.label}</p>
+            </div>
+          ))}
         </motion.div>
 
+        {/* Enterprise pipeline */}
+        <motion.div variants={i} style={{ marginBottom: '1.25rem' }}>
+          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Enterprise Pipeline</span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+            {pipeline.map((name) => (
+              <span key={name} className="pill pill-cyan">{name}</span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Waitlist + closing */}
         <motion.div variants={i} className="bar-card" style={{ maxWidth: 720 }}>
           <p className="t-body">
-            <span className="c-cyan" style={{ fontWeight: 600 }}>Live demo available.</span>{' '}
-            Upload, store, and retrieve files with full breach-proof architecture — visible in the browser, end to end.
+            Early waitlist traction from both businesses and individuals —{' '}
+            <span className="c-gold" style={{ fontWeight: 600 }}>zero marketing spend</span>.
+            Every conversation so far has been inbound or relationship-driven.{' '}
+            <span className="c-white" style={{ fontWeight: 600 }}>The demand is already here. We're raising to meet it.</span>
           </p>
         </motion.div>
 
