@@ -27,10 +27,9 @@ export default function TractionSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
-          Sean spent a decade earning the trust of institutional investors and business owners at
-          JPMorgan, Merrill Lynch, AXA, and Prudential. That network is now BlockDrive's pipeline —
-          six active enterprise conversations, a growing organic waitlist, and a demo-ready product
-          behind every meeting.
+          A decade of institutional finance relationships — built at four of the largest firms
+          on Wall Street — is now BlockDrive's pipeline. Five active enterprise conversations,
+          a growing organic waitlist, and a demo-ready product behind every meeting.
         </motion.p>
 
         {/* Stats row */}
