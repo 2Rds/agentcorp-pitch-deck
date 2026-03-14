@@ -40,7 +40,7 @@ export default function TitleSlide() {
         }}>
           <span className="eyebrow-muted">Seed Round</span>
           <span className="t-stat" style={{ fontSize: '2rem' }}>$2M</span>
-          <span className="t-data">$12M Post-Money SAFE</span>
+          <span className="t-data">$15M Post-Money SAFE</span>
         </motion.div>
 
         <motion.p variants={i} className="eyebrow-muted" style={{ marginTop: '2.5rem' }}>

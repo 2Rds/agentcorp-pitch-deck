@@ -16,9 +16,10 @@ import TractionSlide from '@/components/slides/TractionSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
 import MarketSlide from '@/components/slides/MarketSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
+import AgentCorpSlide from '@/components/slides/AgentCorpSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 15;
+const TOTAL_SLIDES = 16;
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
@@ -40,6 +41,7 @@ const slides = [
   { component: <PositioningSlide key="pos" />,     label: 'Why We Win' },
   { component: <CompetitionSlide key="comp" />,    label: 'Competition' },
   { component: <MarketSlide key="market" />,       label: 'Market' },
+  { component: <AgentCorpSlide key="agentcorp" />, label: 'AgentCorp' },
   { component: <TeamSlide key="team" />,           label: 'Team' },
   { component: <AskSlide key="ask" />,             label: 'The Ask' },
 ];

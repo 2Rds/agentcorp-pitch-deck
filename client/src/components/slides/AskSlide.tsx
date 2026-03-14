@@ -26,7 +26,7 @@ export default function AskSlide() {
         </motion.h2>
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-4)', letterSpacing: '0.08em', marginBottom: '1.5rem' }}>
-          SEED ROUND · $12M POST-MONEY SAFE
+          SEED ROUND · $15M POST-MONEY SAFE
         </motion.p>
 
         <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.1rem' }}>
