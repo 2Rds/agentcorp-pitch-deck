@@ -4,9 +4,9 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const signals = [
-  { stat: '2,365', label: 'Data breaches recorded in 2023 alone',                 sub: '— IBM Cost of a Data Breach Report', color: 'var(--text-3)' },
-  { stat: '2025',  label: 'GENIUS & CLARITY Acts create first federal digital asset framework', sub: '— U.S. Senate & House, Bipartisan', color: 'var(--cyan)' },
-  { stat: '$4.9M', label: 'Average enterprise breach cost — up 15% in two years', sub: '— IBM Security, 2024',               color: 'var(--gold)' },
+  { stat: '3,332', label: 'Record U.S. data compromises in 2025 — up 79% in five years', sub: '— Identity Theft Resource Center, 2026', color: 'var(--text-3)' },
+  { stat: '$10.2M', label: 'Average U.S. breach cost hit an all-time high in 2025', sub: '— IBM Cost of a Data Breach Report, 2025', color: 'var(--gold)' },
+  { stat: '97%', label: 'Of AI-related breaches lacked proper AI access controls', sub: '— IBM & Ponemon Institute, 2025', color: 'var(--cyan)' },
 ];
 
 export default function ThesisSlide() {
