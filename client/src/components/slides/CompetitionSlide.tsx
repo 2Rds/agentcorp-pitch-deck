@@ -11,6 +11,7 @@ const features = [
   { name: 'True Zero-Knowledge',   blockdrive: true,               dropbox: false,         filecoin: false,        tresorit: 'partial' },
   { name: 'Provable Deletion',     blockdrive: true,               dropbox: false,         filecoin: false,        tresorit: false },
   { name: 'Provider Immunity',     blockdrive: true,               dropbox: false,         filecoin: 'partial',    tresorit: false },
+  { name: 'Enterprise Deployed Base', blockdrive: false,            dropbox: true,          filecoin: 'partial',    tresorit: true },
 ];
 
 const renderValue = (value: boolean | string, isBD = false) => {
