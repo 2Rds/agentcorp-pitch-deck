@@ -4,12 +4,12 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const stats = [
-  { value: '5',          label: 'Active enterprise pipeline conversations',       color: 'var(--cyan)' },
-  { value: 'Organic',    label: 'Waitlist growing with zero marketing spend',       color: 'var(--gold)' },
-  { value: 'Demo-Ready', label: 'MVP live with full breach-proof architecture',    color: 'var(--text-1)' },
+  { value: '7',          label: 'Live AI agents running production workloads',    color: 'var(--cyan)' },
+  { value: '35,000+',    label: 'Qualified targets mapped across 4 states',       color: 'var(--gold)' },
+  { value: 'Demo-Ready', label: 'Product live at app.blockdrive.co',              color: 'var(--text-1)' },
 ];
 
-const pipeline = ['Mercury', 'Bitwise', "Sotheby's", 'BlackRock Aladdin', 'Gunster Yoakley'];
+const pipeline = ['Fireblocks', 'Mercury', 'Bitwise', "Sotheby's", 'Gunster Yoakley'];
 
 export default function TractionSlide() {
   return (
@@ -27,9 +27,10 @@ export default function TractionSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
-          A decade of institutional finance relationships — built at four of the largest firms
-          on Wall Street — is now BlockDrive's pipeline. Five active enterprise conversations,
-          a growing organic waitlist, and a demo-ready product behind every meeting.
+          A decade of institutional finance relationships — built at JPMorgan, Merrill Lynch,
+          AXA, and Prudential — is now BlockDrive's sales engine. Seven live AI agents power
+          the GTM infrastructure, 35,000+ qualified targets are mapped across four beachhead
+          states, and a demo-ready product sits behind every conversation.
         </motion.p>
 
         {/* Stats row */}
@@ -44,7 +45,7 @@ export default function TractionSlide() {
 
         {/* Enterprise pipeline */}
         <motion.div variants={i} style={{ marginBottom: '1.25rem' }}>
-          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Enterprise Pipeline</span>
+          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Design Partnerships</span>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
             {pipeline.map((name) => (
               <span key={name} className="pill pill-cyan">{name}</span>
@@ -55,9 +56,8 @@ export default function TractionSlide() {
         {/* Waitlist + closing */}
         <motion.div variants={i} className="bar-card" style={{ maxWidth: 720 }}>
           <p className="t-body">
-            Early waitlist traction from both businesses and individuals —{' '}
-            <span className="c-gold" style={{ fontWeight: 600 }}>zero marketing spend</span>.
-            Every conversation so far has been inbound or relationship-driven.{' '}
+            Five design-partnership conversations are active with crypto-native firms and
+            regulated enterprises.{' '}
             <span className="c-white" style={{ fontWeight: 600 }}>The demand is already here. We're raising to meet it.</span>
           </p>
         </motion.div>
