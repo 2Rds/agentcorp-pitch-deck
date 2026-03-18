@@ -4,9 +4,9 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const funnel = [
-  { value: '$15B',     tag: 'TAM',         sub: 'Global Secure File Storage & Sharing',                      growth: '\u2192 $40B by 2030', color: 'var(--text-1)' },
-  { value: '$3B',      tag: 'SAM',         sub: 'Encrypted Storage \u00b7 Security-Conscious Orgs \u00b7 N. America', growth: '\u2192 $8B by 2030',  color: 'var(--cyan)' },
-  { value: '$15\u201325M', tag: 'YEAR 5 ARR', sub: '1,000 B2B Accounts + Self-Serve',                        growth: 'Bottom-Up Model',     color: 'var(--gold)' },
+  { value: '$15B',   tag: 'TAM', sub: 'Enterprise File Storage & Sharing (EFSS)',                     growth: '\u2192 $53B by 2030 \u00b7 ~29% CAGR', color: 'var(--text-1)' },
+  { value: '$3B',    tag: 'SAM', sub: 'Encrypted Storage \u00b7 Security-Conscious Orgs \u00b7 N. America', growth: '\u2192 $8B by 2030',              color: 'var(--cyan)' },
+  { value: '$350M',  tag: 'SOM', sub: '35,000+ Qualified Targets \u00b7 4 Beachhead States',            growth: 'Bottom-Up \u00b7 ~$10K Blended ACV',  color: 'var(--gold)' },
 ];
 
 const states = [
@@ -33,10 +33,10 @@ export default function MarketSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
-          The $15B secure file storage market is growing 22% CAGR &mdash; driven by AI data production,
-          regulatory tightening, and record data breaches. We target the $3B encrypted segment
-          in North America where compliance isn&rsquo;t optional. 35,000+ qualified targets across
-          four beachhead states, with 3% capture by Year 5.
+          The $15B enterprise file storage and sharing market is growing ~29% CAGR &mdash; a segment
+          of the broader $55&ndash;75B North American cloud storage market. We target the $3B encrypted
+          storage segment where compliance isn&rsquo;t optional. 35,000+ qualified targets mapped
+          across four beachhead states represent ~$350M in obtainable revenue.
         </motion.p>
 
         {/* TAM → SAM → Year 5 ARR */}
