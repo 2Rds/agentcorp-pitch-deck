@@ -7,7 +7,7 @@ const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transiti
 const useOfFunds = [
   { pct: '50%', label: 'Product & Engineering', desc: 'GA by Q2 2026' },
   { pct: '30%', label: 'Sales & GTM',           desc: 'Founder-led Year 1' },
-  { pct: '20%', label: 'Operations',             desc: '18-month runway' },
+  { pct: '20%', label: 'Operations',             desc: '24-month runway' },
 ];
 
 export default function AskSlide() {
