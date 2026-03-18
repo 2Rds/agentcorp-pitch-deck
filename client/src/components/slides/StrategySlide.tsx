@@ -6,7 +6,7 @@ const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transiti
 const parallel = [
   {
     era: '1984 — 2001',
-    figure: 'Steve Jobs',
+    figure: 'Apple',
     tech: 'The personal computer and the internet',
     problem: 'Transformative technology existed but was inaccessible — owned by engineers and early adopters, too complex and too foreign for the mass market.',
     move: 'Stripped away every layer of complexity. Built interfaces so intuitive that the technology underneath became invisible. The Mac, the iPod, the iPhone — each one brought an entire generation of non-technical users onto infrastructure they would never understand, and never needed to.',

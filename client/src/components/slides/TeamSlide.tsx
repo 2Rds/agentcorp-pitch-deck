@@ -8,7 +8,7 @@ const team = [
   {
     photo: '/images/sean-weiss.jpg',
     name: 'Sean Weiss',
-    title: 'Co-Founder & CEO',
+    title: 'Founder & CEO',
     bio: "Sean spent the first decade of his career earning the trust of sophisticated high net worth investors and business owners on the most sensitive subjects relating to their financial lives — at JPMorgan, Merrill Lynch, AXA, and Prudential. That network is now our pipeline. These aren't cold leads. They're relationships built over a career of earning trust with people who don't give it easily.",
     bg: 'rgba(255,255,255,0.03)',
     border: 'rgba(255,255,255,0.09)',
