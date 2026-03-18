@@ -30,19 +30,19 @@ export default function AgentCorpSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.75rem' }}>
-          One human CEO. Six department heads. A full-stack AI sales floor.{' '}
+          One human CEO. Seven AI agents. A full-stack AI sales floor.{' '}
           <span className="c-cyan">This is how the company actually runs.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: '100%', marginBottom: '0.75rem' }}>
-          BlockDrive doesn't plan to use AI agents someday. It runs on them today — across a four-layer operating ecosystem with centralized governance enforcing spending limits, decision boundaries, and escalation protocols.
+          BlockDrive doesn't plan to use AI agents someday. It runs on them today — seven agents with persistent memory, namespace isolation, and multi-model intelligence, operating across a four-layer ecosystem with centralized governance enforcing spending limits, decision boundaries, and escalation protocols.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.6rem 2.5rem', marginBottom: '1.25rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-3)', lineHeight: 1.65 }}>
           <p><span className="c-cyan" style={{ fontWeight: 600 }}>corp.blockdrive.co</span> — cloud workspace where agents do analysis, content, compliance, and financial modeling</p>
           <p><span className="c-cyan" style={{ fontWeight: 600 }}>Slack</span> — inter-agent messaging, status updates, and cross-department handoffs — fully autonomous</p>
           <p><span className="c-cyan" style={{ fontWeight: 600 }}>Telegram</span> — CEO executive channel for spending approvals, critical decisions, and escalations</p>
-          <p><span className="c-cyan" style={{ fontWeight: 600 }}>sales.blockdrive.co</span> — full sales platform with call center routing, CRM, and dual-runtime architecture: ElevenLabs voice for live calls, cognitive runtime for analysis between calls</p>
+          <p><span className="c-cyan" style={{ fontWeight: 600 }}>sales.blockdrive.co</span> — full sales platform with dual runtime: ElevenLabs voice for live calls, cognitive layer that compounds shared intelligence between them</p>
         </motion.div>
 
         {/* Metrics */}
@@ -71,7 +71,7 @@ export default function AgentCorpSlide() {
         {/* Bottom card */}
         <motion.div variants={i} style={{ padding: '1.1rem 1.4rem', background: 'rgba(255,255,255,0.025)', borderLeft: '2px solid var(--cyan)', borderRadius: '0 var(--radius-lg) var(--radius-lg) 0' }}>
           <p className="t-body" style={{ fontSize: '0.875rem' }}>
-            Every capability is proven in production — real financial models, real investor communications, real compliance workflows, real sales outreach. No seed-stage company has a CFO, CMO, General Counsel, Head of Sales, and Chief Compliance Officer operating simultaneously. We do.{' '}
+            Every capability is proven in production — real financial models, real investor communications, real compliance workflows, real sales outreach. No seed-stage company has seven autonomous agents — spanning executive support, finance, operations, marketing, legal, compliance, and sales — operating simultaneously. We do.{' '}
             <span className="c-cyan" style={{ fontWeight: 600 }}>The result: BlockDrive's $2M goes 3–5× further than any comparable seed-stage company.</span>
           </p>
         </motion.div>
