@@ -6,7 +6,7 @@ const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transiti
 const stats = [
   { value: '7',          label: 'Live AI agents running production workloads',    color: 'var(--cyan)' },
   { value: '35,000+',    label: 'Qualified targets mapped across 4 states',       color: 'var(--gold)' },
-  { value: 'Demo-Ready', label: 'Product live at app.blockdrive.co',              color: 'var(--text-1)' },
+  { value: 'Active Pilot', label: '140 seats across 5 companies — signed LOIs in hand',   color: 'var(--text-1)' },
 ];
 
 const pipeline = ['Fireblocks', 'Mercury', 'Bitwise', "Sotheby's", 'Gunster Yoakley'];
@@ -27,10 +27,7 @@ export default function TractionSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
-          A decade of institutional finance relationships — built at JPMorgan, Merrill Lynch,
-          AXA, and Prudential — is now BlockDrive's sales engine. Seven live AI agents power
-          the GTM infrastructure, 35,000+ qualified targets are mapped across four beachhead
-          states, and a demo-ready product sits behind every conversation.
+          A decade of institutional finance relationships — built at JPMorgan, Merrill Lynch, AXA, and Prudential — now amplified by a full-stack AI sales floor. Seven live agents power the GTM infrastructure, 35,000+ qualified targets are mapped across four beachhead states, and a pilot client with 140 seats across a parent company and four subsidiaries is already in production trial with signed LOIs.
         </motion.p>
 
         {/* Stats row */}
@@ -45,7 +42,7 @@ export default function TractionSlide() {
 
         {/* Enterprise pipeline */}
         <motion.div variants={i} style={{ marginBottom: '1.25rem' }}>
-          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Design Partnerships</span>
+          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Design Partner Conversations</span>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
             {pipeline.map((name) => (
               <span key={name} className="pill pill-cyan">{name}</span>
@@ -56,8 +53,7 @@ export default function TractionSlide() {
         {/* Waitlist + closing */}
         <motion.div variants={i} className="bar-card" style={{ maxWidth: 720 }}>
           <p className="t-body">
-            Five design-partnership conversations are active with crypto-native firms and
-            regulated enterprises.{' '}
+            Five design partner conversations are active with crypto-native firms and regulated enterprises — early access in exchange for feedback and case studies. One pilot client — a parent company and four subsidiaries, 140 seats total — is in production trial with signed LOIs.{' '}
             <span className="c-white" style={{ fontWeight: 600 }}>The demand is already here. We're raising to meet it.</span>
           </p>
         </motion.div>
