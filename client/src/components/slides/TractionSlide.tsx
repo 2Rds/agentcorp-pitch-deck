@@ -27,7 +27,7 @@ export default function TractionSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
-          A decade of institutional finance relationships — built at JPMorgan, Merrill Lynch, AXA, and Prudential — now amplified by a full-stack AI sales floor. Seven live agents power the GTM infrastructure, 35,000+ qualified targets are mapped across four beachhead states, and a pilot client with 140 seats across a parent company and four subsidiaries is already in production trial with signed LOIs.
+          A decade of institutional finance relationships — built at JPMorgan, Merrill Lynch, AXA, and Prudential — now amplified by a full-stack AI sales floor. Seven live agents power the GTM infrastructure, 35,000+ qualified targets are mapped across four beachhead states, and a 140-seat pilot client is already in production trial.
         </motion.p>
 
         {/* Stats row */}
