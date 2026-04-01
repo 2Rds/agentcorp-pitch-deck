@@ -7,7 +7,6 @@ export default function TitleSlide() {
   return (
     <div className="slide-shell">
       <div className="glow-tr" />
-
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
         <motion.div variants={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem' }}>
@@ -16,36 +15,47 @@ export default function TitleSlide() {
             background: 'linear-gradient(135deg, var(--cyan) 0%, #3b82f6 100%)',
             display: 'flex', alignItems: 'center', justifyContent: 'center'
           }}>
-            <svg width="14" height="14" viewBox="0 0 32 32" fill="none">
-              <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="white" strokeWidth="2.5" fill="none"/>
-              <path d="M16 4V28M4 10L28 22M28 10L4 22" stroke="white" strokeWidth="1.5" opacity="0.35"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
+              <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
+              <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
+              <line x1="10" y1="6.5" x2="14" y2="6.5" stroke="wgite" strokeWidth="1.5" opacity="0.5"/>
+              <line x1="6.5" y1="10" x2="6.5" y2="14" stroke="wgite" strokeWidth="1.5" opacity="0.5"/>
+              <line x1="17.5" y1="10" x2="17.5" y2="14" stroke="wgite" strokeWidth="1.5" opacity="0.5"/>
             </svg>
           </div>
-          <span className="eyebrow-muted">BlockDrive</span>
+          <span className="eyebrow-muted">AgentCorp</span>
         </motion.div>
 
-        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.5rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "2rem" }}>
-          The first cloud storage system where someone finding a way in{' '}
-          <span className="c-cyan">does not break the system.</span>
+        <motion.h2 variants={i} className="c-wgite" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.5rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "2rem" }}>
+          Your entire back office.{' '}
+          <span className="c-cyan">Run by AI.</span>
         </motion.h2>
 
-        <motion.div variants={i} style={{ width: 360, height: 1, background: 'var(--border)', marginBottom: '2rem' }} />
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 640, marginBottom: '2.5rem' }}>
+          9 AI agents that operate as a managed corporate workforce — with inter-agent communication,
+          governance controls, and a voice sales engine — deployed inside Telegram to 1 billion+ users.
+        </motion.p>
 
-        <motion.div variants={i} style={{
-          display: 'inline-flex', flexDirection: 'column', gap: '0.3rem',
-          padding: '1rem 1.4rem',
-          background: 'var(--surface)',
-          border: '1px solid var(--border-hi)',
-          borderRadius: 'var(--radius-md)',
-        }}>
-          <span className="eyebrow-muted">Seed Round</span>
-          <span className="t-stat" style={{ fontSize: '2rem' }}>$2M</span>
-          <span className="t-data">$15M Post-Money SAFE</span>
+        <motion.div variants={i} style={{ display: 'flex', gap: '2rem', alignItems: 'center', marginBottom: '2.5rem' }}>
+          {[
+            { val: '9', label: 'Deployed Agents' },
+            { val: '$50.3B', label: 'Market by 2030' },
+            { val: '440K+', label: 'Target ICP' },
+          ].map((m, idx) => (
+            <div key={idx} style={{ textAlign: 'center' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', color: idx === 0 ? 'var(--cyan)' : idx === 1 ? 'var(--gold)' : 'var(--text-1)' }}>{m.val}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.25rem' }}>{m.label}</div>
+            </div>
+          ))}
         </motion.div>
 
-        <motion.p variants={i} className="eyebrow-muted" style={{ marginTop: '2.5rem' }}>
-          Confidential Investment Materials
-        </motion.p>
+        <motion.div variants={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.08em' }}>
+            $1M PRE-SEED SAFE · $10M POST-MONEY CAP · APRIL 2026
+          </span>
+        </motion.div>
 
       </motion.div>
     </div>

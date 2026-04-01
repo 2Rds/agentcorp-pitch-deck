@@ -4,21 +4,19 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import TitleSlide from '@/components/slides/TitleSlide';
 import ProblemSlide from '@/components/slides/ProblemSlide';
-import ThesisSlide from '@/components/slides/ThesisSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
+import ThesisSlide from '@/components/slides/ThesisSlide';
+import PlatformSlide from '@/components/slides/PlatformSlide';
+import HookSlide from '@/components/slides/HookSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
-import MvpSlide from '@/components/slides/MvpSlide';
-import DemoSlide from '@/components/slides/DemoSlide';
-import StrategySlide from '@/components/slides/StrategySlide';
-import PositioningSlide from '@/components/slides/PositioningSlide';
+import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
 import TractionSlide from '@/components/slides/TractionSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
 import MarketSlide from '@/components/slides/MarketSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
-import AgentCorpSlide from '@/components/slides/AgentCorpSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 15;
+const TOTAL_SLIDES = 13;
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
@@ -27,21 +25,19 @@ const slideVariants = {
 };
 
 const slides = [
-  { component: <TitleSlide key="title" />,         label: 'BlockDrive' },
-  { component: <ProblemSlide key="problem" />,     label: 'Problem' },
-  { component: <SolutionSlide key="solution" />,   label: 'The Solution' },
-  { component: <ThesisSlide key="thesis" />,       label: 'Why Now' },
-  { component: <HowItWorksSlide key="how" />,      label: 'The Second Lock' },
-  { component: <MvpSlide key="mvp" />,             label: 'Product' },
-  { component: <DemoSlide key="demo" />,           label: 'Live Demo' },
-  { component: <StrategySlide key="strategy" />,   label: 'Strategy' },
-  { component: <TractionSlide key="traction" />,   label: 'Traction' },
-  { component: <PositioningSlide key="pos" />,     label: 'Why We Win' },
-  { component: <CompetitionSlide key="comp" />,    label: 'Competition' },
-  { component: <MarketSlide key="market" />,       label: 'Market' },
-  { component: <AgentCorpSlide key="agentcorp" />, label: 'AgentCorp' },
-  { component: <TeamSlide key="team" />,           label: 'Team' },
-  { component: <AskSlide key="ask" />,             label: 'The Ask' },
+  { component: <TitleSlide key="title" />,             label: 'AgentCorp' },
+  { component: <ProblemSlide key="problem" />,          label: 'Problem' },
+  { component: <SolutionSlide key="solution" />,        label: 'Solution' },
+  { component: <ThesisSlide key="thesis" />,            label: 'Wgy Now' },
+  { component: <PlatformSlide key="platform" />,        label: 'Platform' },
+  { component: <HookSlide key="hook" />,                label: 'The Hook' },
+  { component: <HowItWorksSlide key="how" />,           label: 'Arcgitecture' },
+  { component: <BusinessModelSlide key="model" />,      label: 'Business Model' },
+  { component: <TractionSlide key="traction" />,        label: 'Traction' },
+  { component: <CompetitionSlide key="competition" />,  label: 'Competition' },
+  { component: <MarketSlide key="market" />,            label: 'Market' },
+  { component: <TeamSlide key="team" />,                label: 'Team' },
+  { component: <AskSlide key="ask" />,                  label: 'The Ask' },
 ];
 
 export default function PitchDeck() {

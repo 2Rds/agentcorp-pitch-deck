@@ -1,15 +1,22 @@
 import { motion } from 'framer-motion';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
-const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.09, delayChildren: 0.08 } } };
+const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const stats = [
-  { value: '7',          label: 'Live AI agents running production workloads',    color: 'var(--cyan)' },
-  { value: '35,000+',    label: 'Qualified targets mapped across 4 states',       color: 'var(--gold)' },
-  { value: 'Active Pilot', label: 'Parent company live — LOIs signed for 4 subsidiaries (140 seats total)',   color: 'var(--text-1)' },
+const metrics = [
+  { value: '9', label: 'Agents deployed on DigitalOcean', color: 'var(--cyan)' },
+  { value: '264', label: 'Test cases + CI/CD pipeline', color: 'var(--gold)' },
+  { value: '162', label: 'Knowledge plugins loaded', color: '#8b9cf7' },
 ];
 
-const pipeline = ['Fireblocks', 'Mercury', 'Bitwise', "Sotheby's", 'Gunster Yoakley'];
+const traction = [
+  { item: 'Stripe billing', detail: '3 tiers live — Pro $250, Growth $1K, Scale $2.5K + credit metering + webhooks' },
+  { item: 'Telegram Mini App', detail: '@AgentCorpBot — full agent workspace inside Telegram' },
+  { item: 'Voice sales engine', detail: 'sales.agentcorp.work — ElevenLabs + Telnyx + NextGenSwitch PBX' },
+  { item: 'Inter-agent comms', detail: 'MessageBus with Redis Streams, namespace isolation, peer-to-peer delegation' },
+  { item: 'Governance engine', detail: 'Per-agent spend limits, approval flows, atomic budget enforcement' },
+  { item: 'Customer zero', detail: 'AgentCorp runs on AgentCorp — proving the thesis daily' },
+];
 
 export default function TractionSlide() {
   return (
@@ -21,41 +28,37 @@ export default function TractionSlide() {
           Traction
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
+        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
           Pre-revenue.{' '}
-          <span className="c-cyan">Not pre-pipeline.</span>
+          <span className="c-cyan">Not pre-product.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
-          A decade of institutional finance relationships — built at JPMorgan, Merrill Lynch, AXA, and Prudential — now amplified by a full-stack AI sales floor. Seven live agents power the GTM infrastructure, 35,000+ qualified targets are mapped across four beachhead states, and a pilot client is in production trial — with signed LOIs to onboard four subsidiaries representing 140 total seats.
-        </motion.p>
-
-        {/* Stats row */}
-        <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.25rem' }}>
-          {stats.map((s) => (
-            <div key={s.value} style={{ padding: '1.1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
-              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: s.color, lineHeight: 1, marginBottom: '0.4rem', letterSpacing: '-0.02em' }}>{s.value}</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)', lineHeight: 1.4 }}>{s.label}</p>
+        {/* Stat cards */}
+        <motion.div variants={i} style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem' }}>
+          {metrics.map((m, idx) => (
+            <div key={idx} style={{
+              flex: 1, padding: '1rem', textAlign: 'center',
+              background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)',
+            }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.6rem', color: m.color }}>{m.value}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)', marginTop: '0.2rem' }}>{m.label}</div>
             </div>
           ))}
         </motion.div>
 
-        {/* Enterprise pipeline */}
-        <motion.div variants={i} style={{ marginBottom: '1.25rem' }}>
-          <span className="eyebrow-muted" style={{ display: 'block', marginBottom: '0.5rem' }}>Design Partner Conversations</span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-            {pipeline.map((name) => (
-              <span key={name} className="pill pill-cyan">{name}</span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Waitlist + closing */}
-        <motion.div variants={i} className="bar-card" style={{ maxWidth: 720 }}>
-          <p className="t-body">
-            Five design partner conversations are active with crypto-native firms and regulated enterprises — early access in exchange for feedback and case studies. One pilot client is in production trial with signed LOIs for four additional subsidiaries — 140 seats in the pipeline from a single relationship.{' '}
-            <span className="c-white" style={{ fontWeight: 600 }}>The demand is already here. We're raising to meet it.</span>
-          </p>
+        {/* Traction list */}
+        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+          {traction.map((t, idx) => (
+            <div key={idx} style={{
+              display: 'grid', gridTemplateColumns: '160px 1fr', gap: '1rem', alignItems: 'center',
+              padding: '0.6rem 1rem',
+              background: idx % 2 === 0 ? 'var(--surface)' : 'transparent',
+              borderRadius: 'var(--radius-lg)',
+            }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--cyan)', fontWeight: 500 }}>✓ {t.item}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-3)' }}>{t.detail}</div>
+            </div>
+          ))}
         </motion.div>
 
       </motion.div>

@@ -5,9 +5,17 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const useOfFunds = [
-  { pct: '50%', label: 'Product & Engineering', desc: 'GA by Q2 2026' },
-  { pct: '30%', label: 'Sales & GTM',           desc: 'Founder-led Year 1' },
-  { pct: '20%', label: 'Operations',             desc: '24-month runway' },
+  { pct: '40%', label: 'Product & Engineering', desc: 'Head of Eng + second developer + SOC 2 path' },
+  { pct: '35%', label: 'Sales & GTM', desc: '2-3 operators + marketing + PLG funnel' },
+  { pct: '15%', label: 'Operations', desc: 'C-Corp incorporation + compliance infrastructure' },
+  { pct: '10%', label: 'Working Capital', desc: 'Buffer + seed-round negotiating leverage' },
+];
+
+const milestones = [
+  '20-30 paying customers (5-8 with wgite-glove)',
+  '$300K-$500K ARR (platform + overage)',
+  'Seed round at $20-$30M post-money',
+  'SOC 2 Type II certification path',
 ];
 
 export default function AskSlide() {
@@ -20,55 +28,73 @@ export default function AskSlide() {
           The Ask
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.4rem' }}>
-          $2M to prove the beachhead.{' '}
-          <span className="c-cyan">Then we ride a wave that hits every industry.</span>
+        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.4rem' }}>
+          $1M to launch the go-to-market.{' '}
+          <span className="c-cyan">The product is already built.</span>
         </motion.h2>
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-4)', letterSpacing: '0.08em', marginBottom: '1.5rem' }}>
-          SEED ROUND · $15M POST-MONEY SAFE
+          PRE-SEED · $1M SAFE · $10M POST-MONEY CAP
         </motion.p>
 
-        <motion.div variants={i} className="cols-3" style={{ marginBottom: '1.1rem' }}>
-          {useOfFunds.map((item) => (
-            <div key={item.label} style={{ padding: '1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-              <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', color: 'var(--cyan)', lineHeight: 1, marginBottom: '0.35rem' }}>{item.pct}</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.2rem' }}>{item.label}</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-4)', letterSpacing: '0.04em' }}>{item.desc}</p>
+        {/* Deal stats */}
+        <motion.div variants={i} style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+          {[
+            { val: '$1M', label: 'Pre-Seed SAFE', color: 'var(--cyan)' },
+            { val: '$10M', label: 'Post-Money Cap', color: 'var(--gold)' },
+            { val: '10%', label: 'Investor Ownership', color: 'var(--text-1)' },
+          ].map((s, idx) => (
+            <div key={idx} style={{
+              flex: 1, padding: '0.85rem', textAlign: 'center',
+              background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)',
+            }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.4rem', color: s.color }}>{s.val}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.15rem' }}>{s.label}</div>
             </div>
           ))}
         </motion.div>
 
-        <motion.div variants={i} className="bar-card" style={{ marginBottom: '1.25rem' }}>
-          <p className="t-body">
-            The crypto/Web3 beachhead is Year 1. It's not the ceiling — it's the proof of concept. The company that solves breach-proof storage for the most security-conscious early adopters on earth will have no trouble selling it to healthcare, legal, and financial services.{' '}
-            <span className="c-white" style={{ fontWeight: 600 }}>That is the company we are building.</span>
-          </p>
+        {/* Use of funds */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.6rem', marginBottom: '1.25rem' }}>
+          {useOfFunds.map((f, idx) => (
+            <div key={idx} style={{
+              padding: '0.75rem 0.85rem',
+              background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)',
+            }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--cyan)', marginBottom: '0.2rem' }}>{f.pct}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '0.75rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>{f.label}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.68rem', color: 'var(--text-4)', lineHeight: 1.4 }}>{f.desc}</div>
+            </div>
+          ))}
         </motion.div>
 
-        <motion.div variants={i} style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
-          <p style={{
-            fontFamily: 'var(--font-display)',
-            fontWeight: 800,
-            fontSize: 'clamp(1.4rem, 2.8vw, 2.25rem)',
-            color: 'var(--text-1)',
-            lineHeight: 1.2,
-            letterSpacing: '-0.02em',
-          }}>
-            "Hack us all you want—
-            <br />
-            <span className="c-cyan">you get nothing."</span>
-          </p>
+        {/* Path to seed */}
+        <motion.div variants={i} style={{
+          padding: '0.85rem 1.2rem',
+          background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.15)', borderRadius: 'var(--radius-lg)',
+          marginBottom: '1.25rem',
+        }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.5rem' }}>Path to Seed</div>
+          <div style={{ display: 'flex', gap: '1.5rem' }}>
+            {milestones.map((m, idx) => (
+              <div key={idx} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)' }}>
+                <span style={{ color: 'var(--cyan)', marginRight: '0.4rem' }}>→</span>{m}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
-        <motion.div variants={i} style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', justifyContent: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.825rem', color: 'var(--text-2)' }}>Sean Weiss, CEO</p>
-          <a href="mailto:sean@blockdrive.co" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.04em', textDecoration: 'none' }}>
-            <Mail size={11} />sean@blockdrive.co
-          </a>
-          <a href="https://app.blockdrive.co" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.04em', textDecoration: 'none' }}>
-            <Globe size={11} />app.blockdrive.co
-          </a>
+        {/* Contact */}
+        <motion.div variants={i} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <Mail size={14} style={{ color: 'var(--text-4)' }} />
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-3)' }}>sean@agentcorp.work</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <Globe size={14} style={{ color: 'var(--text-4)' }} />
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-3)' }}>agentcorp.work</span>
+          </div>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-3)' }}>@AgentCorpBot on Telegram</span>
         </motion.div>
 
       </motion.div>

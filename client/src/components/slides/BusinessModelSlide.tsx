@@ -1,139 +1,76 @@
-/*
- * Slide 7: Business Model
- * SaaS with Web3 Leverage
- * Design: Two-column layout, pricing tiers + unit economics
- */
-
 import { motion } from 'framer-motion';
-import { Check, TrendingUp, Percent, Users } from 'lucide-react';
-import CountUp from '@/components/CountUp';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-  }
-};
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.08 } } };
+const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' as const }
-  }
-};
-
-const pricingTiers = [
-  { name: 'Pro', price: '$9', period: '/mo', features: ['200GB Storage', 'Unlimited bandwidth'], highlight: false },
-  { name: 'Power', price: '$49', period: '/mo', features: ['2TB Storage', 'Unlimited bandwidth'], highlight: false },
-  { name: 'Scale', price: '$29', period: '/seat', features: ['1TB Storage', '2-seat minimum', 'Unlimited bandwidth'], highlight: true, badge: 'vs 3-seat competitors' },
-  { name: 'Enterprise', price: '$49', period: '/seat', features: ['Custom Storage', 'Unlimited bandwidth', 'Custom SLA'], highlight: false },
+const tiers = [
+  { name: 'Pro', price: '$250', credits: '5,000', highlight: false },
+  { name: 'Growth', price: '$1,000', credits: '20,000', highlight: true },
+  { name: 'Scale', price: '$2,500', credits: '50,000', highlight: false },
 ];
 
-const unitEconomics = [
-  { icon: Percent, value: 85, suffix: '%+', label: 'Gross Margin Target', decimals: 0 },
-  { icon: TrendingUp, value: 73, suffix: '%', label: 'Cost Reduction vs Traditional', decimals: 0 },
-  { icon: Users, value: 3, suffix: 'x+', label: 'LTV:CAC Target', decimals: 1 },
+const margins = [
+  { label: 'Subscription', value: '70%', note: 'Flat across all tiers', color: 'var(--cyan)' },
+  { label: 'Overage', value: '85%', note: '$0.10/credit flat', color: 'var(--gold)' },
+  { label: 'Wgite-Glove', value: '67%', note: '+$1,500/mo on Scale', color: '#8b9cf7' },
 ];
 
 export default function BusinessModelSlide() {
   return (
-    <div className="w-full min-h-full flex items-start justify-center p-4 md:p-6 pt-8 md:pt-12 pb-20 overflow-auto">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-6xl w-full"
-      >
-        {/* Section label */}
-        <motion.p variants={itemVariants} className="section-label mb-2">
-          Business Model
-        </motion.p>
+    <div className="slide-shell">
+      <div className="glow-tr" />
+      <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
-        {/* Headline */}
-        <motion.h2 variants={itemVariants} className="slide-title text-white mb-6">
-          SaaS with Web3 Leverage
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
+          Business Model
+        </motion.span>
+
+        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
+          Credit-based pricing.{' '}
+          <span className="c-cyan">All 9 agents at every tier.</span>
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-6">
-          {/* Pricing tiers */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xs text-slate-500 uppercase tracking-wide mb-3">Pricing Tiers</h3>
-            <div className="grid grid-cols-2 gap-2">
-              {pricingTiers.map((tier, i) => (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  className={`p-3 rounded-xl ${
-                    tier.highlight 
-                      ? 'glass-card-highlight glow-cyan' 
-                      : 'glass-card'
-                  }`}
-                >
-                  {tier.highlight && (
-                    <span className="text-[10px] text-cyan-400 font-medium uppercase tracking-wide">Popular</span>
-                  )}
-                  {'badge' in tier && tier.badge && (
-                    <span className="block text-[9px] text-green-400 font-medium mt-0.5">{tier.badge}</span>
-                  )}
-                  <h4 className="text-base font-semibold text-white mt-1">{tier.name}</h4>
-                  <div className="flex items-baseline gap-1 mt-1">
-                    <span className="text-xl font-bold text-white">{tier.price}</span>
-                    <span className="text-xs text-slate-400">{tier.period}</span>
-                  </div>
-                  <div className="mt-2 space-y-0.5">
-                    {tier.features.map((feature, fi) => (
-                      <div key={fi} className="flex items-center gap-1">
-                        <Check className="w-3 h-3 text-cyan-400" />
-                        <span className="text-[10px] text-slate-400">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+        {/* Tier cards */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.25rem' }}>
+          {tiers.map((t, idx) => (
+            <div key={idx} style={{
+              padding: '1.25rem',
+              background: t.highlight ? 'rgba(0,229,255,0.06)' : 'var(--surface)',
+              border: `1px solid ${t.highlight ? 'rgba(0,229,255,0.25)' : 'var(--border-hi)'}`,
+              borderRadius: 'var(--radius-lg)',
+              textAlign: 'center',
+            }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: t.highlight ? 'var(--cyan)' : 'var(--text-4)', marginBottom: '0.5rem' }}>{t.name}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>{t.price}<span style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--text-4)' }}>/mo</span></div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-3)' }}>{t.credits} credits</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-4)', marginTop: '0.25rem' }}>All 9 agents · Unlimited seats</div>
             </div>
-          </motion.div>
+          ))}
+        </motion.div>
 
-          {/* Unit economics */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-xs text-slate-500 uppercase tracking-wide mb-3">Unit Economics</h3>
-            <div className="space-y-2">
-              {unitEconomics.map((metric, i) => (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  className="glass-card p-3 flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                    <metric.icon className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="text-xl font-bold text-white">
-                      <CountUp end={metric.value} suffix={metric.suffix} decimals={metric.decimals} />
-                    </div>
-                    <p className="text-xs text-slate-400">{metric.label}</p>
-                  </div>
-                </motion.div>
-              ))}
+        {/* Margin boxes */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1rem' }}>
+          {margins.map((m, idx) => (
+            <div key={idx} style={{
+              padding: '0.85rem 1rem',
+              background: 'var(--surface)',
+              border: '1px solid var(--border-hi)',
+              borderRadius: 'var(--radius-lg)',
+              textAlign: 'center',
+            }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: m.color }}>{m.value}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.15rem' }}>{m.label} Gross Margin</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-4)' }}>{m.note}</div>
             </div>
+          ))}
+        </motion.div>
 
-            {/* NFT note */}
-            <div className="glass-card p-3 mt-3 border-blue-500/20">
-              <div className="flex items-start gap-2">
-                <Check className="w-4 h-4 text-blue-400 mt-0.5" />
-                <div>
-                  <p className="text-xs text-white font-medium">NFT-Based Subscriptions</p>
-                  <p className="text-[10px] text-slate-400 mt-0.5">
-                    Censorship-resistant membership with secondary market potential.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-3)', maxWidth: 700 }}>
+          $0.05/credit effective rate across all tiers. Overage at $0.10/credit creates natural upgrade triggers.
+          Blended margin improves as customers exceed included credits — a Scale customer with 20K overage reaches 77%.
+          5,000 free credits at signup (card required).
+        </motion.p>
+
       </motion.div>
     </div>
   );
