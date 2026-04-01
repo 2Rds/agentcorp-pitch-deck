@@ -8,10 +8,11 @@ const features = [
   { name: 'Pre-built workforce',    ac: true,  ema: true,  motion: true,  beam: true,  oss: 'Varies' },
   { name: 'Peer-to-peer agent comms', ac: true, ema: false, motion: false, beam: false, oss: false },
   { name: 'Voice-native sales',     ac: true,  ema: false, motion: false, beam: false, oss: false },
-  { name: 'Wgite-glove service',    ac: true,  ema: false, motion: false, beam: false, oss: false },
+  { name: 'White-glove service',    ac: true,  ema: false, motion: false, beam: false, oss: false },
   { name: 'Telegram distribution',  ac: true,  ema: false, motion: false, beam: false, oss: false },
   { name: 'Governance + spend ctrl', ac: true, ema: true,  motion: 'Basic', beam: true, oss: false },
-  { name: 'Funded \{ name: 'SMB self-serve',         ac: '$250', ema: false, motion: '$29', beam: '$990', oss: 'Free' }, scaled', ac: 'Pre-seed', ema: '$61M', motion: '$75M', beam: '$1.4M', oss: 'N/A' },
+  { name: 'Funded & scaled',        ac: 'Pre-seed', ema: '$61M', motion: '$75M', beam: '$1.4M', oss: 'N/A' },
+  { name: 'Paying customers',       ac: 'Pre-rev', ema: '10K+', motion: '10K+', beam: 'Early', oss: 'N/A' },
 ];
 
 const renderVal = (v: boolean | string, isAC = false) => {
