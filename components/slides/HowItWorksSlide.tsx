@@ -19,10 +19,10 @@ export default function HowItWorksSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
 
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-          Arcgitecture
+          Architecture
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.5rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.5rem' }}>
           Six layers. All live.{' '}
           <span className="c-cyan">Nothing here is roadmap.</span>
         </motion.h2>

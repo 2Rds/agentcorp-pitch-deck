@@ -16,19 +16,19 @@ export default function TitleSlide() {
             display: 'flex', alignItems: 'center', justifyContent: 'center'
           }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
-              <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
-              <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
-              <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="wgite" strokeWidth="2"/>
-              <line x1="10" y1="6.5" x2="14" y2="6.5" stroke="wgite" strokeWidth="1.5" opacity="0.5"/>
-              <line x1="6.5" y1="10" x2="6.5" y2="14" stroke="wgite" strokeWidth="1.5" opacity="0.5"/>
-              <line x1="17.5" y1="10" x2="17.5" y2="14" stroke="wgite" strokeWidth="1.5" opacity="0.5"/>
+              <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="white" strokeWidth="2"/>
+              <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="white" strokeWidth="2"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="white" strokeWidth="2"/>
+              <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="white" strokeWidth="2"/>
+              <line x1="10" y1="6.5" x2="14" y2="6.5" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+              <line x1="6.5" y1="10" x2="6.5" y2="14" stroke="white" strokeWidth="1.5" opacity="0.5"/>
+              <line x1="17.5" y1="10" x2="17.5" y2="14" stroke="white" strokeWidth="1.5" opacity="0.5"/>
             </svg>
           </div>
           <span className="eyebrow-muted">AgentCorp</span>
         </motion.div>
 
-        <motion.h2 variants={i} className="c-wgite" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.5rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "2rem" }}>
+        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.5rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "2rem" }}>
           Your entire back office.{' '}
           <span className="c-cyan">Run by AI.</span>
         </motion.h2>
@@ -40,12 +40,12 @@ export default function TitleSlide() {
 
         <motion.div variants={i} style={{ display: 'flex', gap: '2rem', alignItems: 'center', marginBottom: '2.5rem' }}>
           {[
-            { val: '9', label: 'Deployed Agents' },
-            { val: '$50.3B', label: 'Market by 2030' },
-            { val: '440K+', label: 'Target ICP' },
+            { val: '9', label: 'Deployed Agents', color: 'var(--cyan)' },
+            { val: '$1M', label: 'Pre-Seed SAFE', color: 'var(--gold)' },
+            { val: '$10M', label: 'Post-Money Cap', color: 'var(--text-1)' },
           ].map((m, idx) => (
             <div key={idx} style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', color: idx === 0 ? 'var(--cyan)' : idx === 1 ? 'var(--gold)' : 'var(--text-1)' }}>{m.val}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', color: m.color }}>{m.val}</div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.25rem' }}>{m.label}</div>
             </div>
           ))}
@@ -53,7 +53,7 @@ export default function TitleSlide() {
 
         <motion.div variants={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.08em' }}>
-            $1M PRE-SEED SAFE · $10M POST-MONEY CAP · APRIL 2026
+            PRE-REVENUE · NOT PRE-PRODUCT · APRIL 2026
           </span>
         </motion.div>
 

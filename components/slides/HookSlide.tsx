@@ -13,15 +13,15 @@ export default function HookSlide() {
           The Hook — What Sells the Platform
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           An AI sales team that makes phone calls.{' '}
           <span className="c-cyan">That's what gets them in the door.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.5rem' }}>
           Every customer gets all 9 agents from day one. But the capability that sells the platform
-          is Sam — a voice-native AI sales force that orchestrates SDR workers with ElevenLabs
-          voice synthesis and real telephony through NextGenSwitch PBX.
+          is Sam — a voice-native AI sales force that orchestrates SDR workers with real voice
+          synthesis and real telephony.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem', marginBottom: '1.5rem' }}>
@@ -29,7 +29,7 @@ export default function HookSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.6rem' }}>What the customer sees</div>
             <div className="t-body-sm">
               An AI sales team that books meetings, qualifies leads, and manages pipeline — with
-              measurable ROI from week one. 
+              measurable ROI from week one.
             </div>
           </div>
           <div style={{ padding: '1.25rem 1.4rem', background: 'rgba(232,201,106,0.05)', border: '1px solid rgba(232,201,106,0.18)', borderRadius: 'var(--radius-lg)' }}>
@@ -59,9 +59,6 @@ export default function HookSlide() {
             </div>
           ))}
         </motion.div>
-
-        <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-3)', marginTop: '1rem', fontStyle: 'italic' }}>
-        </motion.p>
 
       </motion.div>
     </div>

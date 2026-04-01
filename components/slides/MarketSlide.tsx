@@ -19,7 +19,7 @@ export default function MarketSlide() {
           The Market
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
           A $50 billion market.{' '}
           <span className="c-cyan">And nobody is building for SMBs.</span>
         </motion.h2>
@@ -57,8 +57,8 @@ export default function MarketSlide() {
         }}>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-2)' }}>
             <span style={{ color: 'var(--cyan)', fontWeight: 600 }}>Beachhead:</span> Insurance agencies and financial services firms.
-            440,000+ insurance agencies in the US (IBISWorld, 2025). Founder spent 10 years in institutional finance —
-            selling into the exact industry he knows best.
+            440,000+ insurance agencies in the US (IBISWorld, 2025). $5K blended ACV assumes a Pro-weighted mix
+            ($3K-$12K/yr range). Founder spent 10 years in institutional finance — selling into the exact industry he knows best.
           </div>
         </motion.div>
 

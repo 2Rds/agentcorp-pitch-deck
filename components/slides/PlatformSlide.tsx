@@ -25,7 +25,7 @@ export default function PlatformSlide() {
           The Platform
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.5rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.5rem' }}>
           9 department heads.{' '}
           <span className="c-cyan">All live. All deployed.</span>
         </motion.h2>

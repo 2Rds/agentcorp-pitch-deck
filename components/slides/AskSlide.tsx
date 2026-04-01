@@ -12,7 +12,7 @@ const useOfFunds = [
 ];
 
 const milestones = [
-  '20-30 paying customers (5-8 with wgite-glove)',
+  '20-30 paying customers (5-8 with white-glove)',
   '$300K-$500K ARR (platform + overage)',
   'Seed round at $20-$30M post-money',
   'Net revenue retention >120%',
@@ -28,7 +28,7 @@ export default function AskSlide() {
           The Ask
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.4rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.4rem' }}>
           $1M to launch the go-to-market.{' '}
           <span className="c-cyan">The product is already built.</span>
         </motion.h2>

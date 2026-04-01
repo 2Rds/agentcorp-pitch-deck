@@ -4,18 +4,18 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const metrics = [
-  { value: '9', label: 'Agents deployed on DigitalOcean', color: 'var(--cyan)' },
+  { value: '9', label: 'Agents live in production', color: 'var(--cyan)' },
   { value: '3', label: 'Stripe tiers with billing live', color: 'var(--gold)' },
-  { value: 'Day 0', label: 'Dogfooding — runs on itself', color: '#8b9cf7' },
+  { value: 'Day 0', label: 'Dogfooding — AgentCorp runs on AgentCorp', color: '#8b9cf7' },
 ];
 
-const traction = [
-  { item: 'Stripe billing', detail: '3 tiers live — Pro $250, Growth $1K, Scale $2.5K + credit metering + webhooks' },
-  { item: 'Telegram Mini App', detail: '@AgentCorpBot — full agent workspace inside Telegram' },
-  { item: 'Voice sales engine', detail: 'sales.agentcorp.work — ElevenLabs + Telnyx + NextGenSwitch PBX' },
-  { item: 'Inter-agent comms', detail: 'MessageBus with Redis Streams, namespace isolation, peer-to-peer delegation' },
-  { item: 'Governance engine', detail: 'Per-agent spend limits, approval flows, atomic budget enforcement' },
-  { item: 'Customer zero', detail: 'AgentCorp runs on AgentCorp — proving the thesis daily' },
+const shipped = [
+  { item: 'Full billing stack', detail: 'Stripe integration — 3 tiers, credit metering, overage tracking, webhooks' },
+  { item: 'Telegram Mini App', detail: '@AgentCorpBot — full agent workspace, live on Telegram' },
+  { item: 'Voice sales engine', detail: 'ElevenLabs + Telnyx telephony — real calls, real pipeline' },
+  { item: 'Inter-agent comms', detail: 'MessageBus — agents delegate, coordinate, and share context' },
+  { item: 'Governance engine', detail: 'Per-agent spend limits, approval flows, budget enforcement' },
+  { item: 'Web dashboard', detail: 'React 18 admin interface with full agent management' },
 ];
 
 export default function TractionSlide() {
@@ -28,7 +28,7 @@ export default function TractionSlide() {
           Traction
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
           Pre-revenue.{' '}
           <span className="c-cyan">Not pre-product.</span>
         </motion.h2>
@@ -46,9 +46,9 @@ export default function TractionSlide() {
           ))}
         </motion.div>
 
-        {/* Traction list */}
-        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-          {traction.map((t, idx) => (
+        {/* What's shipped */}
+        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', marginBottom: '1rem' }}>
+          {shipped.map((t, idx) => (
             <div key={idx} style={{
               display: 'grid', gridTemplateColumns: '160px 1fr', gap: '1rem', alignItems: 'center',
               padding: '0.6rem 1rem',
@@ -59,6 +59,17 @@ export default function TractionSlide() {
               <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-3)' }}>{t.detail}</div>
             </div>
           ))}
+        </motion.div>
+
+        <motion.div variants={i} style={{
+          padding: '0.85rem 1.2rem',
+          background: 'rgba(232,201,106,0.04)',
+          border: '1px solid rgba(232,201,106,0.15)',
+          borderRadius: 'var(--radius-lg)',
+        }}>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-2)' }}>
+            <span style={{ fontWeight: 600, color: 'var(--gold)' }}>GTM launch:</span> All 3 tiers + white-glove + 5,000 free credits available from day 1 post-raise. Founder-led sales into insurance and financial services — selling into the exact industry he spent a decade in.
+          </div>
         </motion.div>
 
       </motion.div>

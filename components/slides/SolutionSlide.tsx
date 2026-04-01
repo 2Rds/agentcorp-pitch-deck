@@ -13,7 +13,7 @@ const layers = [
   {
     tag: 'The Nervous System',
     title: 'Inter-agent communication',
-    body: 'Agents don\'t operate in silos. A peer-to-peer MessageBus lets them delegate tasks, share context, and coordinate — like a real executive team. ',
+    body: 'Agents delegate tasks, share context, and coordinate through a peer-to-peer MessageBus — operating like a real executive team, not isolated chatbots.',
     accent: 'rgba(232,201,106,0.05)', border: 'rgba(232,201,106,0.18)', color: 'var(--gold)',
   },
   {
@@ -40,7 +40,7 @@ export default function SolutionSlide() {
           The Solution
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           Not 9 chatbots. A{' '}
           <span className="c-cyan">full-stack agentic operating system</span>{' '}
           that runs your company.

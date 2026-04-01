@@ -4,9 +4,9 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const signals = [
-  { stat: '350,000+', label: 'GitHub stars across multi-agent projects', sub: 'CrewAI, OpenClaw, AutoGen, LangGraph', color: 'var(--cyan)' },
+  { stat: '350,000+', label: 'GitHub stars across multi-agent projects', sub: 'CrewAI, OpenClaw, AutoGen, LangGraph — the ecosystem is validating multi-agent', color: 'var(--cyan)' },
   { stat: '$50.3B', label: 'AI agent market projected by 2030 — 45.8% CAGR', sub: '— Grand View Research, May 2025', color: 'var(--gold)' },
-  { stat: '1B+', label: 'Telegram monthly active users — native distribution channel', sub: 'Mini Apps enable full workspaces with no app store', color: 'var(--text-1)' },
+  { stat: '1B+', label: 'Telegram monthly active users — native distribution channel', sub: 'Mini Apps enable full workspaces with no app store friction', color: 'var(--text-1)' },
 ];
 
 export default function ThesisSlide() {
@@ -19,16 +19,15 @@ export default function ThesisSlide() {
           Why Now
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
-          Three things converged in the last 6 months.{' '}
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
+          Three things converged in the last 12 months.{' '}
           <span className="c-cyan">This window won't stay open.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.4rem' }}>
-          Multi-model orchestration became viable (Claude Opus 4.6, Gemini 3 Flash, Grok 4.1 Fast).
-          The developer ecosystem validated multi-agent as the next infrastructure layer.
-          And Telegram opened a native distribution channel to 1 billion+ users. None of this was
-          possible 12 months ago.
+          Multi-model orchestration became viable. The developer ecosystem validated multi-agent
+          as the next infrastructure layer. And Telegram opened a native distribution channel to
+          1 billion+ users via Mini Apps. None of this was possible two years ago.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>

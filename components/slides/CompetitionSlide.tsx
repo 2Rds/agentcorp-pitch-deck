@@ -8,10 +8,11 @@ const features = [
   { name: 'Pre-built workforce',    ac: true,  ema: true,  motion: true,  beam: true,  oss: 'Varies' },
   { name: 'Peer-to-peer agent comms', ac: true, ema: false, motion: false, beam: false, oss: false },
   { name: 'Voice-native sales',     ac: true,  ema: false, motion: false, beam: false, oss: false },
-  { name: 'Wgite-glove service',    ac: true,  ema: false, motion: false, beam: false, oss: false },
+  { name: 'White-glove service',    ac: true,  ema: false, motion: false, beam: false, oss: false },
   { name: 'Telegram distribution',  ac: true,  ema: false, motion: false, beam: false, oss: false },
   { name: 'Governance + spend ctrl', ac: true, ema: true,  motion: 'Basic', beam: true, oss: false },
-  { name: 'Funded \{ name: 'SMB self-serve',         ac: '$250', ema: false, motion: '$29', beam: '$990', oss: 'Free' }, scaled', ac: 'Pre-seed', ema: '$61M', motion: '$75M', beam: '$1.4M', oss: 'N/A' },
+  { name: 'Funded & scaled',        ac: 'Pre-seed', ema: '$61M', motion: '$75M', beam: '$1.4M', oss: 'N/A' },
+  { name: 'Paying customers',       ac: 'Pre-rev', ema: '10K+', motion: '10K+', beam: 'Early', oss: 'N/A' },
 ];
 
 const renderVal = (v: boolean | string, isAC = false) => {
@@ -30,7 +31,7 @@ export default function CompetitionSlide() {
           Competitive Landscape
         </motion.span>
 
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
           Enterprises get Ema. Developers get frameworks.{' '}
           <span className="c-cyan">SMBs get nothing.</span>
         </motion.h2>
@@ -38,7 +39,7 @@ export default function CompetitionSlide() {
         <motion.div variants={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-hi)' }}>
           {/* Header */}
           <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr 1fr 1fr', background: 'rgba(255,255,255,0.04)', padding: '0.6rem 0.9rem' }}>
-            {['', 'AgentCorp', 'Ema ($61M)', 'Motion ($550M)', 'Beam AI', 'Open-Source'].map((h, idx) => (
+            {['', 'AgentCorp', 'Ema', 'Motion', 'Beam AI', 'Open-Source'].map((h, idx) => (
               <div key={idx} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: idx === 1 ? 'var(--cyan)' : 'var(--text-4)', fontWeight: idx === 1 ? 600 : 400, textAlign: idx === 0 ? 'left' : 'center' }}>{h}</div>
             ))}
           </div>
@@ -56,8 +57,8 @@ export default function CompetitionSlide() {
         </motion.div>
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-3)', marginTop: '1rem', maxWidth: 700 }}>
-          350,000+ GitHub stars prove demand. Nobody has built the managed workforce with governance,
-          billing, and a wgite-glove service model for SMBs.
+          We're earlier and smaller than funded competitors. Our bet: the managed workforce with governance,
+          billing, voice sales, and white-glove service for SMBs is a market nobody is building for.
         </motion.p>
 
       </motion.div>
