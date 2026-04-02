@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.08 } } };
 const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const stack = [
-  { layer: 'Distribution', items: ['Telegram Mini App (1B+ MAU)', 'Web Dashboard (React 18)', 'Slack Integration'], color: 'var(--cyan)' },
-  { layer: 'Agent Layer', items: ['9 Agents × Custom Runtime', 'Scoped Tools + Memory', '160+ Tools & Plugins'], color: 'var(--gold)' },
-  { layer: 'Communication', items: ['MessageBus (Redis Streams)', 'Namespace Isolation', 'Peer-to-Peer Delegation'], color: '#8b9cf7' },
-  { layer: 'Intelligence', items: ['Cloudflare AI Gateway', 'Semantic Cache (Cohere)', 'Multi-Model Routing'], color: '#34d399' },
-  { layer: 'Governance', items: ['Per-Agent Spend Limits', 'C-Suite Approval Flows', 'Atomic Budget Enforcement'], color: '#f472b6' },
-  { layer: 'Infrastructure', items: ['DigitalOcean App Platform', 'Supabase + Redis', 'Stripe Billing + Webhooks'], color: 'var(--text-2)' },
+const layers = [
+  { name: 'Interface Layer', tech: 'Telegram Bot API · Web Dashboard · Mobile-responsive', color: 'var(--cyan)' },
+  { name: 'Agent Orchestration', tech: 'Custom Runtime · Inter-agent messaging · Task delegation · Escalation engine', color: 'var(--gold)' },
+  { name: 'Model Layer', tech: 'Claude (reasoning) · Gemini (analysis) · Grok (speed) · ElevenLabs (voice)', color: '#8b9cf7' },
+  { name: 'Infrastructure', tech: 'Stripe Billing · NextGenSwitch PBX · Redis State · PostgreSQL · Credit Metering', color: 'var(--text-3)' },
 ];
 
 export default function HowItWorksSlide() {
@@ -17,39 +15,34 @@ export default function HowItWorksSlide() {
     <div className="slide-shell">
       <div className="glow-bl" />
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
-
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-          Arcgitecture
-        </motion.span>
-
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.5rem' }}>
-          Six layers. All live.{' '}
-          <span className="c-cyan">Nothing here is roadmap.</span>
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Architecture</motion.span>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
+          Multi-model. Multi-agent.{' '}<span className="c-cyan">One managed workforce.</span>
         </motion.h2>
-
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '1.25rem' }}>
-          Every layer is deployed and operational. This is not a prototype.
-        </motion.p>
-
-        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          {stack.map((s, idx) => (
-            <div key={idx} style={{
-              display: 'grid', gridTemplateColumns: '140px 1fr', gap: '1rem', alignItems: 'center',
-              padding: '0.7rem 1rem',
-              background: 'var(--surface)',
-              border: '1px solid var(--border-hi)',
-              borderRadius: 'var(--radius-lg)',
-            }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: s.color, fontWeight: 500 }}>{s.layer}</div>
-              <div style={{ display: 'flex', gap: '1.5rem' }}>
-                {s.items.map((item, j) => (
-                  <div key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)' }}>{item}</div>
-                ))}
-              </div>
+        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
+          {layers.map((l, idx) => (
+            <div key={idx} style={{ padding: '0.85rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: l.color, minWidth: 160 }}>{l.name}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)' }}>{l.tech}</div>
             </div>
           ))}
         </motion.div>
-
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.65rem', marginBottom: '1rem' }}>
+          {[
+            { val: '3', label: 'LLM Providers', note: 'No single-vendor risk' },
+            { val: '9', label: 'Specialized Agents', note: 'Full C-suite coverage' },
+            { val: '∞', label: 'SDR Clones', note: 'Sam scales horizontally' },
+          ].map((m, idx) => (
+            <div key={idx} style={{ padding: '0.85rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem', color: 'var(--cyan)' }}>{m.val}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.15rem' }}>{m.label}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', color: 'var(--text-4)' }}>{m.note}</div>
+            </div>
+          ))}
+        </motion.div>
+        <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 700 }}>
+          Each agent selects the optimal model per task. Voice synthesis via ElevenLabs enables real phone conversations. The entire stack is model-agnostic by design.
+        </motion.p>
       </motion.div>
     </div>
   );

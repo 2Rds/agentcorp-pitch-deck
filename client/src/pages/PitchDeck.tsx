@@ -5,15 +5,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import TitleSlide from '@/components/slides/TitleSlide';
 import ProblemSlide from '@/components/slides/ProblemSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
-import ThesisSlide from '@/components/slides/ThesisSlide';
-import PlatformSlide from '@/components/slides/PlatformSlide';
 import HookSlide from '@/components/slides/HookSlide';
+import PlatformSlide from '@/components/slides/PlatformSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
 import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
+import MarketSlide from '@/components/slides/MarketSlide';
 import TractionSlide from '@/components/slides/TractionSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
-import MarketSlide from '@/components/slides/MarketSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
+import ThesisSlide from '@/components/slides/ThesisSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
 const TOTAL_SLIDES = 13;
@@ -28,15 +28,15 @@ const slides = [
   { component: <TitleSlide key="title" />,             label: 'AgentCorp' },
   { component: <ProblemSlide key="problem" />,          label: 'Problem' },
   { component: <SolutionSlide key="solution" />,        label: 'Solution' },
-  { component: <ThesisSlide key="thesis" />,            label: 'Wgy Now' },
+  { component: <HookSlide key="hook" />,                label: 'The Asymmetry' },
   { component: <PlatformSlide key="platform" />,        label: 'Platform' },
-  { component: <HookSlide key="hook" />,                label: 'The Hook' },
-  { component: <HowItWorksSlide key="how" />,           label: 'Arcgitecture' },
+  { component: <HowItWorksSlide key="how" />,           label: 'Architecture' },
   { component: <BusinessModelSlide key="model" />,      label: 'Business Model' },
+  { component: <MarketSlide key="market" />,            label: 'Market' },
   { component: <TractionSlide key="traction" />,        label: 'Traction' },
   { component: <CompetitionSlide key="competition" />,  label: 'Competition' },
-  { component: <MarketSlide key="market" />,            label: 'Market' },
   { component: <TeamSlide key="team" />,                label: 'Team' },
+  { component: <ThesisSlide key="thesis" />,            label: 'Why Now' },
   { component: <AskSlide key="ask" />,                  label: 'The Ask' },
 ];
 

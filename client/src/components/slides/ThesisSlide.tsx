@@ -1,54 +1,37 @@
 import { motion } from 'framer-motion';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } } };
-const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
-
-const signals = [
-  { stat: '350,000+', label: 'GitHub stars across multi-agent projects', sub: 'CrewAI, OpenClaw, AutoGen, LangGraph', color: 'var(--cyan)' },
-  { stat: '$50.3B', label: 'AI agent market projected by 2030 — 45.8% CAGR', sub: '— Grand View Research, May 2025', color: 'var(--gold)' },
-  { stat: '1B+', label: 'Telegram monthly active users — native distribution channel', sub: 'Mini Apps enable full workspaces with no app store', color: 'var(--text-1)' },
-];
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.08 } } };
+const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
 export default function ThesisSlide() {
   return (
     <div className="slide-shell">
-      <div className="glow-tr" />
+      <div className="glow-bl" />
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
-
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-          Why Now
-        </motion.span>
-
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '0.9rem' }}>
-          Three things converged in the last 6 months.{' '}
-          <span className="c-cyan">This window won't stay open.</span>
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Why Now</motion.span>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
+          Three things just became possible{' '}<span className="c-cyan">at the same time.</span>
         </motion.h2>
-
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 720, marginBottom: '1.4rem' }}>
-          Multi-model orchestration became viable (Claude Opus 4.6, Gemini 3 Flash, Grok 4.1 Fast).
-          The developer ecosystem validated multi-agent as the next infrastructure layer.
-          And Telegram opened a native distribution channel to 1 billion+ users. None of this was
-          possible 12 months ago.
-        </motion.p>
-
-        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-          {signals.map((s, idx) => (
-            <div key={idx} style={{
-              display: 'flex', alignItems: 'center', gap: '1.5rem',
-              padding: '1rem 1.3rem',
-              background: 'var(--surface)',
-              border: '1px solid var(--border-hi)',
-              borderRadius: 'var(--radius-lg)',
-            }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.3rem, 2.2vw, 1.8rem)', color: s.color, flexShrink: 0, minWidth: 120, textAlign: 'right' }}>{s.stat}</div>
-              <div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--text-2)', marginBottom: '0.15rem' }}>{s.label}</div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.06em' }}>{s.sub}</div>
-              </div>
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.5rem' }}>
+          {[
+            { title: 'Voice AI Crossed the Threshold', desc: 'ElevenLabs and other voice synthesis platforms reached quality where AI phone calls are indistinguishable from human calls. This wasn\'t possible 18 months ago. Sam\'s SDR capability is a direct result.', icon: '🎙️', color: 'var(--cyan)' },
+            { title: 'Multi-Model Convergence', desc: 'Claude, Gemini, and Grok each excel at different tasks. For the first time, a platform can assign the optimal model to each agent — reasoning, speed, analysis — without vendor lock-in. Model costs are falling 10× per year.', icon: '🧠', color: 'var(--gold)' },
+            { title: '102M Americans Are Waiting', desc: 'Half of Americans are uninsured or underinsured and know it. The constraint was never demand — it was distribution bandwidth. AI SDR clones remove the constraint for the first time in the history of life insurance sales.', icon: '📊', color: '#8b9cf7' },
+          ].map((t, idx) => (
+            <div key={idx} style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+              <div style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t.icon}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: t.color, marginBottom: '0.4rem' }}>{t.title}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.5 }}>{t.desc}</div>
             </div>
           ))}
         </motion.div>
-
+        <motion.div variants={i} style={{ padding: '1rem 1.5rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.12)' }}>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', lineHeight: 1.6, fontWeight: 500 }}>
+            Life insurance distribution hasn't changed in 50 years. An agent picks up the phone, dials, pitches,
+            follows up, tracks paperwork, manages compliance — all manually. AgentCorp is the first platform that
+            replaces the entire operational layer while amplifying the one thing that can't be automated: the close.
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );

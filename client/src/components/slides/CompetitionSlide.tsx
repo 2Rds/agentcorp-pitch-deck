@@ -1,66 +1,62 @@
 import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } } };
-const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.08 } } };
+const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const features = [
-  { name: 'Pre-built workforce',    ac: true,  ema: true,  motion: true,  beam: true,  oss: 'Varies' },
-  { name: 'Peer-to-peer agent comms', ac: true, ema: false, motion: false, beam: false, oss: false },
-  { name: 'Voice-native sales',     ac: true,  ema: false, motion: false, beam: false, oss: false },
-  { name: 'White-glove service',    ac: true,  ema: false, motion: false, beam: false, oss: false },
-  { name: 'Telegram distribution',  ac: true,  ema: false, motion: false, beam: false, oss: false },
-  { name: 'Governance + spend ctrl', ac: true, ema: true,  motion: 'Basic', beam: true, oss: false },
-  { name: 'Funded & scaled',        ac: 'Pre-seed', ema: '$61M', motion: '$75M', beam: '$1.4M', oss: 'N/A' },
-  { name: 'Paying customers',       ac: 'Pre-rev', ema: '10K+', motion: '10K+', beam: 'Early', oss: 'N/A' },
+const competitors = [
+  { name: 'AI SDR Tools', examples: 'Orum, Dialpad, Kixie', coverage: ['✓','✗','✗','✗','✗'], note: 'Dialer only. No back-office.' },
+  { name: 'Insurance CRMs', examples: 'AgencyBloc, Hawksoft', coverage: ['✗','✗','△','✗','✗'], note: 'Passive record-keeping. No AI agents.' },
+  { name: 'Horizontal AI', examples: 'Motion ($550M), Ema ($61M)', coverage: ['✗','✗','✗','△','✗'], note: 'Generic. No insurance domain expertise.' },
+  { name: 'Back-Office AI', examples: 'Beam AI ($1.4M)', coverage: ['✗','✗','✗','△','✗'], note: 'Task automation. No sales engine.' },
+  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full workforce. Built by the industry.' },
 ];
-
-const renderVal = (v: boolean | string, isAC = false) => {
-  if (v === true) return <Check style={{ width: 16, height: 16, color: isAC ? 'var(--cyan)' : '#4ade80' }} />;
-  if (v === false) return <X style={{ width: 16, height: 16, color: 'rgba(239,68,68,0.4)' }} />;
-  return <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: isAC ? 'var(--cyan)' : 'var(--text-3)' }}>{v}</span>;
-};
+const cols = ['AI SDR', 'Compliance', 'Finance/Ops', 'Multi-Agent', 'Insurance-Native'];
 
 export default function CompetitionSlide() {
   return (
     <div className="slide-shell">
       <div className="glow-bl" />
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
-
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>
-          Competitive Landscape
-        </motion.span>
-
-        <motion.h2 variants={i} className="t-title c-wgite" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
-          Enterprises get Ema. Developers get frameworks.{' '}
-          <span className="c-cyan">SMBs get nothing.</span>
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Competition</motion.span>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
+          Everyone does one thing.{' '}<span className="c-cyan">Nobody does everything.</span>
         </motion.h2>
-
-        <motion.div variants={i} style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-hi)' }}>
-          {/* Header */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr 1fr 1fr', background: 'rgba(255,255,255,0.04)', padding: '0.6rem 0.9rem' }}>
-            {['', 'AgentCorp', 'Ema ($61M)', 'Motion ($550M)', 'Beam AI', 'Open-Source'].map((h, idx) => (
-              <div key={idx} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: idx === 1 ? 'var(--cyan)' : 'var(--text-4)', fontWeight: idx === 1 ? 600 : 400, textAlign: idx === 0 ? 'left' : 'center' }}>{h}</div>
-            ))}
-          </div>
-          {/* Rows */}
-          {features.map((f, idx) => (
-            <div key={idx} style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr 1fr 1fr', padding: '0.55rem 0.9rem', background: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)', borderTop: '1px solid var(--border)' }}>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)' }}>{f.name}</div>
-              <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>{renderVal(f.ac, true)}</div>
-              <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>{renderVal(f.ema)}</div>
-              <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>{renderVal(f.motion)}</div>
-              <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>{renderVal(f.beam)}</div>
-              <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}>{renderVal(f.oss)}</div>
-            </div>
-          ))}
+        <motion.div variants={i} style={{ marginBottom: '1rem' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead><tr>
+              <th style={{ textAlign: 'left', padding: '0.5rem 0.75rem', fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--text-4)', borderBottom: '1px solid var(--border-hi)' }}></th>
+              {cols.map((col, idx) => (<th key={idx} style={{ textAlign: 'center', padding: '0.5rem 0.4rem', fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.06em', color: 'var(--text-4)', borderBottom: '1px solid var(--border-hi)' }}>{col}</th>))}
+              <th style={{ textAlign: 'left', padding: '0.5rem 0.75rem', fontFamily: 'var(--font-mono)', fontSize: '0.5rem', color: 'var(--text-4)', borderBottom: '1px solid var(--border-hi)' }}>Gap</th>
+            </tr></thead>
+            <tbody>
+              {competitors.map((comp, idx) => {
+                const isUs = idx === competitors.length - 1;
+                return (
+                  <tr key={idx} style={{ background: isUs ? 'rgba(0,229,255,0.06)' : 'transparent' }}>
+                    <td style={{ padding: '0.6rem 0.75rem', borderBottom: '1px solid var(--border-hi)' }}>
+                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: isUs ? 800 : 600, fontSize: '0.78rem', color: isUs ? 'var(--cyan)' : 'var(--text-1)' }}>{comp.name}</div>
+                      {comp.examples && <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-4)' }}>{comp.examples}</div>}
+                    </td>
+                    {comp.coverage.map((v, cidx) => (
+                      <td key={cidx} style={{ textAlign: 'center', padding: '0.6rem 0.4rem', borderBottom: '1px solid var(--border-hi)', fontSize: '0.85rem', color: v === '✓' ? (isUs ? 'var(--cyan)' : '#4ade80') : v === '✗' ? '#ef4444' : 'var(--gold)' }}>{v}</td>
+                    ))}
+                    <td style={{ padding: '0.6rem 0.75rem', borderBottom: '1px solid var(--border-hi)', fontFamily: 'var(--font-body)', fontSize: '0.68rem', color: isUs ? 'var(--cyan)' : 'var(--text-4)', fontStyle: isUs ? 'normal' : 'italic' }}>{comp.note}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </motion.div>
-
-        <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-3)', marginTop: '1rem', maxWidth: 700 }}>
-          350,000+ GitHub stars prove demand. Nobody has built the managed workforce with governance,
-          billing, and a wgite-glove service model for SMBs.
-        </motion.p>
-
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+          <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>HONEST ASSESSMENT</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>Competitors like Motion and Ema are funded and scaled. They have paying customers. We don't yet. Our edge is vertical specificity and founder-market fit.</div>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>DEFENSIBILITY</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>A competitor must replicate 9 specialized agents, credit metering, voice SDR, multi-model runtime, Telegram interface, AND insurance domain knowledge. That's a full product, not a feature.</div>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );
