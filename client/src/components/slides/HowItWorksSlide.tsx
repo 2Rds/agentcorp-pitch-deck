@@ -40,3 +40,36 @@ export default function HowItWorksSlide() {
               pitch delivery, appointment setting — all flowing seamlessly through NextGenSwitch PBX.
             </div>
           </div>
+          <div style={{ padding: '1rem', background: 'rgba(232,201,106,0.04)', border: '1px solid rgba(232,201,106,0.15)', borderRadius: 'var(--radius-lg)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.4rem' }}>🧠 COGNITIVE RUNTIME</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>Between calls</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
+              Agents seamlessly shift to learning mode — processing outcomes, extracting patterns, refining
+              strategies. Knowledge compounds across all clones via shared intelligence layer.
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', marginBottom: '0.75rem' }}>
+          {[
+            { val: '3', label: 'LLM Providers', note: 'No single-vendor risk' },
+            { val: '9', label: 'Specialized Agents', note: 'Full C-suite + SDR fleet' },
+            { val: '∞', label: 'SDR Clones', note: 'Each one smarter than the last' },
+          ].map((m, idx) => (
+            <div key={idx} style={{ padding: '0.75rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.4rem', color: 'var(--cyan)' }}>{m.val}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.1rem' }}>{m.label}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-4)' }}>{m.note}</div>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)', maxWidth: 700 }}>
+          Clone #47 learns an objection pattern at 2pm. Clone #3 has that knowledge at 2:01pm.
+          The entire sales force compounds intelligence at every touchpoint.
+        </motion.p>
+      </motion.div>
+    </div>
+  );
+}
