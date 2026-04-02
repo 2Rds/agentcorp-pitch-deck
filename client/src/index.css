@@ -1,4 +1,4 @@
-/* BlockDrive Pitch Deck - Standalone CSS with Tailwind-style utilities */
+/* AgentCorp Pitch Deck - Standalone CSS with Tailwind-style utilities */
 /* Uses Tailwind Play CDN for utility classes */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
@@ -21,7 +21,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* BlockDrive Dark Theme */
+  /* AgentCorp Dark Theme */
   --background: #0a0a12;
   --foreground: #f5f5f7;
   --card: #16161f;
@@ -549,7 +549,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ============================================
-   CUSTOM COMPONENTS (BlockDrive specific)
+   CUSTOM COMPONENTS (AgentCorp specific)
    ============================================ */
 
 .container {
@@ -666,7 +666,7 @@ img, svg { display: block; max-width: 100%; }
 
 
 /* ============================================
-   BLOCKDRIVE NEW DESIGN SYSTEM
+   AGENTCORP NEW DESIGN SYSTEM
    Syne + DM Sans + JetBrains Mono
    ============================================ */
 
