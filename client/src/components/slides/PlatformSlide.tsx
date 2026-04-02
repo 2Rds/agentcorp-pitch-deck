@@ -14,40 +14,69 @@ export default function PlatformSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          Inter-agent communication.{' '}
-          <span className="c-cyan">Governance controls. One interface.</span>
+          Dual-runtime architecture.{' '}
+          <span className="c-cyan">Every call makes every agent smarter.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 700, marginBottom: '1.25rem' }}>
-          Agents don't operate in silos — they communicate, delegate, and escalate across a shared
-          runtime. Sam books a meeting → Jordan schedules it → Parker flags compliance requirements →
-          Riley models the premium. All through Telegram or web.
-        </motion.p>
+        {/* Dual Runtime Hero */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <div style={{
+            padding: '1rem 1.25rem', background: 'rgba(0,229,255,0.05)',
+            border: '1px solid rgba(0,229,255,0.2)', borderRadius: 'var(--radius-lg)',
+          }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>CONVERSATIONAL RUNTIME</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.3rem' }}>Active During Sales</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
+              Real-time voice dialogue via NextGenSwitch PBX. Objection handling, appointment setting,
+              CRM updates — all live. Each SDR clone operates independently at full conversational capacity.
+            </div>
+          </div>
+          <div style={{
+            padding: '1rem 1.25rem', background: 'rgba(232,201,106,0.04)',
+            border: '1px solid rgba(232,201,106,0.15)', borderRadius: 'var(--radius-lg)',
+          }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--gold)', marginBottom: '0.5rem' }}>COGNITIVE RUNTIME</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.3rem' }}>Continuous Learning</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
+              After each touchpoint, agents seamlessly shift to the cognitive runtime — processing outcomes,
+              extracting patterns, updating what works. Learning never stops between calls.
+            </div>
+          </div>
+        </motion.div>
 
-        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.65rem', marginBottom: '1rem' }}>
+        {/* Shared Knowledge Compound */}
+        <motion.div variants={i} style={{
+          padding: '0.85rem 1.25rem', marginBottom: '0.75rem',
+          background: 'rgba(139,156,247,0.04)', border: '1px solid rgba(139,156,247,0.15)',
+          borderRadius: 'var(--radius-lg)',
+        }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: '#8b9cf7', marginBottom: '0.4rem' }}>COMPOUNDING KNOWLEDGE BASE</div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.55 }}>
+            Agents don't just learn individually — they share an aggregated knowledge base that compounds
+            with every touchpoint. Clone #47 learns an objection pattern at 2pm → Clone #3 has that knowledge
+            at 2:01pm. More agents = faster learning. More calls = smarter calls. The intelligence flywheel
+            compounds alongside the revenue flywheel.
+          </div>
+        </motion.div>
+
+        {/* Feature grid - condensed */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
           {[
-            { title: 'Multi-Model Runtime', desc: 'Claude, Gemini, and Grok — each agent uses the optimal model for its task. No vendor lock-in.', icon: '🧠' },
-            { title: 'Telegram-Native + Web', desc: 'Deployed where agents already work. No app downloads. Instant onboarding. Mobile-first.', icon: '💬' },
-            { title: 'Inter-Agent Mesh', desc: 'Agents communicate, hand off tasks, and escalate — mimicking how a real corporate team operates.', icon: '🔗' },
-            { title: 'Voice Sales Engine', desc: 'Sam makes real phone calls via NextGenSwitch PBX with AI voice synthesis. Not chatbot scripts — real conversations.', icon: '📞' },
-            { title: 'Governance Layer', desc: 'Role-based access, audit trails, escalation policies. Enterprise-grade controls from day one.', icon: '🛡️' },
-            { title: 'Credit Metering', desc: 'Every action is metered, tracked, and billed. Full visibility into consumption and ROI per agent.', icon: '📊' },
+            { title: 'Multi-Model', desc: 'Claude, Gemini, Grok — optimal model per task', icon: '🧠' },
+            { title: 'Telegram + Web', desc: 'No app downloads. Instant onboarding. Mobile-first.', icon: '💬' },
+            { title: 'Inter-Agent Mesh', desc: 'Agents delegate, escalate, and hand off tasks.', icon: '🔗' },
+            { title: 'Governance + Metering', desc: 'Audit trails, access controls, per-action billing.', icon: '🛡️' },
           ].map((f, idx) => (
             <div key={idx} style={{
-              padding: '0.9rem 1rem', background: 'var(--surface)',
+              padding: '0.7rem 0.75rem', background: 'var(--surface)',
               border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)',
             }}>
-              <div style={{ fontSize: '1.1rem', marginBottom: '0.35rem' }}>{f.icon}</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>{f.title}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.4 }}>{f.desc}</div>
+              <div style={{ fontSize: '0.9rem', marginBottom: '0.25rem' }}>{f.icon}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.72rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>{f.title}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'var(--text-4)', lineHeight: 1.35 }}>{f.desc}</div>
             </div>
           ))}
         </motion.div>
-
-        <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 700 }}>
-          Stripe billing infrastructure live. Three tiers with credit-based metering.
-          5,000 free credits at signup (card required) for immediate time-to-value.
-        </motion.p>
 
       </motion.div>
     </div>
