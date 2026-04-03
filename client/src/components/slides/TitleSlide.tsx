@@ -33,13 +33,13 @@ export default function TitleSlide() {
           <span className="c-cyan">for life insurance.</span>
         </motion.h2>
 
-        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2rem' }}>
-          9 AI agents that turn a solo life insurance agent into a full-scale operation —
-          unlimited AI SDR clones for pipeline generation, plus a complete back office
-          for compliance, finance, marketing, and client management.
+        <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
+          9 AI agents — led by an infinitely scalable AI sales workforce — that give life insurance
+          agencies the operational capacity of a full-scale firm. Compliance, finance, marketing,
+          case management, and pipeline generation. All deployed on Telegram and web.
         </motion.p>
 
-        <motion.div variants={i} style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2rem' }}>
+        <motion.div variants={i} style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
           {[
             { val: '$1.34T', label: 'US Life Insurance Market' },
             { val: '900K+', label: 'Licensed Agents' },
@@ -52,24 +52,9 @@ export default function TitleSlide() {
           ))}
         </motion.div>
 
-        <motion.div variants={i} style={{
-          padding: '0.75rem 1.25rem', borderRadius: 'var(--radius-lg)',
-          background: 'var(--surface)', border: '1px solid var(--border-hi)',
-          marginBottom: '1.5rem', maxWidth: 720,
-        }}>
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.55, fontStyle: 'italic' }}>
-            "I spent a year closing a $500K+ annual premium, four-policy case — single-handedly.
-            Won Prudential's Diamond Elephant Award for it. Three months later, I left production to build the platform
-            that would have compressed every part of that year except the close."
-          </div>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--cyan)', marginTop: '0.4rem', letterSpacing: '0.06em' }}>
-            — SEAN WEISS, FOUNDER & CEO
-          </div>
-        </motion.div>
-
         <motion.div variants={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-4)', letterSpacing: '0.08em' }}>
-            $2M SEED SAFE · $12M POST-MONEY CAP · 2026
+            $1M PRE-SEED SAFE · $10M POST-MONEY CAP · 2026
           </span>
         </motion.div>
 

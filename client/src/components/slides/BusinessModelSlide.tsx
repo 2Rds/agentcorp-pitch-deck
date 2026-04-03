@@ -44,9 +44,9 @@ export default function BusinessModelSlide() {
         <motion.div variants={i} style={{ padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.12)' }}>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>THE CONSUMPTION FLYWHEEL</div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-            Customers enter at Pro and migrate to Scale + White Glove within 90 days. We don't upsell — the unit
+            Customers enter at Pro and naturally migrate upward as they prove ROI. We don't upsell — the unit
             economics upsell for us. Every $0.10 credit generates revenue for the customer at 6-8× return.
-            Rational behavior is maximum deployment, not conservation. Projected NRR: 200%+.
+            Rational behavior is maximum deployment, not conservation.
           </div>
         </motion.div>
       </motion.div>

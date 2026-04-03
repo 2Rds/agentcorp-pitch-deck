@@ -17,7 +17,7 @@ export default function HowItWorksSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Architecture</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          Dual-runtime sales engine.{' '}<span className="c-cyan">Compounding shared intelligence.</span>
+          Multi-model. Multi-agent.{' '}<span className="c-cyan">Compounding shared intelligence.</span>
         </motion.h2>
 
         {/* Stack layers */}

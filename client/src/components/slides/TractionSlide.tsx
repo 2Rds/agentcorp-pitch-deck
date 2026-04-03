@@ -16,7 +16,7 @@ export default function TractionSlide() {
           {[
             { val: '9', label: 'AI Agents Deployed', desc: 'Full C-suite workforce operational on Telegram and web. Inter-agent communication live.' },
             { val: '3', label: 'Stripe Tiers Live', desc: 'Pro, Growth, Scale — credit-based billing infrastructure with overage metering built and tested.' },
-            { val: 'Day 0', label: 'Founder Dogfooding', desc: 'Built by a nationally award-winning life insurance producer. Eating our own cooking from day one.' },
+            { val: 'Day 0', label: 'Built by the Customer', desc: 'Founded by a Prudential Diamond Elephant Award-winning producer who built the tool he wished he had.' },
           ].map((m, idx) => (
             <div key={idx} style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--cyan)', marginBottom: '0.25rem' }}>{m.val}</div>

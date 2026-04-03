@@ -14,7 +14,7 @@ export default function PlatformSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          Dual-runtime architecture.{' '}
+          Inter-agent communication.{' '}
           <span className="c-cyan">Every call makes every agent smarter.</span>
         </motion.h2>
 

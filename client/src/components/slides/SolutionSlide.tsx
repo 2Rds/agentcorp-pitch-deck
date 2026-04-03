@@ -14,7 +14,7 @@ export default function SolutionSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          A solo agent walks in.{' '}
+          Any agency walks in.{' '}
           <span className="c-cyan">A full-scale operation walks out.</span>
         </motion.h2>
 

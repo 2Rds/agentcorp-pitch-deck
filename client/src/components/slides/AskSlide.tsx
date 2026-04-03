@@ -10,7 +10,7 @@ export default function AskSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>The Ask</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.5rem' }}>
-          $2M Seed.{' '}<span className="c-cyan">$12M post-money cap. SAFE.</span>
+          $1M Pre-Seed.{' '}<span className="c-cyan">$10M post-money cap. SAFE.</span>
         </motion.h2>
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
           <div style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
