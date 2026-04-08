@@ -7,7 +7,7 @@ const competitors = [
   { name: 'AI SDR Tools', examples: 'Orum, Dialpad, Kixie', coverage: ['✓','✗','✗','✗','✗'], note: 'Dialer only. No back-office.' },
   { name: 'Horizontal AI', examples: 'Motion ($550M), Ema ($61M)', coverage: ['✗','✗','✗','△','✗'], note: 'Enterprise-focused or generic. No managed workforce.' },
   { name: 'Back-Office AI', examples: 'Beam AI ($1.4M)', coverage: ['✗','✗','✗','△','✗'], note: 'Task automation. No sales engine.' },
-  { name: 'Open-Source Agents', examples: 'CrewAI, AutoGen, LangGraph', coverage: ['✗','✗','✗','△','✗'], note: 'Developer toolkit. Not a managed workforce.' },
+  { name: 'DIY Agent Frameworks', examples: 'CrewAI, AutoGen, LangGraph', coverage: ['✗','✗','✗','△','✗'], note: 'Developer toolkit. Requires engineering team to deploy.' },
   { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full managed workforce. Sales + operations.' },
 ];
 const cols = ['AI SDR', 'Compliance', 'Finance/Ops', 'Multi-Agent', 'White-Glove'];
