@@ -30,20 +30,20 @@ export default function TitleSlide() {
 
         <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.25rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "1.5rem" }}>
           The AI-powered operating system{' '}
-          <span className="c-cyan">for life insurance.</span>
+          <span className="c-cyan">for every business.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
-          9 AI agents — led by an infinitely scalable AI sales workforce — that give life insurance
-          agencies the operational capacity of a full-scale firm. Compliance, finance, marketing,
-          case management, and pipeline generation. All deployed on Telegram and web.
+          9 AI agents — led by an infinitely scalable AI sales workforce — that give any business
+          the operational capacity of a full-scale firm. Sales, compliance, finance, marketing,
+          and operations. All deployed on Telegram and web.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
           {[
-            { val: '$1.34T', label: 'US Life Insurance Market' },
-            { val: '900K+', label: 'Licensed Agents' },
-            { val: '102M', label: 'Uninsured Americans' },
+            { val: '33M', label: 'US Small Businesses' },
+            { val: '$50B+', label: 'AI Agent Market by 2030' },
+            { val: '9', label: 'AI Agents Deployed' },
           ].map((m, idx) => (
             <div key={idx} style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', color: idx === 0 ? 'var(--cyan)' : idx === 1 ? 'var(--gold)' : 'var(--text-1)' }}>{m.val}</div>

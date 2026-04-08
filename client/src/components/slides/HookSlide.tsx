@@ -15,7 +15,7 @@ export default function HookSlide() {
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           Credits aren't an expense.{' '}
-          <span className="c-cyan">They're the highest-ROI sales investment an agent can make.</span>
+          <span className="c-cyan">They're the highest-ROI investment a business can make.</span>
         </motion.h2>
 
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
@@ -28,10 +28,10 @@ export default function HookSlide() {
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)' }}>$120</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>in credits (10 SDR calls)</span>
             </div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--cyan)', marginBottom: '0.35rem' }}>→ $800 commission</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--cyan)', marginBottom: '0.35rem' }}>→ $2,000+ deal closed</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
-              75-95% first-year commission on life insurance. One term life close from a 10-call campaign
-              returns 6-7× the credit spend. Every credit is inventory with positive expected value.
+              A 10-call SDR campaign costs ~$120 in credits. One closed deal returns multiples of that investment.
+              Every credit is inventory with positive expected value. Rational behavior is maximum deployment.
             </div>
           </div>
           <div style={{
@@ -43,10 +43,10 @@ export default function HookSlide() {
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)' }}>$48K</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>/yr (Scale + White Glove)</span>
             </div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--gold)', marginBottom: '0.35rem' }}>← Saves one $80K case</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--gold)', marginBottom: '0.35rem' }}>← Saves one critical deal</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
-              A missed compliance filing or mismanaged documents can stall a case for 6+ months — or kill it.
-              One saved mid-size case pays for the top tier for a year.
+              A missed follow-up, dropped compliance thread, or mismanaged document can stall or kill a deal.
+              One saved deal pays for the top tier for a year. The system prevents the mistakes that cost revenue.
             </div>
           </div>
         </motion.div>
@@ -74,7 +74,7 @@ export default function HookSlide() {
         {/* Dual flywheel closing */}
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', maxWidth: 740, lineHeight: 1.55 }}>
           <span style={{ color: 'var(--cyan)', fontWeight: 600 }}>Two flywheels compound simultaneously.</span>{' '}
-          The revenue flywheel: credits generate commissions, so customers scale spend. The intelligence flywheel:
+          The revenue flywheel: credits generate pipeline, pipeline generates revenue, so customers scale spend. The intelligence flywheel:
           every call teaches every agent via a shared knowledge base. More calls = smarter SDRs = higher close rates =
           more calls. The ROI per credit <span style={{ fontStyle: 'italic' }}>increases</span> over time.
         </motion.p>

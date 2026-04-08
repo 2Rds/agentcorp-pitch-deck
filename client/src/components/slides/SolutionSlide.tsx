@@ -40,13 +40,13 @@ export default function SolutionSlide() {
         {/* Back-office agents grid */}
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
           {[
-            { name: 'Parker', role: 'Compliance Officer', desc: 'Policy tracking, filing deadlines, E&O prevention' },
-            { name: 'Riley', role: 'CFO', desc: 'Commission tracking, premium modeling, cash flow' },
+            { name: 'Parker', role: 'Compliance Officer', desc: 'Regulatory tracking, filing deadlines, risk mitigation' },
+            { name: 'Riley', role: 'CFO', desc: 'Revenue tracking, budgeting, AP/AR, cash flow' },
             { name: 'Taylor', role: 'CMO', desc: 'Content, campaigns, seminar marketing' },
             { name: 'Jordan', role: 'Exec Assistant', desc: 'Scheduling, follow-ups, document tracking' },
             { name: 'Morgan', role: 'Data Analyst', desc: 'Book analytics, conversion metrics, reporting' },
             { name: 'Casey', role: 'HR Director', desc: 'Onboarding, licensing, team management' },
-            { name: 'Quinn', role: 'Legal Counsel', desc: 'Contracts, IP review, carrier agreements' },
+            { name: 'Quinn', role: 'Legal Counsel', desc: 'Contracts, IP review, vendor agreements' },
             { name: 'Drew', role: 'IT Director', desc: 'System health, integrations, security' },
           ].map((a, idx) => (
             <div key={idx} style={{

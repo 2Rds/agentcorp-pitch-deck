@@ -10,14 +10,14 @@ export default function MarketSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Market</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
-          442,000 agencies. <span className="c-cyan">$1.34 trillion market.</span> Distribution hasn't changed in 50 years.
+          33 million US small businesses. <span className="c-cyan">None of them have an AI workforce.</span>
         </motion.h2>
 
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1rem' }}>
           {[
-            { size: '$9B', label: 'TAM', desc: '442K US insurance agencies × ~$20K avg annual software spend (AMS, CRM, compliance, marketing, dialer tools AgentCorp replaces).', color: 'var(--text-1)' },
-            { size: '$5.5B', label: 'SAM', desc: '~250K independent agencies (excl. captive agents at large carriers with internal systems) × $22K blended ACV.', color: 'var(--gold)' },
-            { size: '$110M', label: 'SOM', desc: '~5,000 agencies × $22K blended ACV in 3-5 years. 1.1% penetration of total US agencies.', color: 'var(--cyan)' },
+            { size: '$50.3B', label: 'TAM', desc: 'Global AI Agent market by 2030 (Grand View Research). The managed AI workforce segment is forming now.', color: 'var(--text-1)' },
+            { size: '$12B', label: 'SAM', desc: 'US SMBs spending on outsourced operations, virtual assistants, and SaaS tools AgentCorp replaces.', color: 'var(--gold)' },
+            { size: '$220M', label: 'SOM', desc: '~10,000 businesses × ~$22K blended ACV (subscription + overage) within 3-5 years.', color: 'var(--cyan)' },
           ].map((m, idx) => (
             <div key={idx} style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '2rem', color: m.color, marginBottom: '0.15rem' }}>{m.size}</div>
@@ -29,10 +29,10 @@ export default function MarketSlide() {
 
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
           {[
-            { val: '900K+', label: 'Licensed Life & Health Agents' },
-            { val: '442K', label: 'Insurance Agencies (IBISWorld 2025)' },
-            { val: '102M', label: 'Uninsured Americans Who Know They Need It' },
-            { val: '52%', label: 'Of Americans Have Life Insurance' },
+            { val: '33M', label: 'US Small Businesses' },
+            { val: '99.9%', label: 'Of US Businesses Are SMBs' },
+            { val: '47%', label: 'Have <5 Employees' },
+            { val: '$50.3B', label: 'AI Agent Market 2030 (GVR)' },
           ].map((s, idx) => (
             <div key={idx} style={{ padding: '0.65rem 0.5rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--cyan)' }}>{s.val}</div>
@@ -41,10 +41,10 @@ export default function MarketSlide() {
           ))}
         </motion.div>
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 720 }}>
-          Our customers serve a $1.34T life insurance market (Statista 2025). All sizing is bottom-up:
-          agency count × software spend for TAM, independent agencies × our ACV for SAM, realistic 3-5yr
-          capture at 1.1% penetration for SOM. Blended ACV of $22K includes subscription + asymmetric
-          overage driven by 75-95% first-year commissions.
+          Every SMB needs sales, compliance, finance, marketing, legal, HR, and IT — but can't afford
+          to hire for any of them. AgentCorp gives them all nine for less than the cost of one part-time employee.
+          The initial wedge is commission-based professional services, with expansion into every vertical where
+          founders are wearing every hat.
         </motion.p>
       </motion.div>
     </div>

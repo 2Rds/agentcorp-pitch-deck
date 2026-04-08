@@ -4,12 +4,12 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const bottlenecks = [
-  { icon: '📞', role: 'Prospecting', gap: '30-50 manual calls/day ceiling', pain: 'Pipeline starves while servicing existing book' },
-  { icon: '📋', role: 'Compliance', gap: 'Filings, carrier requirements, E&O risk', pain: 'One missed filing can delay a case by months' },
-  { icon: '💰', role: 'Finance', gap: 'Multi-carrier commission tracking', pain: 'Cash flow blind spots, quarterly CPA surprises' },
-  { icon: '📢', role: 'Marketing', gap: 'Content, campaigns, seminar invites', pain: 'Posts when they remember — no system, no cadence' },
-  { icon: '📁', role: 'Case Mgmt', gap: 'Documents, signatures, underwriting', pain: 'Mismanaged docs can stall a case for 6+ months' },
-  { icon: '⚖️', role: 'Legal/HR', gap: 'Contracts, onboarding, licensing', pain: '"We don\'t really have a process for that."' },
+  { icon: '📞', role: 'Prospecting', gap: '30-50 manual calls/day ceiling', pain: 'Pipeline starves while servicing existing clients' },
+  { icon: '📋', role: 'Compliance', gap: 'Regulatory tracking, risk mitigation', pain: 'One missed deadline can cost the entire deal' },
+  { icon: '💰', role: 'Finance', gap: 'Revenue tracking, invoicing, cash flow', pain: 'Blind spots until the accountant finds them' },
+  { icon: '📢', role: 'Marketing', gap: 'Content, campaigns, outbound sequences', pain: 'Posts when they remember — no system, no cadence' },
+  { icon: '📁', role: 'Operations', gap: 'Documents, workflows, project tracking', pain: 'Mismanaged ops can stall revenue for months' },
+  { icon: '⚖️', role: 'Legal/HR', gap: 'Contracts, onboarding, team management', pain: '"We don\'t really have a process for that."' },
 ];
 
 export default function ProblemSlide() {
@@ -23,15 +23,14 @@ export default function ProblemSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1.25rem' }}>
-          900,000 life insurance agents serve a $1.3 trillion market.{' '}
+          33 million US small businesses run on heroics.{' '}
           <span className="c-cyan">Every one of them hits the same ceiling.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 700, marginBottom: '1.5rem' }}>
-          102 million Americans are uninsured or underinsured and know they need coverage. The constraint
-          isn't demand — it's agent bandwidth. A solo producer is simultaneously the sales team, compliance
-          department, finance office, and marketing agency. Complex cases take 6-12 months to close while
-          the rest of the business runs on heroics.
+          The founder of every small business is simultaneously the CEO, CFO, CMO, and IT department.
+          They know AI can help but lack the resources to deploy, configure, and manage it. The constraint
+          isn't ambition — it's bandwidth. Revenue stalls while operations run on duct tape and late nights.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.65rem' }}>

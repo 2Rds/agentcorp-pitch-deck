@@ -5,12 +5,12 @@ const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transiti
 
 const competitors = [
   { name: 'AI SDR Tools', examples: 'Orum, Dialpad, Kixie', coverage: ['✓','✗','✗','✗','✗'], note: 'Dialer only. No back-office.' },
-  { name: 'Insurance CRMs', examples: 'AgencyBloc, Hawksoft', coverage: ['✗','✗','△','✗','✗'], note: 'Passive record-keeping. No AI agents.' },
-  { name: 'Horizontal AI', examples: 'Motion ($550M), Ema ($61M)', coverage: ['✗','✗','✗','△','✗'], note: 'Generic. No insurance domain expertise.' },
+  { name: 'Horizontal AI', examples: 'Motion ($550M), Ema ($61M)', coverage: ['✗','✗','✗','△','✗'], note: 'Enterprise-focused or generic. No managed workforce.' },
   { name: 'Back-Office AI', examples: 'Beam AI ($1.4M)', coverage: ['✗','✗','✗','△','✗'], note: 'Task automation. No sales engine.' },
-  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full workforce. Built by the industry.' },
+  { name: 'Open-Source Agents', examples: 'CrewAI, AutoGen, LangGraph', coverage: ['✗','✗','✗','△','✗'], note: 'Developer toolkit. Not a managed workforce.' },
+  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full managed workforce. Sales + operations.' },
 ];
-const cols = ['AI SDR', 'Compliance', 'Finance/Ops', 'Multi-Agent', 'Insurance-Native'];
+const cols = ['AI SDR', 'Compliance', 'Finance/Ops', 'Multi-Agent', 'White-Glove'];
 
 export default function CompetitionSlide() {
   return (
@@ -54,7 +54,7 @@ export default function CompetitionSlide() {
           </div>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>DEFENSIBILITY</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>A competitor must replicate 9 specialized agents, credit metering, voice SDR, multi-model runtime, Telegram interface, AND insurance domain knowledge. That's a full product, not a feature.</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>A competitor must replicate 9 specialized agents, credit metering, voice SDR, multi-model runtime, dual-runtime learning architecture, Telegram interface, AND white-glove managed services. That's a full product, not a feature.</div>
           </div>
         </motion.div>
       </motion.div>
