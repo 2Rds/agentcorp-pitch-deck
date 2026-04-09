@@ -16,7 +16,7 @@ export default function MarketSlide() {
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1rem' }}>
           {[
             { size: '$50.3B', label: 'TAM', desc: 'Global AI Agent market by 2030 (Grand View Research). The managed AI workforce segment is forming now.', color: 'var(--text-1)' },
-            { size: '$12B', label: 'SAM', desc: 'US SMBs spending on outsourced operations, virtual assistants, and SaaS tools AgentCorp replaces.', color: 'var(--gold)' },
+            { size: '1–3M', label: 'SAM', desc: 'US tech-forward SMBs with $200K–$5M revenue, owner-operators in knowledge work, services, and digital commerce.', color: 'var(--gold)' },
             { size: '$120M', label: 'SOM', desc: '~10,000 businesses × ~$12K blended ACV (subscription + overage) within 3-5 years.', color: 'var(--cyan)' },
           ].map((m, idx) => (
             <div key={idx} style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
@@ -30,7 +30,7 @@ export default function MarketSlide() {
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
           {[
             { val: '33M', label: 'US Small Businesses' },
-            { val: '99.9%', label: 'Of US Businesses Are SMBs' },
+            { val: '1–3M', label: 'In Our ICP' },
             { val: '47%', label: 'Have <5 Employees' },
             { val: '$12K', label: 'Blended ACV (sub + overage)' },
           ].map((s, idx) => (
@@ -43,8 +43,8 @@ export default function MarketSlide() {
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 720 }}>
           Every SMB needs sales, marketing, finance, operations, and business intelligence — but can't afford
           to hire for any of them. AgentCorp gives them an executive assistant and five department heads for less than the cost of one part-time employee.
-          Initial traction in outbound-driven service businesses, with natural expansion into every vertical where
-          the founder is wearing every hat.
+          Initial ICP: SaaS founders, agency owners, consultants, e-commerce operators, professional services firms, and real estate teams —
+          tech-forward businesses where the founder is wearing every hat.
         </motion.p>
       </motion.div>
     </div>
