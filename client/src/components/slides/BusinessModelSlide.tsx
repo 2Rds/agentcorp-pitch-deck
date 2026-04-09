@@ -16,7 +16,7 @@ export default function BusinessModelSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Business Model</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          Credit-based pricing.{' '}<span className="c-cyan">All 6 agents at every tier.</span>
+          Credit-based pricing.{' '}<span className="c-cyan">All agents at every tier.</span>
         </motion.h2>
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1rem' }}>
           {tiers.map((t, idx) => (

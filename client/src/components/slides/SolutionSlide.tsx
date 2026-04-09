@@ -19,31 +19,44 @@ export default function SolutionSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 700, marginBottom: '1.5rem' }}>
-          6 AI agents that function as a managed corporate workforce — deployed as a cloud-native web app.
-          Sam fills the pipeline. The other five make sure you never lose what's in it.
+          1 AI executive assistant and 5 department-head agents — deployed as a cloud-native web app.
+          Alex coordinates. Sam fills the pipeline. The other four run your operations.
         </motion.p>
+
+        {/* Alex - the executive assistant layer */}
+        <motion.div variants={i} style={{
+          padding: '0.85rem 1.25rem', marginBottom: '0.5rem',
+          background: 'rgba(139,156,247,0.06)', border: '1px solid rgba(139,156,247,0.25)',
+          borderRadius: 'var(--radius-lg)', display: 'flex', alignItems: 'center', gap: '1rem',
+        }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: '#8b9cf7', minWidth: 60 }}>Alex</div>
+          <div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>Executive Assistant — Your Point of Contact</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)' }}>Scheduling, comms, cross-department coordination · Routes tasks to the right agent · Your interface to the workforce</div>
+          </div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', color: '#8b9cf7', whiteSpace: 'nowrap', padding: '0.25rem 0.6rem', background: 'rgba(139,156,247,0.1)', borderRadius: 6 }}>COORDINATOR</div>
+        </motion.div>
 
         {/* Sam - the spearhead */}
         <motion.div variants={i} style={{
-          padding: '1rem 1.25rem', marginBottom: '0.75rem',
+          padding: '0.85rem 1.25rem', marginBottom: '0.75rem',
           background: 'rgba(0,229,255,0.06)', border: '1px solid rgba(0,229,255,0.25)',
           borderRadius: 'var(--radius-lg)', display: 'flex', alignItems: 'center', gap: '1rem',
         }}>
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--cyan)', minWidth: 60 }}>Sam</div>
           <div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>AI SDR + Scalable Sales Workforce</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)' }}>Real phone calls via voice synthesis · Unlimited SDR clones · Pipeline generation at scale · NextGenSwitch PBX telephony</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>Sales Manager + SDR Workforce</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)' }}>Real phone calls via voice synthesis · Unlimited SDR clones · Pipeline generation at scale</div>
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', color: 'var(--cyan)', whiteSpace: 'nowrap', padding: '0.25rem 0.6rem', background: 'rgba(0,229,255,0.1)', borderRadius: 6 }}>REVENUE ENGINE</div>
         </motion.div>
 
-        {/* Back-office agents grid */}
-        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
+        {/* Department head agents grid */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
           {[
-            { name: 'Alex', role: 'Exec Assistant', desc: 'Scheduling, comms, cross-department coordination' },
             { name: 'Jordan', role: 'Operations & Team', desc: 'Workflows, project tracking, team management' },
-            { name: 'Taylor', role: 'CMO', desc: 'Content, campaigns, outbound sequences' },
-            { name: 'Riley', role: 'CFO', desc: 'Revenue tracking, budgeting, AP/AR, cash flow' },
+            { name: 'Taylor', role: 'Marketing', desc: 'Content, campaigns, outbound sequences' },
+            { name: 'Riley', role: 'Finance', desc: 'Revenue tracking, budgeting, AP/AR, cash flow' },
             { name: 'Morgan', role: 'Business Intelligence', desc: 'Pipeline analytics, conversion metrics, reporting' },
           ].map((a, idx) => (
             <div key={idx} style={{
@@ -58,7 +71,7 @@ export default function SolutionSlide() {
         </motion.div>
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 700 }}>
-          Sam is why they buy — immediate, measurable ROI from day one. The other five are why they stay —
+          Sam is why they buy — immediate, measurable ROI from day one. The department heads are why they stay —
           operational dependency that drives net retention above 120%.
         </motion.p>
 
