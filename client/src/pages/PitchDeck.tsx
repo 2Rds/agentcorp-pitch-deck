@@ -6,7 +6,6 @@ import TitleSlide from '@/components/slides/TitleSlide';
 import ProblemSlide from '@/components/slides/ProblemSlide';
 import SolutionSlide from '@/components/slides/SolutionSlide';
 import HookSlide from '@/components/slides/HookSlide';
-import PlatformSlide from '@/components/slides/PlatformSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
 import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
 import MarketSlide from '@/components/slides/MarketSlide';
@@ -16,7 +15,7 @@ import TeamSlide from '@/components/slides/TeamSlide';
 import ThesisSlide from '@/components/slides/ThesisSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 13;
+const TOTAL_SLIDES = 12;
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
@@ -29,8 +28,7 @@ const slides = [
   { component: <ProblemSlide key="problem" />,          label: 'Problem' },
   { component: <SolutionSlide key="solution" />,        label: 'Solution' },
   { component: <HookSlide key="hook" />,                label: 'The Asymmetry' },
-  { component: <PlatformSlide key="platform" />,        label: 'Platform' },
-  { component: <HowItWorksSlide key="how" />,           label: 'Architecture' },
+  { component: <HowItWorksSlide key="how" />,           label: 'How It Works' },
   { component: <BusinessModelSlide key="model" />,      label: 'Business Model' },
   { component: <MarketSlide key="market" />,            label: 'Market' },
   { component: <TractionSlide key="traction" />,        label: 'Traction' },
