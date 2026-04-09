@@ -54,7 +54,7 @@ export default function TeamSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>THE PRODUCT IS THE PROOF</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>
               Entire platform built by a non-technical founder using AI-augmented development.
-              6 agents, multi-model runtime, Stripe billing, voice SDR — all operational.
+              6 agents, multi-model runtime, Stripe billing, automated SDR — all operational.
             </div>
           </div>
         </motion.div>

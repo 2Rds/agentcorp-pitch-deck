@@ -6,8 +6,8 @@ const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transiti
 const layers = [
   { name: 'Interface Layer', tech: 'Web Dashboard · REST API · Mobile-responsive', color: 'var(--cyan)' },
   { name: 'Dual-Runtime Engine', tech: 'Conversational runtime (live calls) ↔ Cognitive runtime (learning & strategy)', color: 'var(--gold)' },
-  { name: 'Model Layer', tech: 'Claude (reasoning) · Gemini (analysis) · Grok (speed) · ElevenLabs (voice)', color: '#8b9cf7' },
-  { name: 'Infrastructure', tech: 'Stripe Billing · NextGenSwitch PBX · Redis State · PostgreSQL · Credit Metering', color: 'var(--text-3)' },
+  { name: 'Model Layer', tech: 'Claude (reasoning) · Gemini (analysis) · Grok (speed) · Cloudflare AI Gateway', color: '#8b9cf7' },
+  { name: 'Infrastructure', tech: 'Stripe Billing · Redis State · PostgreSQL · Credit Metering · Cloudflare Workers', color: 'var(--text-3)' },
 ];
 
 export default function HowItWorksSlide() {
@@ -36,8 +36,8 @@ export default function HowItWorksSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>🎙️ CONVERSATIONAL RUNTIME</div>
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>During the call</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
-              Real-time dialogue engine optimized for natural sales conversations. Voice synthesis, objection handling,
-              pitch delivery, appointment setting — all flowing seamlessly through NextGenSwitch PBX.
+              Automated outbound engine optimized for pipeline generation. Email sequences, lead research,
+              appointment scheduling, CRM updates — all running autonomously across unlimited SDR instances.
             </div>
           </div>
           <div style={{ padding: '1rem', background: 'rgba(232,201,106,0.04)', border: '1px solid rgba(232,201,106,0.15)', borderRadius: 'var(--radius-lg)' }}>

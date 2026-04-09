@@ -14,7 +14,7 @@ export default function ThesisSlide() {
         </motion.h2>
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {[
-            { title: 'Voice AI Crossed the Threshold', desc: 'ElevenLabs and other voice synthesis platforms reached quality where AI phone calls are indistinguishable from human calls. This wasn\'t possible 18 months ago. Sam\'s SDR capability is a direct result.', icon: '🎙️', color: 'var(--cyan)' },
+            { title: 'LLM Reasoning Crossed the Threshold', desc: 'AI agents can now execute multi-step business tasks autonomously — not just answer questions. Compliance tracking, financial analysis, lead research, campaign creation — all at human-equivalent quality. This wasn\'t possible 18 months ago.', icon: '🧪', color: 'var(--cyan)' },
             { title: 'Multi-Model Convergence', desc: 'Claude, Gemini, and Grok each excel at different tasks. For the first time, a platform can assign the optimal model to each agent — reasoning, speed, analysis — without vendor lock-in. Model costs are falling 10× per year.', icon: '🧠', color: 'var(--gold)' },
             { title: '33M Businesses Are Waiting', desc: 'Every small business founder is simultaneously the CEO, CFO, and IT department. They know AI can help but can\'t deploy it themselves. AgentCorp gives them a full workforce for less than one part-time hire.', icon: '📊', color: '#8b9cf7' },
           ].map((t, idx) => (

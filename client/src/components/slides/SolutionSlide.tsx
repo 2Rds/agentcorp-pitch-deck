@@ -46,7 +46,7 @@ export default function SolutionSlide() {
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--cyan)', minWidth: 60 }}>Sam</div>
           <div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>Sales Manager + SDR Workforce</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)' }}>Real phone calls via voice synthesis · Unlimited SDR clones · Pipeline generation at scale</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)' }}>Automated outbound sequences · Lead research · Appointment scheduling · Pipeline generation at scale</div>
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', color: 'var(--cyan)', whiteSpace: 'nowrap', padding: '0.25rem 0.6rem', background: 'rgba(0,229,255,0.1)', borderRadius: 6 }}>REVENUE ENGINE</div>
         </motion.div>

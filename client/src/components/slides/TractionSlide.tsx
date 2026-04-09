@@ -29,7 +29,7 @@ export default function TractionSlide() {
           <div style={{ padding: '1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.5rem' }}>BUILT SINGLE-HANDEDLY</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-              6-agent platform, multi-model runtime, Stripe billing, voice SDR engine —
+              6-agent platform, multi-model runtime, Stripe billing, automated SDR engine —
               built by a non-technical founder using AI-augmented development. Head of Engineering committed
               to return post-raise.
             </div>

@@ -27,8 +27,8 @@ export default function PlatformSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>CONVERSATIONAL RUNTIME</div>
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.3rem' }}>Active During Sales</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
-              Real-time voice dialogue via NextGenSwitch PBX. Objection handling, appointment setting,
-              CRM updates — all live. Each SDR clone operates independently at full conversational capacity.
+              Automated outbound engine for pipeline generation. Email sequences, lead research,
+              appointment scheduling, CRM updates. Each SDR instance operates independently at full capacity.
             </div>
           </div>
           <div style={{
