@@ -56,11 +56,11 @@ export default function HookSlide() {
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginBottom: '0.4rem' }}>CUSTOMER JOURNEY — NOT A BELL CURVE, A STEP FUNCTION</div>
           <div style={{ display: 'flex', gap: '0.4rem' }}>
             {[
-              { month: 'Month 1', tier: 'Pro $250', event: 'Testing · 20 sequences', color: 'var(--text-4)' },
-              { month: 'Month 2', tier: 'Pro → Overage', event: 'First close · Math hits', color: 'var(--text-3)' },
-              { month: 'Month 3', tier: 'Growth $1K', event: 'Scaling · 200+ sequences/mo', color: 'var(--gold)' },
-              { month: 'Month 5', tier: 'Scale $2.5K', event: 'SDR fleet deployed', color: 'var(--cyan)' },
-              { month: 'Month 7', tier: 'Scale+WG $4K', event: '"Help me scale faster"', color: 'var(--cyan)' },
+              { month: 'Entry', tier: 'Pro $250', event: 'Testing · First sequences', color: 'var(--text-4)' },
+              { month: 'Validation', tier: 'Pro → Overage', event: 'First close · Math hits', color: 'var(--text-3)' },
+              { month: 'Scaling', tier: 'Growth $1K', event: 'Expanding outbound volume', color: 'var(--gold)' },
+              { month: 'Full Deploy', tier: 'Scale $2.5K', event: 'All agents active', color: 'var(--cyan)' },
+              { month: 'Managed', tier: 'Scale+WG $4K', event: '"Help me scale faster"', color: 'var(--cyan)' },
             ].map((s, idx) => (
               <div key={idx} style={{ flex: 1, padding: '0.5rem 0.4rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', color: s.color, marginBottom: '0.15rem' }}>{s.month}</div>
