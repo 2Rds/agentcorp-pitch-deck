@@ -10,7 +10,7 @@ export default function TeamSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Founder-Market Fit</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          I didn't theorize about this problem.{' '}<span className="c-cyan">I lived it at the highest level.</span>
+          I was customer zero.{' '}<span className="c-cyan">I built the workforce I needed.</span>
         </motion.h2>
 
         {/* The Diamond Elephant Story */}
@@ -28,8 +28,8 @@ export default function TeamSlide() {
             and mismanaged business documents — three operational failures that three AI agents would have prevented.
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-1)', lineHeight: 1.55, fontWeight: 500 }}>
-            Three months after the award, I left production to build the AI workforce
-            that would have given me the operational capacity I needed from day one.
+            Three months after the award, I left production to build AgentCorp — the AI workforce
+            that would have given any business the operational capacity it needs from day one.
           </div>
         </motion.div>
 

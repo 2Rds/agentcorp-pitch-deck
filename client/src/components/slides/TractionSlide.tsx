@@ -37,8 +37,8 @@ export default function TractionSlide() {
           <div style={{ padding: '1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.5rem' }}>IMMEDIATE POST-RAISE MILESTONES</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-              First 10 paying agencies within 60 days of launch. Founder-led sales leveraging existing
-              industry network. Target: 50 paying agencies by month 6, NRR tracking above 120%.
+              First 10 paying customers within 60 days of launch. Founder-led sales via LinkedIn and
+              existing network. Target: 50 paying customers by month 6, NRR tracking above 120%.
             </div>
           </div>
         </motion.div>

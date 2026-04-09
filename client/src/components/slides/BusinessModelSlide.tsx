@@ -45,8 +45,8 @@ export default function BusinessModelSlide() {
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>THE CONSUMPTION FLYWHEEL</div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
             Customers enter at Pro and naturally migrate upward as they prove ROI. We don't upsell — the unit
-            economics upsell for us. Every $0.10 credit generates revenue for the customer at 6-8× return.
-            Rational behavior is maximum deployment, not conservation.
+            economics upsell for us. In every outbound-driven vertical we've modeled, credits return multiples
+            of their cost. Rational behavior is maximum deployment, not conservation.
           </div>
         </motion.div>
       </motion.div>

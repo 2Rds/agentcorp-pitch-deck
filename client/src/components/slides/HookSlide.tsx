@@ -28,10 +28,10 @@ export default function HookSlide() {
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)' }}>$120</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>in credits (10 SDR calls)</span>
             </div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--cyan)', marginBottom: '0.35rem' }}>→ $2,000+ deal closed</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--cyan)', marginBottom: '0.35rem' }}>→ One closed deal pays for months</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
-              A 10-call SDR campaign costs ~$120 in credits. One closed deal returns multiples of that investment.
-              Every credit is inventory with positive expected value. Rational behavior is maximum deployment.
+              Recruiting: one $20K placement fee = 167× return. Agency: one $5K/mo retainer = 42×.
+              SaaS: one $15K ACV deal = 125×. The math works in every vertical where revenue exceeds credit cost.
             </div>
           </div>
           <div style={{

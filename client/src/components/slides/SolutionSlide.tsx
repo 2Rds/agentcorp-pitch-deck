@@ -14,7 +14,7 @@ export default function SolutionSlide() {
         </motion.span>
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          Any agency walks in.{' '}
+          Any business walks in.{' '}
           <span className="c-cyan">A full-scale operation walks out.</span>
         </motion.h2>
 
@@ -42,10 +42,10 @@ export default function SolutionSlide() {
           {[
             { name: 'Parker', role: 'Compliance Officer', desc: 'Regulatory tracking, filing deadlines, risk mitigation' },
             { name: 'Riley', role: 'CFO', desc: 'Revenue tracking, budgeting, AP/AR, cash flow' },
-            { name: 'Taylor', role: 'CMO', desc: 'Content, campaigns, seminar marketing' },
+            { name: 'Taylor', role: 'CMO', desc: 'Content, campaigns, outbound sequences' },
             { name: 'Jordan', role: 'Exec Assistant', desc: 'Scheduling, follow-ups, document tracking' },
-            { name: 'Morgan', role: 'Data Analyst', desc: 'Book analytics, conversion metrics, reporting' },
-            { name: 'Casey', role: 'HR Director', desc: 'Onboarding, licensing, team management' },
+            { name: 'Morgan', role: 'Data Analyst', desc: 'Pipeline analytics, conversion metrics, reporting' },
+            { name: 'Casey', role: 'HR Director', desc: 'Onboarding, hiring workflows, team management' },
             { name: 'Quinn', role: 'Legal Counsel', desc: 'Contracts, IP review, vendor agreements' },
             { name: 'Drew', role: 'IT Director', desc: 'System health, integrations, security' },
           ].map((a, idx) => (
