@@ -32,7 +32,7 @@ export default function BusinessModelSlide() {
           {[
             { label: 'Subscription', value: '70%', note: 'Gross margin, all tiers', color: 'var(--cyan)' },
             { label: 'Overage', value: '85%', note: '$0.10/credit — 2× effective rate', color: 'var(--gold)' },
-            { label: 'White-Glove', value: '67%', note: '+$1,500/mo on Scale tier', color: '#8b9cf7' },
+            { label: 'White-Glove', value: '67%', note: '+$1,500/mo · Dedicated system manager', color: '#8b9cf7' },
           ].map((m, idx) => (
             <div key={idx} style={{ padding: '0.85rem 1rem', textAlign: 'center', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: m.color }}>{m.value}</div>
@@ -41,12 +41,20 @@ export default function BusinessModelSlide() {
             </div>
           ))}
         </motion.div>
-        <motion.div variants={i} style={{ padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.12)' }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>THE CONSUMPTION FLYWHEEL</div>
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-            Customers enter at Pro and naturally migrate upward as they prove ROI. We don't upsell — the unit
-            economics upsell for us. In every outbound-driven vertical we've modeled, credits return multiples
-            of their cost. Rational behavior is maximum deployment, not conservation.
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+          <div style={{ padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.12)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>THE CONSUMPTION FLYWHEEL</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
+              Customers enter at Pro and naturally migrate upward as they prove ROI. We don't upsell — the unit
+              economics upsell for us. Credits return multiples of their cost. Rational behavior is maximum deployment.
+            </div>
+          </div>
+          <div style={{ padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-lg)', background: 'rgba(139,156,247,0.04)', border: '1px solid rgba(139,156,247,0.12)' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: '#8b9cf7', marginBottom: '0.4rem' }}>WHITE-GLOVE MANAGED SERVICE</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
+              A dedicated remote operator manages 2–3 customer agent systems — configuration, optimization, escalation,
+              and reporting. The business owner never touches the backend. This is the moat no competitor replicates.
+            </div>
           </div>
         </motion.div>
       </motion.div>
