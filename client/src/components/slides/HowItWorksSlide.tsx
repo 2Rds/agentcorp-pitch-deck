@@ -4,7 +4,7 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const layers = [
-  { name: 'Interface Layer', tech: 'Telegram Bot API · Web Dashboard · Mobile-responsive', color: 'var(--cyan)' },
+  { name: 'Interface Layer', tech: 'Web Dashboard · REST API · Mobile-responsive', color: 'var(--cyan)' },
   { name: 'Dual-Runtime Engine', tech: 'Conversational runtime (live calls) ↔ Cognitive runtime (learning & strategy)', color: 'var(--gold)' },
   { name: 'Model Layer', tech: 'Claude (reasoning) · Gemini (analysis) · Grok (speed) · ElevenLabs (voice)', color: '#8b9cf7' },
   { name: 'Infrastructure', tech: 'Stripe Billing · NextGenSwitch PBX · Redis State · PostgreSQL · Credit Metering', color: 'var(--text-3)' },
@@ -54,7 +54,7 @@ export default function HowItWorksSlide() {
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', marginBottom: '0.75rem' }}>
           {[
             { val: '3', label: 'LLM Providers', note: 'No single-vendor risk' },
-            { val: '9', label: 'Specialized Agents', note: 'Full C-suite + SDR fleet' },
+            { val: '6', label: 'Specialized Agents', note: 'Full workforce + SDR fleet' },
             { val: '∞', label: 'SDR Clones', note: 'Each one smarter than the last' },
           ].map((m, idx) => (
             <div key={idx} style={{ padding: '0.75rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>

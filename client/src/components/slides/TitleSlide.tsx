@@ -34,16 +34,16 @@ export default function TitleSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
-          9 AI agents — led by an infinitely scalable AI sales workforce — that give any business
-          the operational capacity of a full-scale firm. Sales, compliance, finance, marketing,
-          and operations. All deployed on Telegram and web.
+          6 AI agents — led by an infinitely scalable AI sales workforce — that give any business
+          the operational capacity of a full-scale firm. Sales, operations, finance, marketing,
+          and business intelligence. Cloud-native web app.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
           {[
             { val: '33M', label: 'US Small Businesses' },
             { val: '$50B+', label: 'AI Agent Market by 2030' },
-            { val: '9', label: 'AI Agents Deployed' },
+            { val: '6', label: 'AI Agents Deployed' },
           ].map((m, idx) => (
             <div key={idx} style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', color: idx === 0 ? 'var(--cyan)' : idx === 1 ? 'var(--gold)' : 'var(--text-1)' }}>{m.val}</div>

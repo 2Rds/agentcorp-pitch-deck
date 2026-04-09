@@ -42,7 +42,7 @@ export default function MarketSlide() {
         </motion.div>
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 720 }}>
           Every SMB needs sales, compliance, finance, marketing, legal, HR, and IT — but can't afford
-          to hire for any of them. AgentCorp gives them all nine for less than the cost of one part-time employee.
+          to hire for any of them. AgentCorp gives them all six for less than the cost of one part-time employee.
           Initial traction in outbound-driven service businesses, with natural expansion into every vertical where
           the founder is wearing every hat.
         </motion.p>

@@ -63,7 +63,7 @@ export default function PlatformSlide() {
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
           {[
             { title: 'Multi-Model', desc: 'Claude, Gemini, Grok — optimal model per task', icon: '🧠' },
-            { title: 'Telegram + Web', desc: 'No app downloads. Instant onboarding. Mobile-first.', icon: '💬' },
+            { title: 'Cloud-Native Web App', desc: 'No installs. Instant onboarding. Mobile-responsive.', icon: '💬' },
             { title: 'Inter-Agent Mesh', desc: 'Agents delegate, escalate, and hand off tasks.', icon: '🔗' },
             { title: 'Governance + Metering', desc: 'Audit trails, access controls, per-action billing.', icon: '🛡️' },
           ].map((f, idx) => (

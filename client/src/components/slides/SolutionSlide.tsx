@@ -19,8 +19,8 @@ export default function SolutionSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 700, marginBottom: '1.5rem' }}>
-          9 AI agents that function as a managed corporate workforce — deployed on Telegram and web.
-          Sam fills the pipeline. The other eight make sure you never lose what's in it.
+          6 AI agents that function as a managed corporate workforce — deployed as a cloud-native web app.
+          Sam fills the pipeline. The other five make sure you never lose what's in it.
         </motion.p>
 
         {/* Sam - the spearhead */}
@@ -38,16 +38,13 @@ export default function SolutionSlide() {
         </motion.div>
 
         {/* Back-office agents grid */}
-        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem', marginBottom: '1rem' }}>
           {[
-            { name: 'Parker', role: 'Compliance Officer', desc: 'Regulatory tracking, filing deadlines, risk mitigation' },
-            { name: 'Riley', role: 'CFO', desc: 'Revenue tracking, budgeting, AP/AR, cash flow' },
+            { name: 'Alex', role: 'Exec Assistant', desc: 'Scheduling, comms, cross-department coordination' },
+            { name: 'Jordan', role: 'Operations & Team', desc: 'Workflows, project tracking, team management' },
             { name: 'Taylor', role: 'CMO', desc: 'Content, campaigns, outbound sequences' },
-            { name: 'Jordan', role: 'Exec Assistant', desc: 'Scheduling, follow-ups, document tracking' },
-            { name: 'Morgan', role: 'Data Analyst', desc: 'Pipeline analytics, conversion metrics, reporting' },
-            { name: 'Casey', role: 'HR Director', desc: 'Onboarding, hiring workflows, team management' },
-            { name: 'Quinn', role: 'Legal Counsel', desc: 'Contracts, IP review, vendor agreements' },
-            { name: 'Drew', role: 'IT Director', desc: 'System health, integrations, security' },
+            { name: 'Riley', role: 'CFO', desc: 'Revenue tracking, budgeting, AP/AR, cash flow' },
+            { name: 'Morgan', role: 'Business Intelligence', desc: 'Pipeline analytics, conversion metrics, reporting' },
           ].map((a, idx) => (
             <div key={idx} style={{
               padding: '0.7rem 0.75rem', background: 'var(--surface)',
@@ -61,7 +58,7 @@ export default function SolutionSlide() {
         </motion.div>
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 700 }}>
-          Sam is why they buy — immediate, measurable ROI from day one. The other eight are why they stay —
+          Sam is why they buy — immediate, measurable ROI from day one. The other five are why they stay —
           operational dependency that drives net retention above 120%.
         </motion.p>
 

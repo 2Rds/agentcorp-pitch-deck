@@ -50,11 +50,11 @@ export default function CompetitionSlide() {
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>HONEST ASSESSMENT</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>Competitors like Motion and Ema are funded and scaled. They have paying customers. We don't yet. Our edge is vertical specificity and founder-market fit.</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>Competitors like Motion and Ema are funded and scaled. They have paying customers. We don't yet. Our edge is full-surface-area coverage and a managed service model no one else offers.</div>
           </div>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>DEFENSIBILITY</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>A competitor must replicate 9 specialized agents, credit metering, voice SDR, multi-model runtime, dual-runtime learning architecture, Telegram interface, AND white-glove managed services. That's a full product, not a feature.</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>A competitor must replicate 6 specialized agents, credit metering, voice SDR, multi-model runtime, dual-runtime learning architecture, AND white-glove managed services. That's a full product, not a feature.</div>
           </div>
         </motion.div>
       </motion.div>
