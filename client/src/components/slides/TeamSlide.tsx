@@ -10,7 +10,7 @@ export default function TeamSlide() {
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>Founder-Market Fit</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          I was customer zero.{' '}<span className="c-cyan">I built the workforce I needed.</span>
+          I was the ICP.{' '}<span className="c-cyan">I built the workforce that eliminates the ceiling.</span>
         </motion.h2>
 
         {/* The Diamond Elephant Story */}
@@ -22,17 +22,16 @@ export default function TeamSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', color: 'var(--gold)', padding: '0.25rem 0.6rem', background: 'rgba(232,201,106,0.1)', borderRadius: 6 }}>PRUDENTIAL DIAMOND ELEPHANT AWARD</div>
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.55, marginBottom: '0.6rem' }}>
-            Closed a $500K+ annual premium, four-policy case single-handedly — buy-sell agreements and
-            NQDB executive benefit plans for a $30M ARR business. The case took 12 months. It should have
-            taken 4. Six months of delay were caused by a missed compliance filing, a stale premium illustration,
-            and mismanaged business documents — three operational failures that three AI agents would have prevented.
+            I ran an outbound-driven practice wearing every hat — CEO, sales, finance, ops, admin —
+            simultaneously. Closed a $500K+ annual premium, four-policy case single-handedly. It should
+            have taken 4 months. It took 12 — because of missed compliance filings, stale documents, and
+            operational chaos that three AI agents would have prevented.
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', lineHeight: 1.55, marginBottom: '0.6rem', fontStyle: 'italic' }}>
             Those failures aren't unique to financial services. Every business that runs on a founder wearing every hat faces the same breakdowns.
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-1)', lineHeight: 1.55, fontWeight: 500 }}>
-            Three months after the award, I left production to build AgentCorp — the AI workforce
-            that would have given any business the operational capacity it needs from day one.
+            I won a national award despite that ceiling. Then I built the workforce that eliminates it.
           </div>
         </motion.div>
 
