@@ -4,12 +4,12 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const bottlenecks = [
-  { icon: '📞', role: 'Prospecting', gap: '30-50 manual calls/day ceiling', pain: 'Pipeline starves while servicing existing clients' },
-  { icon: '📋', role: 'Compliance', gap: 'Regulatory tracking, risk mitigation', pain: 'One missed deadline can cost the entire deal' },
+  { icon: '📞', role: 'Sales', gap: '30-50 manual outreach attempts/day ceiling', pain: 'Pipeline starves while servicing existing clients' },
+  { icon: '📊', role: 'Business Intelligence', gap: 'No visibility into pipeline or conversion', pain: 'Decisions made on gut feel, not data' },
   { icon: '💰', role: 'Finance', gap: 'Revenue tracking, invoicing, cash flow', pain: 'Blind spots until the accountant finds them' },
   { icon: '📢', role: 'Marketing', gap: 'Content, campaigns, outbound sequences', pain: 'Posts when they remember — no system, no cadence' },
   { icon: '📁', role: 'Operations', gap: 'Documents, workflows, project tracking', pain: 'Mismanaged ops can stall revenue for months' },
-  { icon: '⚖️', role: 'Legal/HR', gap: 'Contracts, onboarding, team management', pain: '"We don\'t really have a process for that."' },
+  { icon: '🤝', role: 'Admin & Coordination', gap: 'Scheduling, comms, follow-ups', pain: 'Balls drop because nobody is tracking them' },
 ];
 
 export default function ProblemSlide() {

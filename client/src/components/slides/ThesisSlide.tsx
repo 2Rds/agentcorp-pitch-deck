@@ -28,8 +28,8 @@ export default function ThesisSlide() {
         <motion.div variants={i} style={{ padding: '1rem 1.5rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.12)' }}>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', lineHeight: 1.6, fontWeight: 500 }}>
             Until now, AI tools helped businesses do existing work faster. AgentCorp is the first platform that
-            gives a business entirely new capabilities it never had — a sales floor, a compliance department,
-            a finance office — all running autonomously. This is the Slack moment for AI agents: the shift from
+            gives a business entirely new capabilities it never had — a sales floor, a finance office,
+            a marketing department — all running autonomously. This is the Slack moment for AI agents: the shift from
             tool to workforce.
           </div>
         </motion.div>

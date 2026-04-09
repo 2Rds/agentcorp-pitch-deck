@@ -10,7 +10,7 @@ const competitors = [
   { name: 'DIY Agent Frameworks', examples: 'CrewAI, AutoGen, LangGraph', coverage: ['✗','✗','✗','△','✗'], note: 'Developer toolkit. Requires engineering team to deploy.' },
   { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full managed workforce. Sales + operations.' },
 ];
-const cols = ['AI SDR', 'Compliance', 'Finance/Ops', 'Multi-Agent', 'White-Glove'];
+const cols = ['AI SDR', 'BI/Analytics', 'Finance/Ops', 'Multi-Agent', 'White-Glove'];
 
 export default function CompetitionSlide() {
   return (

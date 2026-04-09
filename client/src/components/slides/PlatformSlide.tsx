@@ -15,7 +15,7 @@ export default function PlatformSlide() {
 
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
           Inter-agent communication.{' '}
-          <span className="c-cyan">Every call makes every agent smarter.</span>
+          <span className="c-cyan">Every interaction makes every agent smarter.</span>
         </motion.h2>
 
         {/* Dual Runtime Hero */}
@@ -25,7 +25,7 @@ export default function PlatformSlide() {
             border: '1px solid rgba(0,229,255,0.2)', borderRadius: 'var(--radius-lg)',
           }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>CONVERSATIONAL RUNTIME</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.3rem' }}>Active During Sales</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.3rem' }}>Active During Outbound</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
               Automated outbound engine for pipeline generation. Email sequences, lead research,
               appointment scheduling, CRM updates. Each SDR instance operates independently at full capacity.
@@ -39,7 +39,7 @@ export default function PlatformSlide() {
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-1)', marginBottom: '0.3rem' }}>Continuous Learning</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
               After each touchpoint, agents seamlessly shift to the cognitive runtime — processing outcomes,
-              extracting patterns, updating what works. Learning never stops between calls.
+              extracting patterns, updating what works. Learning never stops between interactions.
             </div>
           </div>
         </motion.div>
@@ -54,7 +54,7 @@ export default function PlatformSlide() {
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.55 }}>
             Agents don't just learn individually — they share an aggregated knowledge base that compounds
             with every touchpoint. Clone #47 learns an objection pattern at 2pm → Clone #3 has that knowledge
-            at 2:01pm. More agents = faster learning. More calls = smarter calls. The intelligence flywheel
+            at 2:01pm. More agents = faster learning. More touchpoints = smarter agents. The intelligence flywheel
             compounds alongside the revenue flywheel.
           </div>
         </motion.div>

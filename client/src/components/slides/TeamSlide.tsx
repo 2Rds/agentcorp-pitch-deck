@@ -27,6 +27,9 @@ export default function TeamSlide() {
             taken 4. Six months of delay were caused by a missed compliance filing, a stale premium illustration,
             and mismanaged business documents — three operational failures that three AI agents would have prevented.
           </div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', lineHeight: 1.55, marginBottom: '0.6rem', fontStyle: 'italic' }}>
+            Those failures aren't unique to financial services. Every business that runs on a founder wearing every hat faces the same breakdowns.
+          </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-1)', lineHeight: 1.55, fontWeight: 500 }}>
             Three months after the award, I left production to build AgentCorp — the AI workforce
             that would have given any business the operational capacity it needs from day one.

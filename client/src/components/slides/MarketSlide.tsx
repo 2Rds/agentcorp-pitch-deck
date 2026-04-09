@@ -32,7 +32,7 @@ export default function MarketSlide() {
             { val: '33M', label: 'US Small Businesses' },
             { val: '99.9%', label: 'Of US Businesses Are SMBs' },
             { val: '47%', label: 'Have <5 Employees' },
-            { val: '$50.3B', label: 'AI Agent Market 2030 (GVR)' },
+            { val: '$12K', label: 'Blended ACV (sub + overage)' },
           ].map((s, idx) => (
             <div key={idx} style={{ padding: '0.65rem 0.5rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--cyan)' }}>{s.val}</div>
@@ -41,7 +41,7 @@ export default function MarketSlide() {
           ))}
         </motion.div>
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 720 }}>
-          Every SMB needs sales, compliance, finance, marketing, legal, HR, and IT — but can't afford
+          Every SMB needs sales, marketing, finance, operations, and business intelligence — but can't afford
           to hire for any of them. AgentCorp gives them an executive assistant and five department heads for less than the cost of one part-time employee.
           Initial traction in outbound-driven service businesses, with natural expansion into every vertical where
           the founder is wearing every hat.

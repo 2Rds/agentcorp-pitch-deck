@@ -26,7 +26,7 @@ export default function HookSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>⚔️ OFFENSE — SAM FILLS THE PIPELINE</div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.35rem' }}>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)' }}>$120</span>
-              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>in credits (10 SDR calls)</span>
+              <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>in credits (10 outbound sequences)</span>
             </div>
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: 'var(--cyan)', marginBottom: '0.35rem' }}>→ One closed deal pays for months</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
@@ -75,8 +75,8 @@ export default function HookSlide() {
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', maxWidth: 740, lineHeight: 1.55 }}>
           <span style={{ color: 'var(--cyan)', fontWeight: 600 }}>Two flywheels compound simultaneously.</span>{' '}
           The revenue flywheel: credits generate pipeline, pipeline generates revenue, so customers scale spend. The intelligence flywheel:
-          every call teaches every agent via a shared knowledge base. More calls = smarter SDRs = higher close rates =
-          more calls. The ROI per credit <span style={{ fontStyle: 'italic' }}>increases</span> over time.
+          every touchpoint teaches every agent via a shared knowledge base. More outreach = smarter SDRs = higher close rates =
+          more outreach. The ROI per credit <span style={{ fontStyle: 'italic' }}>increases</span> over time.
         </motion.p>
 
       </motion.div>

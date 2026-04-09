@@ -5,7 +5,7 @@ const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transiti
 
 const layers = [
   { name: 'Interface Layer', tech: 'Web Dashboard · REST API · Mobile-responsive', color: 'var(--cyan)' },
-  { name: 'Dual-Runtime Engine', tech: 'Conversational runtime (live calls) ↔ Cognitive runtime (learning & strategy)', color: 'var(--gold)' },
+  { name: 'Dual-Runtime Engine', tech: 'Conversational runtime (active outbound) ↔ Cognitive runtime (learning & strategy)', color: 'var(--gold)' },
   { name: 'Model Layer', tech: 'Claude (reasoning) · Gemini (analysis) · Grok (speed) · Cloudflare AI Gateway', color: '#8b9cf7' },
   { name: 'Infrastructure', tech: 'Stripe Billing · Redis State · PostgreSQL · Credit Metering · Cloudflare Workers', color: 'var(--text-3)' },
 ];
@@ -33,8 +33,8 @@ export default function HowItWorksSlide() {
         {/* Dual runtime detail */}
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem', marginBottom: '0.75rem' }}>
           <div style={{ padding: '1rem', background: 'rgba(0,229,255,0.05)', border: '1px solid rgba(0,229,255,0.2)', borderRadius: 'var(--radius-lg)' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>🎙️ CONVERSATIONAL RUNTIME</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>During the call</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>⚡ CONVERSATIONAL RUNTIME</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>During active operations</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
               Automated outbound engine optimized for pipeline generation. Email sequences, lead research,
               appointment scheduling, CRM updates — all running autonomously across unlimited SDR instances.
@@ -42,7 +42,7 @@ export default function HowItWorksSlide() {
           </div>
           <div style={{ padding: '1rem', background: 'rgba(232,201,106,0.04)', border: '1px solid rgba(232,201,106,0.15)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.4rem' }}>🧠 COGNITIVE RUNTIME</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>Between calls</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: 'var(--text-1)', marginBottom: '0.25rem' }}>Between touchpoints</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)', lineHeight: 1.45 }}>
               Agents seamlessly shift to learning mode — processing outcomes, extracting patterns, refining
               strategies. Knowledge compounds across all clones via shared intelligence layer.
@@ -66,8 +66,8 @@ export default function HowItWorksSlide() {
         </motion.div>
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-3)', maxWidth: 700 }}>
-          Clone #47 learns an objection pattern at 2pm. Clone #3 has that knowledge at 2:01pm.
-          The entire sales force compounds intelligence at every touchpoint.
+          Clone #47 learns a pattern at 2pm. Clone #3 has that knowledge at 2:01pm.
+          The entire workforce compounds intelligence at every touchpoint.
         </motion.p>
       </motion.div>
     </div>

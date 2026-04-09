@@ -34,9 +34,8 @@ export default function TitleSlide() {
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
-          1 AI executive assistant and 5 department-head agents — backed by an infinitely
-          scalable AI sales workforce — that give any business the operational capacity of
-          a full-scale firm. Cloud-native web app.
+          1 AI executive assistant and 5 department-head agents that give any business
+          the operational capacity of a full-scale firm. Cloud-native web app.
         </motion.p>
 
         <motion.div variants={i} style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>

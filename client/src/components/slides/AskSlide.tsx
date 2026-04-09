@@ -37,7 +37,7 @@ export default function AskSlide() {
               { month: 'Month 6', milestone: '50 customers. NRR tracking above 120%. First Growth tier upgrades.' },
               { month: 'Month 9', milestone: '150 customers. First Scale tier customers. $50K+ MRR.' },
               { month: 'Month 12', milestone: '300 customers. $150K+ MRR. Series A metrics in sight.' },
-              { month: 'Month 18', milestone: '500+ customers. Net revenue retention 200%+. SOC 2 Type II path complete.' },
+              { month: 'Month 18', milestone: '500+ customers. NRR above 150%. SOC 2 Type II path complete.' },
             ].map((m, idx) => (
               <div key={idx} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.65rem' }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--gold)', minWidth: 60 }}>{m.month}</div>
