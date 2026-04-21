@@ -29,8 +29,8 @@ export default function TitleSlide() {
         </motion.div>
 
         <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.65rem, 3.2vw, 3rem)", lineHeight: 1.1, letterSpacing: "-0.025em", maxWidth: 980, marginBottom: "1.5rem" }}>
-          The AI-powered operating system{' '}
-          <span className="c-cyan">for the 2{'\u00a0'}million owner-operator businesses that can't afford to hire{'\u00a0'}— but can't afford not to.</span>
+          The AI operating system{' '}
+          <span className="c-cyan">for the 2{'\u00a0'}million owner-operators that can't afford to hire{'\u00a0'}— but can't afford not to.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
