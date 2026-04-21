@@ -23,18 +23,23 @@ const slideVariants = {
   exit: (direction: number) => ({ x: direction < 0 ? 100 : -100, opacity: 0 }),
 };
 
+// Slide order optimized for pre-seed: founder + timing front-loaded so the
+// investor is bought into the person and the moment before they see the
+// product/economics. Order: Title → Problem → Why Now → Founder-Market Fit →
+// Solution → How It Works → Asymmetry → Business Model → Market →
+// Competition → Traction → Ask.
 const slides = [
   { component: <TitleSlide key="title" />,             label: 'AgentCorp' },
   { component: <ProblemSlide key="problem" />,          label: 'Problem' },
+  { component: <ThesisSlide key="thesis" />,            label: 'Why Now' },
+  { component: <TeamSlide key="team" />,                label: 'Founder-Market Fit' },
   { component: <SolutionSlide key="solution" />,        label: 'Solution' },
-  { component: <HookSlide key="hook" />,                label: 'The Asymmetry' },
   { component: <HowItWorksSlide key="how" />,           label: 'How It Works' },
+  { component: <HookSlide key="hook" />,                label: 'The Asymmetry' },
   { component: <BusinessModelSlide key="model" />,      label: 'Business Model' },
   { component: <MarketSlide key="market" />,            label: 'Market' },
-  { component: <TractionSlide key="traction" />,        label: 'Traction' },
   { component: <CompetitionSlide key="competition" />,  label: 'Competition' },
-  { component: <TeamSlide key="team" />,                label: 'Team' },
-  { component: <ThesisSlide key="thesis" />,            label: 'Why Now' },
+  { component: <TractionSlide key="traction" />,        label: 'Traction' },
   { component: <AskSlide key="ask" />,                  label: 'The Ask' },
 ];
 

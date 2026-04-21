@@ -28,13 +28,13 @@ export default function TitleSlide() {
           <span className="eyebrow-muted">AgentCorp</span>
         </motion.div>
 
-        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.25rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 860, marginBottom: "1.5rem" }}>
+        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.25rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 920, marginBottom: "1.5rem" }}>
           The AI-powered operating system{' '}
-          <span className="c-cyan">for every business.</span>
+          <span className="c-cyan">for every owner-operator wearing every hat.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
-          1 AI executive assistant and 5 department-head agents that give any business
+          1 AI executive assistant and 5 department-head agents that give any owner-operator
           the operational capacity of a full-scale firm. Cloud-native web app.
         </motion.p>
 

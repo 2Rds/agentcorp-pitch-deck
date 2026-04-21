@@ -18,7 +18,7 @@ export default function AskSlide() {
             {[
               { pct: '40%', use: 'Engineering', detail: 'Head of Engineering + 2 senior devs. Harden platform, scale SDR infrastructure.' },
               { pct: '25%', use: 'Go-to-Market', detail: 'Founder-led sales to first 50 customers. LinkedIn PLG. Channel partnerships.' },
-              { pct: '20%', use: 'Operations', detail: 'SOC 2 compliance path. Legal. Delaware C-Corp incorporation.' },
+              { pct: '20%', use: 'Operations', detail: 'SOC 2 Type II prep. Legal/contracts. Finance + billing infrastructure.' },
               { pct: '15%', use: 'Runway Buffer', detail: '18-month runway at planned burn. Capital efficiency from AI-augmented development.' },
             ].map((f, idx) => (
               <div key={idx} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.65rem' }}>
