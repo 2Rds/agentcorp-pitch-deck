@@ -1,13 +1,42 @@
 import { motion } from 'framer-motion';
 
-const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.08 } } };
+const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.08 } } };
 const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
-const layers = [
-  { name: 'Interface Layer', tech: 'Web Dashboard · REST API · Mobile-responsive', color: 'var(--cyan)' },
-  { name: 'Agent Engine', tech: '6 specialized agents · Inter-agent mesh · Task routing & delegation', color: 'var(--gold)' },
-  { name: 'Model Layer', tech: 'Claude (reasoning) · Gemini (analysis) · Grok (X/Twitter) · Cohere (search & retrieval)', color: '#8b9cf7' },
-  { name: 'Infrastructure', tech: 'Stripe Billing · Redis State · PostgreSQL · Credit Metering · Cloudflare Workers', color: 'var(--text-3)' },
+// Three-step narrative: the owner's journey from "sign up" to "a workforce
+// that learns my business." Replaces the previous 4-layer tech stack
+// (Interface / Agent / Model / Infrastructure) which read as architecture
+// documentation to investors — Redis, Postgres, Cloudflare Workers are
+// implementation details, not thesis material.
+const steps = [
+  {
+    n: '01',
+    label: 'Connect',
+    title: 'Your tools. Not new ones.',
+    body: 'Plug in the tools you already use — Gmail, calendar, CRM, Stripe, accounting. The agents work inside your stack. Nothing to migrate, nothing to rebuild.',
+  },
+  {
+    n: '02',
+    label: 'Converse',
+    title: 'Tell Alex what you need.',
+    body: 'Plain English. Alex routes the work to the right agent — sales to Sam, finance to Riley, ops to Jordan. No dashboards to learn, no workflows to configure.',
+  },
+  {
+    n: '03',
+    label: 'Compound',
+    title: 'Your workforce learns your business.',
+    body: 'Agents execute, hand off tasks, and log every outcome. A pattern one agent discovers at 2pm is available to every other agent at 2:01pm. The system gets smarter with every touchpoint.',
+  },
+];
+
+// Investor-benefit framing, not technology namechecking. Previous tile
+// labels leaned "4 LLM Providers / 6 Specialized Agents / 0 Engineering
+// Required" — fine, but the names (Claude, Gemini, Grok, Redis, CF Workers)
+// belonged inside. Here we surface capability, not vendor.
+const credibility = [
+  { val: 'Best-Fit',    label: 'Model Per Task',     note: 'No vendor lock-in. Lower inference cost than single-model systems.' },
+  { val: 'Zero',        label: 'Engineering Lift',   note: 'Cloud-native web app. Deploy in minutes. Mobile-responsive.' },
+  { val: 'Every',       label: 'Action Audited',     note: 'Full trail of what ran, when, why, and what it cost.' },
 ];
 
 export default function HowItWorksSlide() {
@@ -15,65 +44,47 @@ export default function HowItWorksSlide() {
     <div className="slide-shell">
       <div className="glow-bl" />
       <motion.div className="slide-inner" variants={c} initial="hidden" animate="visible">
-        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.75rem' }}>How It Works</motion.span>
-        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 860, marginBottom: '1rem' }}>
-          Multi-model. Multi-agent.{' '}<span className="c-cyan">Compounding shared intelligence.</span>
+
+        <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.65rem' }}>How It Works</motion.span>
+        <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 880, marginBottom: '0.85rem' }}>
+          One conversation. Six specialists.{' '}<span className="c-cyan">Intelligence that compounds.</span>
         </motion.h2>
 
-        {/* Stack layers */}
-        <motion.div variants={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '0.75rem' }}>
-          {layers.map((l, idx) => (
-            <div key={idx} style={{ padding: '0.65rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.75rem', color: l.color, minWidth: 130 }}>{l.name}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', color: 'var(--text-3)' }}>{l.tech}</div>
+        {/* Three-step journey */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.6rem', marginBottom: '0.75rem' }}>
+          {steps.map((step, idx) => (
+            <div key={idx} style={{ padding: '1rem 1.1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', position: 'relative' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)' }}>{step.n}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--text-4)' }}>{step.label.toUpperCase()}</div>
+              </div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-1)', lineHeight: 1.25, marginBottom: '0.45rem' }}>{step.title}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.73rem', color: 'var(--text-3)', lineHeight: 1.5 }}>{step.body}</div>
             </div>
           ))}
         </motion.div>
 
-        {/* Compounding Knowledge */}
+        {/* The moat — reframed compounding-knowledge story as defensibility thesis */}
         <motion.div variants={i} style={{
-          padding: '0.85rem 1.25rem', marginBottom: '0.75rem',
-          background: 'rgba(139,156,247,0.04)', border: '1px solid rgba(139,156,247,0.15)',
-          borderRadius: 'var(--radius-lg)',
+          padding: '0.95rem 1.25rem', marginBottom: '0.75rem',
+          background: 'rgba(0,229,255,0.04)', borderLeft: '2px solid var(--cyan)',
+          borderRadius: '0 var(--radius-lg) var(--radius-lg) 0',
         }}>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: '#8b9cf7', marginBottom: '0.4rem' }}>COMPOUNDING KNOWLEDGE BASE</div>
-          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.55 }}>
-            Agents don't just learn individually — they share an aggregated knowledge base that compounds
-            with every interaction. Patterns discovered by one agent are immediately available to all others.
-            The entire workforce gets smarter with every touchpoint.
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>WHY IT'S DEFENSIBLE</div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-1)', lineHeight: 1.55 }}>
+            Every agent's outcomes feed a shared knowledge base that compounds with every task. Over 6 months, the system knows your operation better than a new hire would after 2 years. <span style={{ color: 'var(--cyan)', fontWeight: 500 }}>That's the moat — and why customers don't leave.</span>
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem', marginBottom: '0.75rem' }}>
-          {[
-            { val: '4', label: 'LLM Providers', note: 'Best model per task, no lock-in' },
-            { val: '6', label: 'Specialized Agents', note: '1 EA + 5 department heads' },
-            { val: '0', label: 'Engineering Required', note: 'Fully managed, deploy in minutes' },
-          ].map((m, idx) => (
-            <div key={idx} style={{ padding: '0.75rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.4rem', color: 'var(--cyan)' }}>{m.val}</div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.1rem' }}>{m.label}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-4)' }}>{m.note}</div>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Feature grid */}
-        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
-          {[
-            { title: 'Multi-Model', desc: 'Claude, Gemini, Grok, Cohere — optimal model per task', icon: '🧠' },
-            { title: 'Cloud-Native', desc: 'No installs. Instant onboarding. Mobile-responsive.', icon: '☁️' },
-            { title: 'Inter-Agent Mesh', desc: 'Agents delegate, escalate, and hand off tasks.', icon: '🔗' },
-            { title: 'Governance + Metering', desc: 'Audit trails, access controls, per-action billing.', icon: '🛡️' },
-          ].map((f, idx) => (
-            <div key={idx} style={{
-              padding: '0.7rem 0.75rem', background: 'var(--surface)',
-              border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)',
-            }}>
-              <div style={{ fontSize: '0.9rem', marginBottom: '0.25rem' }}>{f.icon}</div>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.72rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>{f.title}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'var(--text-4)', lineHeight: 1.35 }}>{f.desc}</div>
+        {/* Credibility strip — capability, not vendor namechecking */}
+        <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem' }}>
+          {credibility.map((c, idx) => (
+            <div key={idx} style={{ padding: '0.7rem 0.9rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem', marginBottom: '0.25rem' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.95rem', color: 'var(--cyan)' }}>{c.val}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--text-4)' }}>{c.label.toUpperCase()}</div>
+              </div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'var(--text-4)', lineHeight: 1.4 }}>{c.note}</div>
             </div>
           ))}
         </motion.div>
