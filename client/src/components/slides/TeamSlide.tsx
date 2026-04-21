@@ -13,7 +13,7 @@ const career = [
 const stats = [
   { val: '7 yrs',  label: 'Wealth Management' },
   { val: '$25M',   label: 'AUM Book Built' },
-  { val: '$500K+', label: 'Single-Case Annual Premium' },
+  { val: '$500K+', label: 'Single-Case Life Insurance Premium' },
 ];
 
 export default function TeamSlide() {
@@ -63,7 +63,7 @@ export default function TeamSlide() {
           {/* Story */}
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.55, marginBottom: '0.55rem' }}>
             I ran an outbound-driven practice wearing every hat — CEO, sales, finance, ops, admin —
-            simultaneously. Closed a <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>$500K+ annual premium, four-policy case</span> single-handedly.
+            simultaneously. Closed a <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>$500K+ annual-premium, four-policy life insurance strategy spanning business continuity and executive benefits</span> — single-handedly.
             It should have taken 4 months. It took 12 — because of missed compliance filings, stale documents, and
             operational chaos that three AI agents would have prevented.
           </div>
