@@ -40,13 +40,16 @@ export default function TitleSlide() {
 
         <motion.div variants={i} style={{ display: 'flex', gap: '2.5rem', alignItems: 'center', marginBottom: '2.5rem' }}>
           {[
-            { val: '33M', label: 'US Small Businesses' },
+            { val: '2M', label: 'Owner-Operator ICP', sublabel: 'of 33M US SMBs' },
             { val: '$50B+', label: 'AI Agent Market by 2030' },
             { val: '6', label: 'AI Agents Deployed' },
-          ].map((m, idx) => (
+          ].map((m: { val: string; label: string; sublabel?: string }, idx) => (
             <div key={idx} style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', color: idx === 0 ? 'var(--cyan)' : idx === 1 ? 'var(--gold)' : 'var(--text-1)' }}>{m.val}</div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--text-4)', marginTop: '0.25rem' }}>{m.label}</div>
+              {m.sublabel && (
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.25)', marginTop: '0.15rem' }}>{m.sublabel}</div>
+              )}
             </div>
           ))}
         </motion.div>
