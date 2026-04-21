@@ -28,9 +28,9 @@ export default function TitleSlide() {
           <span className="eyebrow-muted">AgentCorp</span>
         </motion.div>
 
-        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.75rem, 3.5vw, 3.25rem)", lineHeight: 1.08, letterSpacing: "-0.025em", maxWidth: 920, marginBottom: "1.5rem" }}>
+        <motion.h2 variants={i} className="c-white" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(1.65rem, 3.2vw, 3rem)", lineHeight: 1.1, letterSpacing: "-0.025em", maxWidth: 980, marginBottom: "1.5rem" }}>
           The AI-powered operating system{' '}
-          <span className="c-cyan">for every owner-operator wearing every hat.</span>
+          <span className="c-cyan">for the 2 million businesses that can't afford to hire — but can't afford not to.</span>
         </motion.h2>
 
         <motion.p variants={i} className="t-body" style={{ maxWidth: 680, marginBottom: '2.5rem' }}>
