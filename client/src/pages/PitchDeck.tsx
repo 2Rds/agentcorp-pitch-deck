@@ -9,13 +9,14 @@ import HookSlide from '@/components/slides/HookSlide';
 import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
 import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
 import MarketSlide from '@/components/slides/MarketSlide';
+import GTMSlide from '@/components/slides/GTMSlide';
 import TractionSlide from '@/components/slides/TractionSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
 import ThesisSlide from '@/components/slides/ThesisSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 12;
+const TOTAL_SLIDES = 13;
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
@@ -25,9 +26,11 @@ const slideVariants = {
 
 // Slide order optimized for pre-seed: founder + timing front-loaded so the
 // investor is bought into the person and the moment before they see the
-// product/economics. Order: Title → Problem → Why Now → Founder-Market Fit →
-// Solution → How It Works → Asymmetry → Business Model → Market →
-// Competition → Traction → Ask.
+// product/economics. GTM slides between Market and Competition to surface
+// capital efficiency ($183/mo all-in) — a pre-seed story investors look for.
+// Order: Title → Problem → Why Now → Founder-Market Fit → Solution →
+// How It Works → Asymmetry → Business Model → Market → GTM → Competition →
+// Traction → Ask.
 const slides = [
   { component: <TitleSlide key="title" />,             label: 'AgentCorp' },
   { component: <ProblemSlide key="problem" />,          label: 'Problem' },
@@ -38,6 +41,7 @@ const slides = [
   { component: <HookSlide key="hook" />,                label: 'The Asymmetry' },
   { component: <BusinessModelSlide key="model" />,      label: 'Business Model' },
   { component: <MarketSlide key="market" />,            label: 'Market' },
+  { component: <GTMSlide key="gtm" />,                  label: 'Go-to-Market' },
   { component: <CompetitionSlide key="competition" />,  label: 'Competition' },
   { component: <TractionSlide key="traction" />,        label: 'Traction' },
   { component: <AskSlide key="ask" />,                  label: 'The Ask' },
