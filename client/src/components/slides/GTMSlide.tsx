@@ -15,11 +15,13 @@ const funnel = [
 ];
 
 // Channel stack — named tools, not generic categories. Each line on startup
-// credit or free tier; total all-in $183/mo.
+// credit or free tier; total all-in $183/mo. Lightfield flagged as the
+// strategic centerpiece — AI-native CRM that AgentCorp agents work inside
+// natively (vs legacy HubSpot/Salesforce which are pre-AI).
 const stack = [
   { layer: 'Prospecting', tool: 'LinkedIn Sales Nav + Apollo' },
   { layer: 'Outbound',    tool: 'Instantly (cold email)' },
-  { layer: 'CRM',         tool: 'Lightfield AI (auto-capture)' },
+  { layer: 'CRM',         tool: 'Lightfield AI', sub: 'AI-native — our agents read + write records natively', highlight: true },
   { layer: 'Lifecycle',   tool: 'Customer.io (post-signup)' },
 ];
 
@@ -71,9 +73,19 @@ export default function GTMSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--gold)', marginBottom: '0.5rem' }}>CHANNEL STACK</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.55rem 0.75rem' }}>
               {stack.map((s, idx) => (
-                <div key={idx}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.06em', color: 'var(--text-4)', marginBottom: '0.1rem' }}>{s.layer.toUpperCase()}</div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-2)' }}>{s.tool}</div>
+                <div key={idx} style={s.highlight ? {
+                  padding: '0.4rem 0.55rem',
+                  margin: '-0.4rem -0.55rem',
+                  background: 'rgba(0,229,255,0.06)',
+                  border: '1px solid rgba(0,229,255,0.25)',
+                  borderRadius: 6,
+                } : undefined}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.35rem', marginBottom: '0.1rem' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.06em', color: s.highlight ? 'var(--cyan)' : 'var(--text-4)' }}>{s.layer.toUpperCase()}</div>
+                    {s.highlight && <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.08em', color: 'var(--cyan)', padding: '0.05rem 0.3rem', background: 'rgba(0,229,255,0.12)', borderRadius: 3 }}>STRATEGIC</div>}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-1)', fontWeight: s.highlight ? 600 : 400 }}>{s.tool}</div>
+                  {s.sub && <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-3)', marginTop: '0.15rem', lineHeight: 1.35 }}>{s.sub}</div>}
                 </div>
               ))}
             </div>
