@@ -3,15 +3,14 @@ import { motion } from 'framer-motion';
 const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.08 } } };
 const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any } } };
 
-// Four-stage funnel: enrichment → decision-maker contacts → demos → customers.
-// Numbers match the live pipeline state: Wave 1 South FL is 232 companies /
-// 34 contacts; Operation Six Hats targets 50 demos → 10 customers by Day 60
-// at a data-driven 20% demo-to-close.
+// Forward-looking 60-day funnel — credibility anchor (5 pre-GTM users today)
+// then three target cards. The bottom-up math defending these targets lives
+// on the next slide (GTM Math).
 const funnel = [
-  { val: '232 → 1,500+', label: 'Companies Enriched', note: 'Wave 1 South FL · scaling nationally' },
-  { val: '34',           label: 'Decision-Maker Contacts', note: 'Named, enriched, ready for outbound' },
-  { val: '50',           label: 'Demos by Day 60',         note: 'Founder-led, no SDR hire' },
-  { val: '10',           label: 'Customers by Day 60',     note: '20% demo-to-close (data-driven)' },
+  { val: '5',            label: 'Pre-GTM Users (today)', note: 'Organic inbound · 5 verticals · zero marketing spend' },
+  { val: '1,500+',       label: 'Target Leads (60d)',    note: 'Multi-channel via Operation Six Hats' },
+  { val: '~49',          label: 'Target Demos (60d)',    note: 'Founder-led · ~3.2% blended lead→demo' },
+  { val: '15',           label: 'Target Customers (60d)', note: '~31% blended close · math on next slide' },
 ];
 
 // Channel stack — named tools, not generic categories. Each line on startup
@@ -19,10 +18,12 @@ const funnel = [
 // strategic centerpiece — AI-native CRM that AgentCorp agents work inside
 // natively (vs legacy HubSpot/Salesforce which are pre-AI).
 const stack = [
-  { layer: 'Prospecting', tool: 'LinkedIn Sales Nav + Apollo' },
-  { layer: 'Outbound',    tool: 'Instantly (cold email)' },
+  { layer: 'Prospecting', tool: 'LinkedIn Sales Nav' },
+  { layer: 'Enrichment',  tool: 'Apollo · secondary data + emails' },
+  { layer: 'Outbound',    tool: 'Instantly · 6 mailboxes' },
   { layer: 'CRM',         tool: 'Lightfield AI', sub: 'AI-native — our agents read + write records natively', highlight: true },
-  { layer: 'Lifecycle',   tool: 'Customer.io (post-signup)' },
+  { layer: 'Content',     tool: 'Reddit · HN · ProductHunt · IndieHackers · X · LinkedIn' },
+  { layer: 'Lifecycle',   tool: 'Customer.io · post-signup drip' },
 ];
 
 export default function GTMSlide() {
@@ -33,7 +34,7 @@ export default function GTMSlide() {
 
         <motion.span variants={i} className="eyebrow" style={{ display: 'block', marginBottom: '0.65rem' }}>Go-to-Market</motion.span>
         <motion.h2 variants={i} className="t-title c-white" style={{ maxWidth: 880, marginBottom: '0.4rem' }}>
-          Ten customers. Sixty days.{' '}<span className="c-cyan">$183 a month.</span>
+          Fifteen customers. Sixty days.{' '}<span className="c-cyan">$183 a month.</span>
         </motion.h2>
         <motion.p variants={i} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-4)', letterSpacing: '0.08em', marginBottom: '1rem' }}>
           OPERATION SIX HATS — CAPITAL EFFICIENCY AS A FEATURE, NOT A CONSTRAINT
@@ -71,23 +72,38 @@ export default function GTMSlide() {
           {/* Stack */}
           <div style={{ padding: '1rem 1.2rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--gold)', marginBottom: '0.5rem' }}>CHANNEL STACK</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.55rem 0.75rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem 0.75rem' }}>
               {stack.map((s, idx) => (
                 <div key={idx} style={s.highlight ? {
-                  padding: '0.4rem 0.55rem',
-                  margin: '-0.4rem -0.55rem',
+                  padding: '0.35rem 0.5rem',
+                  margin: '-0.35rem -0.5rem',
                   background: 'rgba(0,229,255,0.06)',
                   border: '1px solid rgba(0,229,255,0.25)',
                   borderRadius: 6,
                 } : undefined}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.35rem', marginBottom: '0.1rem' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.06em', color: s.highlight ? 'var(--cyan)' : 'var(--text-4)' }}>{s.layer.toUpperCase()}</div>
-                    {s.highlight && <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.45rem', letterSpacing: '0.08em', color: 'var(--cyan)', padding: '0.05rem 0.3rem', background: 'rgba(0,229,255,0.12)', borderRadius: 3 }}>STRATEGIC</div>}
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.35rem', marginBottom: '0.08rem' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.52rem', letterSpacing: '0.06em', color: s.highlight ? 'var(--cyan)' : 'var(--text-4)' }}>{s.layer.toUpperCase()}</div>
+                    {s.highlight && <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.42rem', letterSpacing: '0.08em', color: 'var(--cyan)', padding: '0.05rem 0.3rem', background: 'rgba(0,229,255,0.12)', borderRadius: 3 }}>STRATEGIC</div>}
                   </div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-1)', fontWeight: s.highlight ? 600 : 400 }}>{s.tool}</div>
-                  {s.sub && <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', color: 'var(--text-3)', marginTop: '0.15rem', lineHeight: 1.35 }}>{s.sub}</div>}
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.66rem', color: 'var(--text-1)', fontWeight: s.highlight ? 600 : 400, lineHeight: 1.3 }}>{s.tool}</div>
+                  {s.sub && <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', color: 'var(--text-3)', marginTop: '0.1rem', lineHeight: 1.3 }}>{s.sub}</div>}
                 </div>
               ))}
+            </div>
+
+            {/* Automated workflow visualization */}
+            <div style={{ marginTop: '0.7rem', paddingTop: '0.55rem', borderTop: '1px dashed rgba(0,229,255,0.2)' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.5rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.35rem' }}>AUTOMATED WORKFLOW · BUILT + LIVE</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-1)', padding: '0.2rem 0.45rem', background: 'rgba(0,229,255,0.08)', border: '1px solid rgba(0,229,255,0.2)', borderRadius: 4 }}>Lightfield Workflow</span>
+                <span style={{ color: 'var(--cyan)', fontSize: '0.6rem', opacity: 0.7 }}>→</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-1)', padding: '0.2rem 0.45rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 4 }}>Apollo Enrichment</span>
+                <span style={{ color: 'var(--cyan)', fontSize: '0.6rem', opacity: 0.7 }}>→</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.58rem', color: 'var(--text-1)', padding: '0.2rem 0.45rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 4 }}>Instantly Sequence</span>
+              </div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.58rem', color: 'var(--text-4)', marginTop: '0.3rem', lineHeight: 1.4 }}>
+                New lead lands in Lightfield → custom skill auto-triggers Apollo enrichment → qualified records flow to Instantly sequence. Zero-touch pipeline, fully automated.
+              </div>
             </div>
           </div>
 
@@ -109,7 +125,7 @@ export default function GTMSlide() {
         {/* Capital-efficiency closer */}
         <motion.div variants={i} style={{ padding: '0.85rem 1.25rem', background: 'rgba(232,201,106,0.04)', borderLeft: '2px solid var(--gold)', borderRadius: '0 var(--radius-lg) var(--radius-lg) 0' }}>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-1)', lineHeight: 1.55 }}>
-            Most pre-seed startups burn $10K+/mo on GTM before hitting traction. We close our first ten at <span style={{ color: 'var(--gold)', fontWeight: 600 }}>less than 2% of that spend</span>. The same AI-augmented discipline that built the product runs the pipeline.
+            Most pre-seed startups burn $10K+/mo on GTM before hitting traction. We close our first fifteen at <span style={{ color: 'var(--gold)', fontWeight: 600 }}>less than 2% of that spend</span>. The same AI-augmented discipline that built the product runs the pipeline.
           </div>
         </motion.div>
 
