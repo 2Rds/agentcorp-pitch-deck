@@ -17,7 +17,7 @@ export default function AskSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.75rem' }}>USE OF FUNDS</div>
             {[
               { pct: '40%', use: 'Engineering / Payroll', detail: 'Roberto Cinque (Head of Eng, Naples, $6K/mo) + 1 sr dev sourced via Roberto\'s network ($6K/mo) + founder draw ($8K/mo) + remote EA ($1K/mo) + self-hosted AgentCorp ops ($750/mo). Offshore-weighted; run-rate ~$22K/mo.' },
-              { pct: '25%', use: 'Go-to-Market', detail: 'Founder-led sales to first 50 customers. LinkedIn PLG. Channel partnerships.' },
+              { pct: '25%', use: 'Go-to-Market', detail: 'Founder-led mo 1-6 (first 50 customers, cold + inbound). PLG self-serve + content + paid acquisition layered mo 6-12 (50→300). First sales hire mo 12+ once CAC validated.' },
               { pct: '20%', use: 'Operations', detail: 'SOC 2 Type II prep. Legal/contracts. Finance + billing infrastructure.' },
               { pct: '15%', use: 'Runway Buffer', detail: '18-month runway at planned burn. Capital efficiency from AI-augmented development.' },
             ].map((f, idx) => (

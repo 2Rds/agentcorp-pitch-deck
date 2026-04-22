@@ -76,6 +76,9 @@ export default function CapitalEfficiencySlide() {
                 </div>
               ))}
             </div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', color: 'var(--text-4)', fontStyle: 'italic', marginTop: '0.5rem', lineHeight: 1.4 }}>
+              Notion's $12K is provider-stated program value (~$720 direct Y1 sub offset; remainder is AI-feature credit consumption). PostHog credit retains beyond Y1 as event volume scales.
+            </div>
           </div>
 
           {/* Subscription Offsets */}
