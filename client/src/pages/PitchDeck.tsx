@@ -10,13 +10,14 @@ import HowItWorksSlide from '@/components/slides/HowItWorksSlide';
 import BusinessModelSlide from '@/components/slides/BusinessModelSlide';
 import MarketSlide from '@/components/slides/MarketSlide';
 import GTMSlide from '@/components/slides/GTMSlide';
+import CapitalEfficiencySlide from '@/components/slides/CapitalEfficiencySlide';
 import TractionSlide from '@/components/slides/TractionSlide';
 import CompetitionSlide from '@/components/slides/CompetitionSlide';
 import TeamSlide from '@/components/slides/TeamSlide';
 import ThesisSlide from '@/components/slides/ThesisSlide';
 import AskSlide from '@/components/slides/AskSlide';
 
-const TOTAL_SLIDES = 13;
+const TOTAL_SLIDES = 14;
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
@@ -42,6 +43,7 @@ const slides = [
   { component: <BusinessModelSlide key="model" />,      label: 'Business Model' },
   { component: <MarketSlide key="market" />,            label: 'Market' },
   { component: <GTMSlide key="gtm" />,                  label: 'Go-to-Market' },
+  { component: <CapitalEfficiencySlide key="capital" />, label: 'Capital Efficiency' },
   { component: <CompetitionSlide key="competition" />,  label: 'Competition' },
   { component: <TractionSlide key="traction" />,        label: 'Traction' },
   { component: <AskSlide key="ask" />,                  label: 'The Ask' },

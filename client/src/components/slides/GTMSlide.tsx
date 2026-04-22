@@ -62,7 +62,7 @@ export default function GTMSlide() {
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-3)' }}>/ mo, all-in</div>
             </div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-              Supported by <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>$80K+ in offset infrastructure</span> — Mercury, Notion, DigitalOcean, Lightfield, Customer.io startup credits.
+              Supported by <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>~$83K in offset infrastructure</span> across 17 active startup programs (full list on Traction slide).
             </div>
           </div>
 
@@ -79,6 +79,19 @@ export default function GTMSlide() {
             </div>
           </div>
 
+        </motion.div>
+
+        {/* Measurement stack — PostHog $50K credit + full-funnel instrumentation */}
+        <motion.div variants={i} style={{ padding: '0.85rem 1.2rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)', marginBottom: '0.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.4rem', gap: '0.75rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)' }}>ENTERPRISE OBSERVABILITY — DAY 0</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-3)' }}>
+              <span style={{ color: 'var(--text-1)', fontWeight: 700 }}>$50K</span> POSTHOG CREDIT · LIVE
+            </div>
+          </div>
+          <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
+            The <span style={{ color: 'var(--text-1)' }}>$10K+/mo analytics + observability stack</span> scaled companies pay for once they hit millions of events — funded by PostHog's $50K startup credit. Full-funnel instrumentation (ad → click → signup → activation → retention → expansion), session replay, LLM observability (<span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--cyan)' }}>$ai_generation</span> per model call with shared trace IDs), feature flags, and experiments — all live before the first paid customer. Every GTM decision is empirical from user zero.
+          </div>
         </motion.div>
 
         {/* Capital-efficiency closer */}

@@ -9,7 +9,7 @@ const competitors = [
   { name: 'Workflow Automation', examples: 'Bardeen ($15M), Make + AI', coverage: ['△','✗','✗','△','✗'], note: 'Task automation. Agents don\'t think.' },
   { name: 'DIY Agent Frameworks', examples: 'CrewAI, AutoGen, LangGraph', coverage: ['✗','✗','✗','△','✗'], note: 'Developer toolkit. Requires engineering team.' },
   { name: 'Enterprise AI Workforce', examples: 'Ema ($75M), Athena', coverage: ['✓','△','✓','✓','✗'], note: 'Enterprise-only. Six-figure contracts. No SMB tier.' },
-  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full surface. White-glove included. $250–$2,500/mo.' },
+  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full surface. White-glove in the model. $250–$2,500/mo.' },
 ];
 const cols = ['AI SDR', 'BI/Analytics', 'Finance/Ops', 'Multi-Agent', 'White-Glove'];
 
@@ -51,7 +51,7 @@ export default function CompetitionSlide() {
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>WHERE WE SIT</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>The only full-surface AI workforce built for SMB owner-operators — sales, BI, finance, ops, marketing pre-built and coordinated, with a white-glove operator included, at $250–$2,500/mo. Ema is the enterprise cousin — different segment, different GTM.</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>The only full-surface AI workforce built for SMB owner-operators — sales, BI, finance, ops, marketing pre-built and coordinated, with a white-glove operator bundled in the model (Phase 2 post-initial traction), at $250–$2,500/mo. Ema is the enterprise cousin — different segment, different GTM.</div>
           </div>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>DEFENSIBILITY</div>
