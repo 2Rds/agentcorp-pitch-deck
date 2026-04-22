@@ -62,16 +62,15 @@ export default function PlatformSlide() {
         {/* Feature grid - condensed */}
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
           {[
-            { title: 'Multi-Model', desc: 'Claude, Gemini, Grok — optimal model per task', icon: '🧠' },
-            { title: 'Cloud-Native Web App', desc: 'No installs. Instant onboarding. Mobile-responsive.', icon: '💬' },
-            { title: 'Inter-Agent Mesh', desc: 'Agents delegate, escalate, and hand off tasks.', icon: '🔗' },
-            { title: 'Governance + Metering', desc: 'Audit trails, access controls, per-action billing.', icon: '🛡️' },
+            { title: 'Multi-Model', desc: 'Claude, Gemini, Grok — optimal model per task' },
+            { title: 'Cloud-Native Web App', desc: 'No installs. Instant onboarding. Mobile-responsive.' },
+            { title: 'Inter-Agent Mesh', desc: 'Agents delegate, escalate, and hand off tasks.' },
+            { title: 'Governance + Metering', desc: 'Audit trails, access controls, per-action billing.' },
           ].map((f, idx) => (
             <div key={idx} style={{
               padding: '0.7rem 0.75rem', background: 'var(--surface)',
               border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)',
             }}>
-              <div style={{ fontSize: '0.9rem', marginBottom: '0.25rem' }}>{f.icon}</div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.72rem', color: 'var(--text-1)', marginBottom: '0.15rem' }}>{f.title}</div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', color: 'var(--text-4)', lineHeight: 1.35 }}>{f.desc}</div>
             </div>

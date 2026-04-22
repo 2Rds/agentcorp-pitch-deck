@@ -14,12 +14,12 @@ export default function ThesisSlide() {
         </motion.h2>
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {[
-            { title: 'LLM Reasoning Crossed the Threshold', desc: 'AI agents can now execute multi-step business tasks autonomously — not just answer questions. Compliance tracking, financial analysis, lead research, campaign creation — all at human-equivalent quality. This wasn\'t possible 18 months ago.', icon: '🧪', color: 'var(--cyan)' },
-            { title: 'Multi-Model Convergence', desc: 'Claude, Gemini, and Grok each excel at different tasks. For the first time, a platform can assign the optimal model to each agent — reasoning, speed, analysis — without vendor lock-in. Model costs are falling 10× per year.', icon: '🧠', color: 'var(--gold)' },
-            { title: '33M Businesses Are Waiting', desc: 'Every small business founder is simultaneously the CEO, CFO, and IT department. They know AI can help but can\'t deploy it themselves. AgentCorp gives them a full workforce for less than one part-time hire.', icon: '📊', color: '#8b9cf7' },
+            { n: '01', title: 'LLM Reasoning Crossed the Threshold', desc: 'AI agents can now execute multi-step business tasks autonomously — not just answer questions. Compliance tracking, financial analysis, lead research, campaign creation — all at human-equivalent quality. This wasn\'t possible 18 months ago.', color: 'var(--cyan)' },
+            { n: '02', title: 'Multi-Model Convergence', desc: 'Claude, Gemini, and Grok each excel at different tasks. For the first time, a platform can assign the optimal model to each agent — reasoning, speed, analysis — without vendor lock-in. Model costs are falling 10× per year.', color: 'var(--gold)' },
+            { n: '03', title: '33M Businesses Are Waiting', desc: 'Every small business founder is simultaneously the CEO, CFO, and IT department. They know AI can help but can\'t deploy it themselves. AgentCorp gives them a full workforce for less than one part-time hire.', color: '#8b9cf7' },
           ].map((t, idx) => (
             <div key={idx} style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-              <div style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t.icon}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: t.color, marginBottom: '0.4rem' }}>{t.n}</div>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: t.color, marginBottom: '0.4rem' }}>{t.title}</div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.5 }}>{t.desc}</div>
             </div>
@@ -29,8 +29,8 @@ export default function ThesisSlide() {
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', color: 'var(--text-1)', lineHeight: 1.6, fontWeight: 500 }}>
             Until now, AI tools helped businesses do existing work faster. AgentCorp is the first platform that
             gives a business entirely new capabilities it never had — a sales floor, a finance office,
-            a marketing department — all running autonomously. This is the Slack moment for AI agents: the shift from
-            tool to workforce.
+            a marketing department — all running autonomously. The step change: AI goes from tool-you-use
+            to workforce-you-deploy.
           </div>
         </motion.div>
       </motion.div>

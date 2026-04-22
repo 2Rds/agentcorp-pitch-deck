@@ -94,7 +94,7 @@ export default function TeamSlide() {
             operational chaos that three AI agents would have prevented.
           </div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-1)', lineHeight: 1.55, fontWeight: 500 }}>
-            Those failures aren't unique to financial services. I won national awards despite the ceiling. Then I built the workforce that eliminates it.
+            Those failures aren't unique to financial services — they're the same ceiling every owner-operator hits regardless of vertical. I won national awards despite it. Then I built the workforce that eliminates it.
           </div>
 
           </div>{/* /right column */}

@@ -23,7 +23,7 @@ export default function HookSlide() {
             padding: '1.1rem', background: 'rgba(0,229,255,0.05)',
             border: '1px solid rgba(0,229,255,0.2)', borderRadius: 'var(--radius-lg)',
           }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>⚔️ OFFENSE — SAM FILLS THE PIPELINE</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.5rem' }}>OFFENSE — SAM FILLS THE PIPELINE</div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.35rem' }}>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)' }}>$120</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>in credits (10 outbound sequences)</span>
@@ -38,7 +38,7 @@ export default function HookSlide() {
             padding: '1.1rem', background: 'rgba(232,201,106,0.04)',
             border: '1px solid rgba(232,201,106,0.15)', borderRadius: 'var(--radius-lg)',
           }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--gold)', marginBottom: '0.5rem' }}>🛡️ DEFENSE — THE SYSTEM PROTECTS THE PIPELINE</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'var(--gold)', marginBottom: '0.5rem' }}>DEFENSE — THE SYSTEM PROTECTS THE PIPELINE</div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.35rem' }}>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.75rem', color: 'var(--text-1)' }}>$48K</span>
               <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)' }}>/yr (Scale + White Glove)</span>

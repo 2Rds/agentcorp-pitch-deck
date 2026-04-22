@@ -72,7 +72,7 @@ export default function HowItWorksSlide() {
         }}>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.1em', color: 'var(--cyan)', marginBottom: '0.4rem' }}>WHY IT'S DEFENSIBLE</div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--text-1)', lineHeight: 1.55 }}>
-            Every agent's outcomes feed a shared knowledge base. The pattern Sam finds at 2pm is live for Riley at 2:01pm — <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>not 1+1+1+1+1+1, but 6×6×6</span>. Over 2 months, the system knows your operation better than a new hire would after 2 years. <span style={{ color: 'var(--cyan)', fontWeight: 500 }}>That's the moat — and why customers don't leave.</span>
+            <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>One hive mind, six specialists.</span> Every agent's outcomes feed a shared knowledge base — the pattern Sam finds at 2pm is live for Riley at 2:01pm. Over 2 months, the system knows your operation better than a new hire would after 2 years. <span style={{ color: 'var(--cyan)', fontWeight: 500 }}>That's the moat — and why customers don't leave.</span>
           </div>
         </motion.div>
 

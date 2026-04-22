@@ -4,12 +4,12 @@ const c = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { stagger
 const i = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as any } } };
 
 const bottlenecks = [
-  { icon: '📞', role: 'Sales', gap: '30-50 manual outreach attempts/day ceiling', pain: 'Pipeline starves while servicing existing clients' },
-  { icon: '📊', role: 'Business Intelligence', gap: 'No visibility into pipeline or conversion', pain: 'Decisions made on gut feel, not data' },
-  { icon: '💰', role: 'Finance', gap: 'Revenue tracking, invoicing, cash flow', pain: 'Blind spots until the accountant finds them' },
-  { icon: '📢', role: 'Marketing', gap: 'Content, campaigns, outbound sequences', pain: 'Posts when they remember — no system, no cadence' },
-  { icon: '📁', role: 'Operations', gap: 'Documents, workflows, project tracking', pain: 'Mismanaged ops can stall revenue for months' },
-  { icon: '🤝', role: 'Admin & Coordination', gap: 'Scheduling, comms, follow-ups', pain: 'Balls drop because nobody is tracking them' },
+  { role: 'Sales', gap: '30-50 manual outreach attempts/day ceiling', pain: 'Pipeline starves while servicing existing clients' },
+  { role: 'Business Intelligence', gap: 'No visibility into pipeline or conversion', pain: 'Decisions made on gut feel, not data' },
+  { role: 'Finance', gap: 'Revenue tracking, invoicing, cash flow', pain: 'Blind spots until the accountant finds them' },
+  { role: 'Marketing', gap: 'Content, campaigns, outbound sequences', pain: 'Posts when they remember — no system, no cadence' },
+  { role: 'Operations', gap: 'Documents, workflows, project tracking', pain: 'Mismanaged ops can stall revenue for months' },
+  { role: 'Admin & Coordination', gap: 'Scheduling, comms, follow-ups', pain: 'Balls drop because nobody is tracking them' },
 ];
 
 export default function ProblemSlide() {
@@ -41,7 +41,7 @@ export default function ProblemSlide() {
               border: '1px solid var(--border-hi)',
               borderRadius: 'var(--radius-lg)',
             }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.35rem' }}>{g.icon} {g.role}</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.35rem' }}>{g.role}</div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-2)', marginBottom: '0.3rem' }}>{g.gap}</div>
               <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-4)', fontStyle: 'italic' }}>{g.pain}</div>
             </div>
