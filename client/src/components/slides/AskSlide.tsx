@@ -35,10 +35,10 @@ export default function AskSlide() {
             {[
               { month: 'Month 3',  milestone: '25 paying customers. First overage revenue recognized.' },
               { month: 'Month 6',  milestone: '75 customers. First Growth tier upgrades. NRR tracking toward 120%+.' },
-              { month: 'Month 9',  milestone: '175 customers. First Scale tier customers. $85K+ MRR.' },
-              { month: 'Month 12', milestone: '350 customers. $180K+ MRR ($2.2M ARR). Series A metrics in sight.' },
-              { month: 'Month 18', milestone: '700 customers. $440K+ MRR ($5.3M ARR). Series A closed. SOC 2 Type II path complete.' },
-              { month: 'Month 24', milestone: '1,000+ customers. $660K+ MRR ($7.9M ARR). Series B-ready.' },
+              { month: 'Month 9',  milestone: '150 customers. First Scale tier customers. $75K+ MRR.' },
+              { month: 'Month 12', milestone: '300 customers. $157K+ MRR ($1.9M ARR). Series A metrics in sight.' },
+              { month: 'Month 18', milestone: '600 customers. $380K+ MRR ($4.55M ARR). Series A closed. SOC 2 Type II path complete.' },
+              { month: 'Month 24', milestone: '1,000+ customers. $640K+ MRR ($7.7M ARR). Series B-ready.' },
             ].map((m, idx) => (
               <div key={idx} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.65rem' }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--gold)', minWidth: 60 }}>{m.month}</div>

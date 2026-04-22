@@ -182,7 +182,7 @@ export default function GTMMathSlide() {
               </div>
             ))}
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.55rem', color: 'var(--text-4)', fontStyle: 'italic', marginTop: '0.35rem', lineHeight: 1.4 }}>
-              Drives Mo 24 MRR to ~$660K ($7.9M ARR). Audited against HubSpot / Atlassian / Snowflake / MongoDB public benchmarks.
+              Drives Mo 24 MRR to ~$640K ($7.7M ARR). Audited against HubSpot / Atlassian / Snowflake / MongoDB public benchmarks.
             </div>
           </div>
         </motion.div>
