@@ -16,7 +16,7 @@ export default function AskSlide() {
           <div style={{ padding: '1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--cyan)', marginBottom: '0.75rem' }}>USE OF FUNDS</div>
             {[
-              { pct: '40%', use: 'Engineering', detail: 'Head of Engineering + 2 senior devs. Harden platform, scale SDR infrastructure.' },
+              { pct: '40%', use: 'Engineering / Payroll', detail: 'Roberto Cinque (Head of Eng, Naples, $6K/mo) + 1 sr dev sourced via Roberto\'s network ($6K/mo) + founder draw ($8K/mo) + remote EA ($1K/mo) + self-hosted AgentCorp ops ($750/mo). Offshore-weighted; run-rate ~$22K/mo.' },
               { pct: '25%', use: 'Go-to-Market', detail: 'Founder-led sales to first 50 customers. LinkedIn PLG. Channel partnerships.' },
               { pct: '20%', use: 'Operations', detail: 'SOC 2 Type II prep. Legal/contracts. Finance + billing infrastructure.' },
               { pct: '15%', use: 'Runway Buffer', detail: '18-month runway at planned burn. Capital efficiency from AI-augmented development.' },
@@ -34,10 +34,10 @@ export default function AskSlide() {
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.75rem' }}>18-MONTH MILESTONES</div>
             {[
               { month: 'Month 3', milestone: '10 paying customers. First overage revenue recognized.' },
-              { month: 'Month 6', milestone: '50 customers. NRR tracking above 120%. First Growth tier upgrades.' },
+              { month: 'Month 6', milestone: '50 customers. NRR tracking toward 120%+ target. First Growth tier upgrades.' },
               { month: 'Month 9', milestone: '150 customers. First Scale tier customers. $75K+ MRR.' },
               { month: 'Month 12', milestone: '300 customers. $150K+ MRR. Series A metrics in sight.' },
-              { month: 'Month 18', milestone: '700+ customers. NRR above 150%. SOC 2 Type II path complete.' },
+              { month: 'Month 18', milestone: '700+ customers. NRR sustained at 120%+ as white-glove tier scales. SOC 2 Type II path complete.' },
             ].map((m, idx) => (
               <div key={idx} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.65rem' }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--gold)', minWidth: 60 }}>{m.month}</div>

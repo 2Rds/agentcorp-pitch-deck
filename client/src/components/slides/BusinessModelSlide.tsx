@@ -50,10 +50,9 @@ export default function BusinessModelSlide() {
             </div>
           </div>
           <div style={{ padding: '0.85rem 1.25rem', borderRadius: 'var(--radius-lg)', background: 'rgba(139,156,247,0.04)', border: '1px solid rgba(139,156,247,0.12)' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: '#8b9cf7', marginBottom: '0.4rem' }}>WHITE-GLOVE MANAGED SERVICE</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: '#8b9cf7', marginBottom: '0.4rem' }}>WHITE-GLOVE MANAGED SERVICE — PHASE 2</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-              A dedicated remote operator manages 2–3 customer agent systems — configuration, optimization, escalation,
-              and reporting. The business owner never touches the backend. This is the moat no competitor replicates.
+              Phase 2 distribution model — launches post-initial traction. A dedicated remote operator manages 2–3 customer agent systems (configuration, optimization, escalation, reporting). Compounds the knowledge-graph moat by adding operational dependency the customer can't migrate away from.
             </div>
           </div>
         </motion.div>

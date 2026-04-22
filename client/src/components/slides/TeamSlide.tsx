@@ -26,8 +26,34 @@ export default function TeamSlide() {
           I was the ICP.{' '}<span className="c-cyan">I built the workforce that eliminates the ceiling.</span>
         </motion.h2>
 
-        {/* Founder card — name + award + career arc + stats + story */}
-        <motion.div variants={i} style={{ padding: '1rem 1.25rem', marginBottom: '0.65rem', background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.15)', borderRadius: 'var(--radius-lg)' }}>
+        {/* Founder card — 2-column: portrait left, content right */}
+        <motion.div variants={i} style={{
+          padding: '1rem 1.25rem', marginBottom: '0.65rem',
+          background: 'rgba(0,229,255,0.04)', border: '1px solid rgba(0,229,255,0.15)',
+          borderRadius: 'var(--radius-lg)',
+          display: 'grid', gridTemplateColumns: '260px 1fr', gap: '1.25rem', alignItems: 'start',
+        }}>
+
+          {/* Portrait — left column */}
+          <div style={{
+            width: '100%', aspectRatio: '4 / 5',
+            borderRadius: 10, overflow: 'hidden',
+            border: '1px solid rgba(0,229,255,0.3)',
+            background: 'var(--surface)',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,229,255,0.08) inset',
+          }}>
+            <img
+              src="/team/sean-weiss.jpg"
+              alt="Sean Weiss"
+              style={{
+                width: '100%', height: '100%', objectFit: 'cover',
+                objectPosition: 'center 22%', display: 'block',
+              }}
+            />
+          </div>
+
+          {/* Content — right column */}
+          <div>
 
           {/* Header */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem', marginBottom: '0.85rem', flexWrap: 'wrap' }}>
@@ -70,6 +96,8 @@ export default function TeamSlide() {
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-1)', lineHeight: 1.55, fontWeight: 500 }}>
             Those failures aren't unique to financial services. I won national awards despite the ceiling. Then I built the workforce that eliminates it.
           </div>
+
+          </div>{/* /right column */}
         </motion.div>
 
         {/* The pivot — AI consulting + product as proof */}
@@ -81,9 +109,9 @@ export default function TeamSlide() {
             </div>
           </div>
           <div style={{ padding: '0.8rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>THE PRODUCT IS THE PROOF</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>ENGINEERING — COMMITTED POST-CLOSE</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--text-2)', lineHeight: 1.45 }}>
-              6 agents, multi-model runtime, Stripe billing, automated SDR — all operational. Built single-handedly with AI-augmented development.
+              <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>Roberto Cinque</span> — Head of Engineering (Naples, Italy). 6+ years full-stack — React, back-end systems, IT consulting. Senior dev hire sourced + vetted via Roberto's network on close.
             </div>
           </div>
         </motion.div>

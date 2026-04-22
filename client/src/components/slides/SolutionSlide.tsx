@@ -72,7 +72,7 @@ export default function SolutionSlide() {
 
         <motion.p variants={i} style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-3)', maxWidth: 700 }}>
           Sam is why they buy — immediate, measurable ROI from day one. The department heads are why they stay —
-          operational dependency that drives net retention above 120%.
+          operational dependency designed to drive a <span style={{ color: 'var(--text-1)', fontWeight: 600 }}>targeted NRR of 120%+</span>, in line with usage-based SaaS peers (Snowflake 126%, Datadog ~120%) and above top-quartile SMB SaaS (111%, SaaS Capital 2025).
         </motion.p>
 
       </motion.div>
