@@ -44,7 +44,7 @@ export default function TractionSlide() {
           <div style={{ padding: '1rem 1.25rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.5rem' }}>ORGANIC DISTRIBUTION</div>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.5 }}>
-              All five arrived pre-GTM through inbound network. Founder's seven years in wealth management — Prudential Diamond Elephant top producer — compound into a warm distribution surface that paid acquisition can't replicate at this stage. GTM accelerates volume, not interest.
+              All five arrived pre-GTM through inbound network. Founder's seven years as a top-producing wealth advisor compound into a warm distribution surface that paid acquisition can't replicate at this stage. GTM accelerates volume, not interest.
             </div>
           </div>
         </motion.div>
