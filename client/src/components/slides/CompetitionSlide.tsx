@@ -5,10 +5,11 @@ const i = { hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transiti
 
 const competitors = [
   { name: 'AI SDR Specialists', examples: '11x.ai ($50M+), Apollo AI', coverage: ['✓','✗','✗','✗','✗'], note: 'Outbound only. No back-office.' },
-  { name: 'Build-Your-Own AI', examples: 'Lindy.ai ($30M+), Relevance AI ($18M)', coverage: ['△','△','△','✓','✗'], note: 'Toolkit, not a workforce. User assembles.' },
+  { name: 'Build-Your-Own AI', examples: 'Lindy.ai, Relevance AI ($18M)', coverage: ['△','△','△','✓','✗'], note: 'Toolkit, not a workforce. User assembles.' },
   { name: 'Workflow Automation', examples: 'Bardeen ($15M), Make + AI', coverage: ['△','✗','✗','△','✗'], note: 'Task automation. Agents don\'t think.' },
   { name: 'DIY Agent Frameworks', examples: 'CrewAI, AutoGen, LangGraph', coverage: ['✗','✗','✗','△','✗'], note: 'Developer toolkit. Requires engineering team.' },
-  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full managed workforce. Sales + operations.' },
+  { name: 'Enterprise AI Workforce', examples: 'Ema ($75M), Athena', coverage: ['✓','△','✓','✓','✗'], note: 'Enterprise-only. Six-figure contracts. No SMB tier.' },
+  { name: 'AgentCorp', examples: '', coverage: ['✓','✓','✓','✓','✓'], note: 'Full surface. White-glove included. $250–$2,500/mo.' },
 ];
 const cols = ['AI SDR', 'BI/Analytics', 'Finance/Ops', 'Multi-Agent', 'White-Glove'];
 
@@ -49,8 +50,8 @@ export default function CompetitionSlide() {
         </motion.div>
         <motion.div variants={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>HONEST ASSESSMENT</div>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>11x.ai and Lindy.ai are funded and scaling. They have paying customers. We don't yet. Our edge is full-surface-area coverage and a managed service model no one else offers.</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>WHERE WE SIT</div>
+            <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', color: 'var(--text-3)', lineHeight: 1.4 }}>The only full-surface AI workforce built for SMB owner-operators — sales, BI, finance, ops, marketing pre-built and coordinated, with a white-glove operator included, at $250–$2,500/mo. Ema is the enterprise cousin — different segment, different GTM.</div>
           </div>
           <div style={{ padding: '0.75rem 1rem', background: 'var(--surface)', border: '1px solid var(--border-hi)', borderRadius: 'var(--radius-lg)' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.55rem', letterSpacing: '0.08em', color: 'var(--gold)', marginBottom: '0.3rem' }}>DEFENSIBILITY</div>
